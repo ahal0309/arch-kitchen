@@ -169,19 +169,38 @@ html {
 .delay-400 { transition-delay: 400ms; }
 .delay-500 { transition-delay: 500ms; }
 
-/* Architectural Template Styling (Urbantrop-inspired: pure continuous cream + delicate champagne brass contour lines) */
-.architectural-bg {
-  background-color: #fbf9f5;
-  background-image: 
-    radial-gradient(ellipse 120% 70% at 85% 10%, rgba(197, 160, 89, 0.08) 0%, transparent 70%),
-    radial-gradient(ellipse 100% 60% at 15% 90%, rgba(197, 160, 89, 0.06) 0%, transparent 60%);
+/* Architectural Animated Golden Contour Lines (Topographic Motion) */
+@keyframes contourFlow {
+  0% {
+    background-position: 0% 0%, 0% 0%, 0% 0%;
+  }
+  50% {
+    background-position: 100px 30px, -60px 40px, 0% 0%;
+  }
+  100% {
+    background-position: 0% 0%, 0% 0%, 0% 0%;
+  }
 }
 
+.architectural-bg,
 .contour-lines {
   background-color: #fbf9f5;
   background-image:
-    radial-gradient(ellipse 90% 50% at 90% 15%, rgba(197, 160, 89, 0.09) 0%, transparent 65%),
-    radial-gradient(ellipse 80% 50% at 10% 80%, rgba(197, 160, 89, 0.07) 0%, transparent 60%);
+    repeating-linear-gradient(
+      -38deg,
+      transparent,
+      transparent 85px,
+      rgba(197, 160, 89, 0.22) 85px,
+      rgba(197, 160, 89, 0.22) 86.5px,
+      transparent 86.5px,
+      transparent 145px,
+      rgba(216, 188, 126, 0.16) 145px,
+      rgba(216, 188, 126, 0.16) 146px
+    ),
+    radial-gradient(ellipse 110% 65% at 90% 12%, rgba(197, 160, 89, 0.15) 0%, transparent 65%),
+    radial-gradient(ellipse 95% 55% at 10% 85%, rgba(197, 160, 89, 0.12) 0%, transparent 60%);
+  background-size: 320px 320px, 100% 100%, 100% 100%;
+  animation: contourFlow 24s ease-in-out infinite;
 }
 
 .arch-card {

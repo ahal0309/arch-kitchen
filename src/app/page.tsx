@@ -279,7 +279,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-[#fbf9f5] text-[#2c2b29] font-sans antialiased selection:bg-[#c5a059] selection:text-white">
       {/* Top Utility Bar */}
-      <div className="border-b border-[#ede8df] bg-[#fbf9f5] text-[#6b6863] text-xs py-2 px-6 lg:px-16 transition-colors">
+      <div className="bg-transparent text-[#6b6863] text-xs py-2 px-6 lg:px-16 transition-colors">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
           <div className="flex items-center space-x-6">
             <a
@@ -305,15 +305,15 @@ export default function HomePage() {
       <header
         className={`sticky top-0 z-50 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           isScrolled
-            ? "py-3 px-4 sm:px-8"
-            : "py-5 px-6 lg:px-16 bg-[#fbf9f5]/90 border-b border-[#ede8df]"
+            ? "py-3 px-4 sm:px-8 bg-transparent"
+            : "py-4 px-6 lg:px-16 bg-transparent"
         }`}
       >
         <div
           className={`mx-auto transition-all duration-500 flex items-center justify-between ${
             isScrolled
-              ? "max-w-6xl bg-white/90 backdrop-blur-xl border border-[#c5a059]/40 shadow-2xl rounded-full px-6 sm:px-10 h-16 sm:h-20"
-              : "max-w-7xl h-16 sm:h-20"
+              ? "max-w-6xl bg-white/95 backdrop-blur-xl border border-[#c5a059]/40 shadow-2xl rounded-full px-6 sm:px-10 h-16 sm:h-20"
+              : "max-w-7xl h-16 sm:h-20 bg-transparent"
           }`}
         >
           {/* Brand Logo / Architectural Wordmark */}
