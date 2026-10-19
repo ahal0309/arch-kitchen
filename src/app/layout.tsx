@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import ScrollAnimationProvider from "./ScrollAnimationProvider";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -39,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${cormorant.variable} ${jakarta.variable}`}>
       <body className="antialiased bg-[#fbf9f5] text-[#2c2b29] font-sans selection:bg-[#cbb17b] selection:text-white">
-        {children}
+        <ScrollAnimationProvider>{children}</ScrollAnimationProvider>
       </body>
     </html>
   );
