@@ -163,5 +163,36 @@ html {
 .delay-400 { transition-delay: 400ms; }
 .delay-500 { transition-delay: 500ms; }
 
+/* Architectural Template Styling (Urbantrop-inspired, preserved champagne brass palette) */
+.architectural-bg {
+  background-color: #fbf9f5;
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(197, 160, 89, 0.12) 1px, transparent 0),
+    linear-gradient(to right, rgba(237, 232, 223, 0.4) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(237, 232, 223, 0.4) 1px, transparent 1px);
+  background-size: 32px 32px, 96px 96px, 96px 96px;
+}
 
+.contour-lines {
+  background-image: radial-gradient(ellipse at 80% 20%, rgba(197, 160, 89, 0.08) 0%, transparent 60%),
+                    radial-gradient(ellipse at 20% 80%, rgba(197, 160, 89, 0.05) 0%, transparent 50%);
+}
 
+.arch-card {
+  border-radius: 2rem;
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.arch-card:hover {
+  border-color: #c5a059;
+  box-shadow: 0 16px 36px -8px rgba(197, 160, 89, 0.18);
+  transform: translateY(-4px);
+}
+
+.outline-heading {
+  color: transparent;
+  -webkit-text-stroke: 1.5px #c5a059;
+}

@@ -473,108 +473,154 @@ export default function ServicesPage() {
         </div>
       </div>
 
-      {/* Comprehensive Detailed Services List */}
-      <main className="py-20 lg:py-28 px-6 lg:px-16 bg-[#fbf9f5]">
-        <div className="max-w-7xl mx-auto space-y-24">
-          {services.map((svc, idx) => (
-            <section
-              key={svc.id}
-              id={svc.id}
-              className="scroll-mt-36 p-8 sm:p-12 rounded-2xl bg-white border border-[#ede8df] shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="max-w-4xl space-y-6 scroll-reveal reveal-init">
-                <div>
-                  <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#1e1d1b] leading-tight">
-                    {svc.title}
-                  </h2>
-                  <p className="text-sm sm:text-base text-[#6b6863] leading-relaxed mt-3">
-                    {svc.description}
-                  </p>
+      {/* Services Architectural Showcase Grid (Urbantrop Style Template) */}
+      <main className="py-20 lg:py-28 px-6 lg:px-16 architectural-bg contour-lines relative overflow-hidden">
+        <div className="max-w-7xl mx-auto space-y-16">
+          {/* Section Introduction */}
+          <div className="max-w-3xl scroll-reveal reveal-init">
+            <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#c5a059] block mb-2">
+              ARCH KITCHENS — CAPABILITIES & SCOPE
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-[#1e1d1b] font-normal tracking-tight">
+              WHERE DESIGNS BECOME <span className="text-[#c5a059] italic">LANDMARKS.</span>
+            </h2>
+          </div>
+
+          {/* 3-Column Pill-Shaped Architectural Service Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((svc, idx) => (
+              <section
+                key={svc.id}
+                id={svc.id}
+                className="arch-card p-8 sm:p-10 flex flex-col justify-between scroll-reveal reveal-card"
+              >
+                <div className="space-y-6">
+                  {/* Card Number Header */}
+                  <div className="flex items-center justify-between border-b border-[#ede8df] pb-4">
+                    <span className="text-xs font-mono font-semibold text-[#c5a059]">
+                      {svc.num}
+                    </span>
+                    <span className="text-[10px] font-mono tracking-widest text-[#6b6863] uppercase">
+                      {svc.category}
+                    </span>
+                  </div>
+
+                  {/* Clean Black Heading & Tagline */}
+                  <div>
+                    <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#1e1d1b] leading-tight mb-2">
+                      {svc.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-[#6b6863] leading-relaxed">
+                      {svc.description}
+                    </p>
+                  </div>
+
+                  {/* Architectural Blueprint Specifications */}
+                  <div className="space-y-2.5 pt-2">
+                    <h4 className="text-[11px] font-mono font-semibold uppercase tracking-wider text-[#1e1d1b]">
+                      SCOPE & HIGHLIGHTS
+                    </h4>
+                    <ul className="space-y-2">
+                      {svc.features.slice(0, 4).map((feat, fIdx) => (
+                        <li key={fIdx} className="flex items-start space-x-2.5 text-xs text-[#4a4742]">
+                          <span className="text-[#c5a059] font-mono text-[11px] mt-0.5">•</span>
+                          <span className="leading-snug">{feat}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
 
-                {/* Key Features List */}
-                <div className="space-y-3 pt-2">
-                  <h4 className="text-xs font-semibold uppercase tracking-wider text-[#1e1d1b]">
-                    What's Included in This Service:
-                  </h4>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
-                    {svc.features.map((feat, fIdx) => (
-                      <li key={fIdx} className="flex items-start space-x-3 text-sm text-[#4a4742]">
-                        <div className="w-5 h-5 rounded-full bg-[#f7f1e5] border border-[#c5a059] flex items-center justify-center text-[#c5a059] shrink-0 mt-0.5">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#c5a059]" />
-                        </div>
-                        <span className="leading-snug">{feat}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Action CTA */}
-                <div className="pt-4 flex flex-wrap gap-4 items-center">
+                {/* Card Footer Link */}
+                <div className="pt-8 border-t border-[#ede8df]/80 mt-6 flex items-center justify-between">
+                  <Link
+                    href={`/services/${svc.id}`}
+                    className="text-xs font-semibold uppercase tracking-wider text-[#c5a059] hover:text-[#b38e45] inline-flex items-center space-x-1.5 transition-colors"
+                  >
+                    <span>View Detail</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
                   <Link
                     href="/contact"
-                    className="inline-flex items-center space-x-2 px-7 py-3.5 bg-[#c5a059] hover:bg-[#b38e45] text-white font-medium text-xs uppercase tracking-wider rounded-sm shadow transition-all hover:shadow-lg transform hover:-translate-y-0.5"
+                    className="text-xs font-mono text-[#6b6863] hover:text-[#1e1d1b] transition-colors"
                   >
-                    <span>Request A Quote for {svc.title}</span>
-                    <ArrowRight className="w-4 h-4" />
+                    Request Quote →
                   </Link>
                 </div>
-              </div>
-            </section>
-          ))}
+              </section>
+            ))}
+          </div>
         </div>
       </main>
 
-      {/* Our 4-Step Architectural Methodology */}
-      <section className="py-20 lg:py-28 px-6 lg:px-16 bg-[#f7f4ee] border-t border-[#ede8df]">
+      {/* Our 18-Step Systematic Process (Urbantrop Reference Style) */}
+      <section className="py-20 lg:py-28 px-6 lg:px-16 bg-[#f7f4ee] border-t border-[#ede8df] relative">
         <div className="max-w-7xl mx-auto space-y-16">
-          <div className="text-center max-w-2xl mx-auto scroll-reveal reveal-init">
-            <span className="text-xs font-semibold uppercase tracking-widest text-[#c5a059] block mb-2">
-              Our Proven Methodology
+          <div className="max-w-2xl scroll-reveal reveal-init">
+            <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#c5a059] block mb-2">
+              EXECUTION MATRIX
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-[#1e1d1b] font-normal mb-4">
-              How We Execute Your Dream Kitchen
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-[#1e1d1b] font-normal tracking-tight">
+              OUR PROCESS
             </h2>
-            <p className="text-sm sm:text-base text-[#6b6863]">
-              From the initial Toronto in-home survey to final cabinet adjustments, our systematic workflow ensures zero subcontractor surprises.
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {processSteps.map((step, idx) => (
-              <div
-                key={idx}
-                className={`bg-white rounded-2xl p-7 border border-[#ede8df] shadow-sm hover:border-[#c5a059] hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative group scroll-reveal reveal-init ${
-                  idx === 0
-                    ? "delay-100"
-                    : idx === 1
-                    ? "delay-200"
-                    : idx === 2
-                    ? "delay-300"
-                    : "delay-400"
-                }`}
-              >
-                <div className="text-4xl font-serif font-bold text-[#c5a059] mb-4">
-                  {step.step}
+          {/* 3-Column Architectural Process Checklist */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-4 border-t border-[#ede8df] pt-8">
+            {[
+              "CONSULTATION",
+              "CLIENT CONSULTATION",
+              "FEE PROPOSAL",
+              "TERMS OF ENGAGEMENT",
+              "SITE INVESTIGATION",
+              "MECHANICAL & ELECTRICAL DESIGN",
+              "PLAN DRAWING",
+              "JOINERY DRAFTING",
+              "CLIENT DESIGN APPROVAL",
+              "FINAL REALISTIC 3D RENDERS",
+              "SELECTION OF MATERIALS",
+              "BOQ & DETAIL DRAWING SUBMISSION",
+              "CONTRACTOR SELECTION",
+              "MATERIAL BOARD SUBMISSION",
+              "SITE MARKING & REVIEW",
+              "PROJECT MONITORING & COORDINATION",
+              "PROJECT COMPLETION & HANDOVER",
+              "DOCUMENTATION & WARRANTY",
+            ].map((stepName, sIdx) => {
+              const numStr = String(sIdx + 1).padStart(2, "0");
+              return (
+                <div
+                  key={sIdx}
+                  className="flex items-center justify-between py-3 border-b border-[#ede8df]/80 group hover:border-[#c5a059] transition-colors scroll-reveal reveal-init"
+                >
+                  <div className="flex items-center space-x-3">
+                    <span className="text-xs font-mono text-[#c5a059]">{numStr}</span>
+                    <span className="text-xs font-medium uppercase tracking-wider text-[#2c2b29] group-hover:text-[#c5a059] transition-colors">
+                      {stepName}
+                    </span>
+                  </div>
+                  <span className="text-[#c5a059] opacity-40 group-hover:opacity-100 transition-opacity font-mono text-xs">
+                    +
+                  </span>
                 </div>
-                <h3 className="text-xl font-serif font-bold text-[#1e1d1b] mb-2 leading-snug">
-                  {step.title}
-                </h3>
-                <p className="text-xs text-[#6b6863] leading-relaxed">
-                  {step.description}
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
-          <div className="text-center pt-4 scroll-reveal reveal-init">
-            <Link
-              href="/contact"
-              className="inline-flex items-center space-x-2 px-8 py-4 bg-[#c5a059] hover:bg-[#b38e45] text-white font-medium text-xs uppercase tracking-wider rounded-sm shadow-md transition-all hover:shadow-lg transform hover:-translate-y-0.5"
-            >
-              <span>Schedule A Free In-Home Consultation</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+          {/* Large Architectural "LET'S DESIGN." Statement from Reference Image */}
+          <div className="pt-16 pb-8 text-center scroll-reveal reveal-scale-init">
+            <h3 className="text-5xl sm:text-7xl lg:text-9xl font-serif font-bold tracking-widest outline-heading uppercase select-none">
+              LET'S DESIGN.
+            </h3>
+            <div className="mt-8">
+              <Link
+                href="/contact"
+                className="inline-flex items-center space-x-3 px-9 py-4 bg-[#c5a059] hover:bg-[#b38e45] text-white font-medium text-xs uppercase tracking-widest rounded-full shadow-md transition-all hover:shadow-xl transform hover:-translate-y-0.5"
+              >
+                <span>Schedule A Consultation</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
