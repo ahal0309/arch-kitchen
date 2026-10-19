@@ -3,6 +3,7 @@
 :root {
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-arch: 'Space Grotesk', var(--font-sans);
   --cream-bg: #fbf9f5;
   --cream-card: #ffffff;
   --champagne-brass: #c5a059;
@@ -22,7 +23,12 @@ body {
 }
 
 h1, h2, h3, .font-serif-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-arch), var(--font-sans);
+  letter-spacing: -0.03em;
+}
+
+.font-arch {
+  font-family: var(--font-arch), var(--font-sans);
 }
 
 /* Custom smooth transitions & luxury styling */

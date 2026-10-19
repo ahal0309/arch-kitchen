@@ -522,121 +522,116 @@ export default function HomePage() {
         )}
       </header>
 
-      {/* Hero Section */}
-      <section className="relative pt-12 pb-20 lg:pt-20 lg:pb-28 px-6 lg:px-16 overflow-hidden">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
-          {/* Left Column Content with Exact SEO Keywords & Copy */}
-          <div className="lg:col-span-6 space-y-6">
-            <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.12] font-serif text-[#1e1d1b] font-normal tracking-tight">
-              Toronto's Best <br className="hidden sm:inline" />
-              <span className="text-[#c5a059]">Kitchen Contractor</span>
-            </h1>
-
-            <p className="text-base sm:text-lg text-[#615e58] font-normal leading-relaxed max-w-xl">
-              Transform your kitchen with Arch Kitchen Cabinets, Toronto's top
-              kitchen remodeler. We offer full kitchen renovations, custom
-              cabinet installations and repairs, countertop solutions, and
-              flooring services. Experience exceptional craftsmanship and
-              outstanding service for your dream kitchen.
-            </p>
-
-            {/* We Provide The Best Kitchen For You Value List */}
-            <div className="space-y-3 pt-1">
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-[#1e1d1b]">
-                We Provide The Best Kitchen For You:
-              </h3>
-              <div className="space-y-2 text-sm text-[#4a4742]">
-                <div className="flex items-center space-x-3">
-                  <div className="w-5 h-5 rounded-full bg-[#f7f1e5] border border-[#c5a059] flex items-center justify-center text-[#c5a059] shrink-0">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#c5a059]" />
-                  </div>
-                  <span>Unique Solution to fit your style and needs</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-5 h-5 rounded-full bg-[#f7f1e5] border border-[#c5a059] flex items-center justify-center text-[#c5a059] shrink-0">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#c5a059]" />
-                  </div>
-                  <span>High Quality Materials and Detailed Work</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-5 h-5 rounded-full bg-[#f7f1e5] border border-[#c5a059] flex items-center justify-center text-[#c5a059] shrink-0">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#c5a059]" />
-                  </div>
-                  <span>Smooth Renovation from start to finish</span>
-                </div>
+      {/* Architectural Hero Presentation (Urbantrop Reference Style) */}
+      <section className="relative pt-8 pb-16 lg:pt-14 lg:pb-24 px-6 lg:px-16 architectural-bg contour-lines overflow-hidden border-b border-[#ede8df]">
+        <div className="max-w-7xl mx-auto space-y-12 lg:space-y-16">
+          {/* Top 3-Panel Architectural Photography Strip (from Reference Image 1) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
+            <div className="relative aspect-[3/4] sm:aspect-[4/5] rounded-3xl overflow-hidden shadow-lg border border-[#ede8df] group">
+              <Image
+                src="/project2.png"
+                alt="Toronto Kitchen Architecture"
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute top-4 left-4 bg-black/75 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-mono text-white tracking-widest uppercase">
+                01 / RESIDENTIAL
               </div>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap items-center gap-4 pt-3">
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center space-x-2 px-7 py-3.5 bg-[#c5a059] hover:bg-[#b38e45] text-white font-medium text-xs uppercase tracking-wider rounded-sm shadow transition-all hover:shadow-lg transform hover:-translate-y-0.5"
-              >
-                <span>Let's Start</span>
-                <ArrowRight className="w-4 h-4" />
-              </a>
-              <a
-                href="#portfolio"
-                className="inline-flex items-center justify-center space-x-2 px-7 py-3.5 bg-white hover:bg-[#f6f2e9] text-[#2c2b29] border border-[#ded8cb] font-medium text-xs uppercase tracking-wider rounded-sm transition-all"
-              >
-                <span>Explore Portfolio</span>
-              </a>
+            <div className="relative aspect-[3/4] sm:aspect-[4/5] rounded-3xl overflow-hidden shadow-lg border border-[#ede8df] group">
+              <Image
+                src="/project1.png"
+                alt="Custom Joinery & Millwork"
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute top-4 left-4 bg-black/75 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-mono text-white tracking-widest uppercase">
+                02 / JOINERY
+              </div>
             </div>
 
-            {/* Statistics / Value Props */}
-            <div className="pt-6 grid grid-cols-3 gap-6 border-t border-[#ede8df]">
-              <div>
-                <div className="text-3xl lg:text-4xl font-serif font-medium text-[#1e1d1b]">
-                  100<span className="text-xl text-[#c5a059]">%</span>
-                </div>
-                <div className="text-xs text-[#78756e] uppercase tracking-wider mt-1">
-                  In-House Built
-                </div>
-              </div>
-              <div>
-                <div className="text-3xl lg:text-4xl font-serif font-medium text-[#1e1d1b]">
-                  4–8 Wks
-                </div>
-                <div className="text-xs text-[#78756e] uppercase tracking-wider mt-1">
-                  Concept to Build
-                </div>
-              </div>
-              <div>
-                <div className="text-3xl lg:text-4xl font-serif font-medium text-[#1e1d1b]">
-                  Lifetime
-                </div>
-                <div className="text-xs text-[#78756e] uppercase tracking-wider mt-1">
-                  Hardware Warranty
-                </div>
+            <div className="relative aspect-[3/4] sm:aspect-[4/5] rounded-3xl overflow-hidden shadow-lg border border-[#ede8df] group">
+              <Image
+                src="/project3.png"
+                alt="Architectural Kitchen Island & Stone"
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute top-4 left-4 bg-black/75 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-mono text-white tracking-widest uppercase">
+                03 / QUARTZITE
               </div>
             </div>
           </div>
 
-          {/* Right Column Visual / Hero Showcase - Space for Video or Image */}
-          <div className="lg:col-span-6 relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/80 bg-stone-100 aspect-[4/3] sm:aspect-[1.15/1] group">
-              {/* Active Hero Media (Can easily switch between <video> tag or <Image>) */}
-              {/* --- Video Support (Uncomment below and add video src when ready):
-              <video
-                src="/hero_video.mp4"
-                poster="/hero_main.png"
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full h-full object-cover"
-              />
-              --- */}
-              <Image
-                src="/project2.png"
-                alt="Toronto's Best Kitchen Contractor Masterpiece"
-                fill
-                priority
-                loading="eager"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover object-center transform group-hover:scale-105 transition-transform duration-700"
-              />
+          {/* Architectural Statement Block (Matching Reference: "WHERE PLANS BECOME LANDMARKS.") */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center pt-4">
+            <div className="lg:col-span-7 space-y-6">
+              <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block">
+                ARCH KITCHENS — TORONTO ATELIER
+              </span>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif text-[#1e1d1b] font-normal leading-[1.08] tracking-tight">
+                WHERE PLANS BECOME <br className="hidden sm:inline" />
+                <span className="text-[#c5a059] italic">LANDMARKS.</span>
+              </h1>
+              <p className="text-base sm:text-lg text-[#615e58] font-normal leading-relaxed max-w-xl">
+                Toronto's premier kitchen contractor and remodeler. We engineer full kitchen renovations, custom cabinet joinery, luxury quartz & stone countertops, and flooring designed to elevate your living architecture.
+              </p>
+
+              {/* Value checks */}
+              <div className="space-y-2.5 text-sm text-[#4a4742] pt-2">
+                <div className="flex items-center space-x-3">
+                  <span className="text-[#c5a059] font-mono font-bold">•</span>
+                  <span>Unique Solution tailored to fit your architectural style & needs</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <span className="text-[#c5a059] font-mono font-bold">•</span>
+                  <span>High-Quality In-House Materials & Detailed CNC Woodwork</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <span className="text-[#c5a059] font-mono font-bold">•</span>
+                  <span>Systematic Turnkey Renovation from site survey to white-glove handover</span>
+                </div>
+              </div>
+
+              {/* Actions */}
+              <div className="flex flex-wrap items-center gap-4 pt-4">
+                <a
+                  href="#contact"
+                  className="inline-flex items-center space-x-3 px-8 py-4 bg-[#c5a059] hover:bg-[#b38e45] text-white font-medium text-xs uppercase tracking-widest rounded-full shadow-md transition-all hover:shadow-xl transform hover:-translate-y-0.5"
+                >
+                  <span>Let's Design</span>
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+                <a
+                  href="#portfolio"
+                  className="inline-flex items-center space-x-2 px-8 py-4 bg-white hover:bg-[#f6f2e9] text-[#2c2b29] border border-[#ded8cb] font-medium text-xs uppercase tracking-widest rounded-full transition-all"
+                >
+                  <span>Explore Projects</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Inset Curated Interior Preview Box */}
+            <div className="lg:col-span-5 relative">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-stone-100 aspect-[4/3] group">
+                <Image
+                  src="/image_from_https_www.archkitchencabinets.com_wp_content_uploads_2024_05_home.png"
+                  alt="Arch Kitchens Architectural Interior"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute bottom-4 left-4 bg-black/80 backdrop-blur-md px-4 py-2 rounded-2xl border border-stone-700 text-white text-xs font-mono">
+                  1940 Ellesmere Rd, Scarborough, ON
+                </div>
+              </div>
             </div>
           </div>
         </div>
