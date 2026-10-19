@@ -1,9 +1,19 @@
+@import url('https://api.fontshare.com/v2/css?f[]=nohemi@100,200,300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
 @import "tailwindcss";
 
+@theme {
+  --font-arch: "Nohemi", "Space Grotesk", sans-serif;
+  --font-serif: "Nohemi", "Space Grotesk", sans-serif;
+  --font-sans: "Poppins", "Plus Jakarta Sans", sans-serif;
+  --font-mono: "Space Grotesk", monospace;
+}
+
 :root {
-  --font-nohemi: 'Nohemi', 'Space Grotesk', var(--font-sans);
+  --font-nohemi: 'Nohemi', 'Space Grotesk', sans-serif;
   --font-poppins: 'Poppins', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  --font-serif: 'Nohemi', 'Cormorant Garamond', Georgia, serif;
+  --font-serif: 'Nohemi', 'Space Grotesk', sans-serif;
   --font-sans: var(--font-poppins);
   --font-arch: var(--font-nohemi);
   --cream-bg: #fbf9f5;
@@ -18,15 +28,31 @@
 }
 
 body {
-  font-family: var(--font-poppins);
+  font-family: 'Poppins', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif !important;
   background-color: var(--cream-bg);
   color: var(--charcoal-text);
   overflow-x: hidden;
 }
 
-h1, h2, h3, .font-serif-title, .font-arch, .font-serif {
-  font-family: var(--font-nohemi);
+h1, h2, h3, h4, h5, h6,
+.font-serif,
+.font-arch,
+.font-serif-title,
+[class*="font-serif"],
+[class*="font-arch"] {
+  font-family: 'Nohemi', 'Space Grotesk', sans-serif !important;
   letter-spacing: -0.02em;
+}
+
+.font-sans,
+p,
+span:not(.font-mono):not(.font-arch):not(.font-serif),
+li,
+a:not(.font-mono):not(.font-arch):not(.font-serif),
+input,
+textarea,
+button {
+  font-family: 'Poppins', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 }
 
 /* Custom smooth transitions & luxury styling */

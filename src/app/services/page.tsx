@@ -433,26 +433,23 @@ export default function ServicesPage() {
         )}
       </header>
 
-      {/* Hero Header Section */}
-      <section className="relative py-20 lg:py-28 bg-[#181715] text-white px-6 lg:px-16 overflow-hidden">
-        <div className="absolute inset-0 opacity-20 mix-blend-overlay">
-          <Image
-            src="/hero_main.png"
-            alt="Arch Kitchens Custom Millwork Services"
-            fill
-            sizes="100vw"
-            className="object-cover object-center"
-            priority
-          />
-        </div>
-        <div className="relative max-w-7xl mx-auto text-center space-y-4">
-          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#c5a059] block">
-            Atelier Offerings & Capabilities
-          </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-normal tracking-tight">
-            Our Architectural <span className="text-[#c5a059]">Services</span>
-          </h1>
-          <p className="text-sm sm:text-base text-[#cfcbc4] max-w-2xl mx-auto leading-relaxed">
+      {/* Architectural Hero Header Banner for Services (Urbantrop Style) */}
+      <section className="relative pt-16 pb-12 lg:pt-24 lg:pb-16 px-6 lg:px-16 architectural-bg contour-lines border-b border-[#ede8df] overflow-hidden">
+        <div className="max-w-7xl mx-auto space-y-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#ede8df]/80">
+            <div>
+              <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-3">
+                01 / ATELIER OFFERINGS & CAPABILITIES
+              </span>
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-arch uppercase tracking-tight text-[#1e1d1b]">
+                OUR ARCHITECTURAL <span className="text-[#c5a059]">SERVICES</span>
+              </h1>
+            </div>
+            <p className="text-xs sm:text-sm font-mono uppercase tracking-widest text-[#78756e] max-w-sm">
+              [ COMPLETE RESIDENTIAL RENOVATIONS & BESPOKE JOINERY ]
+            </p>
+          </div>
+          <p className="text-base sm:text-lg text-[#5a5750] max-w-3xl leading-relaxed">
             From complete residential gut renovations and bespoke cabinet joinery to quartzite slab waterfalls, discover our full suite of master services across the Greater Toronto Area.
           </p>
         </div>
@@ -481,7 +478,7 @@ export default function ServicesPage() {
             <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#c5a059] block mb-2">
               ARCH KITCHENS — CAPABILITIES & SCOPE
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-[#1e1d1b] font-normal tracking-tight">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-arch uppercase text-[#1e1d1b] leading-tight">
               WHERE DESIGNS BECOME <span className="text-[#c5a059] italic">LANDMARKS.</span>
             </h2>
           </div>
@@ -507,7 +504,7 @@ export default function ServicesPage() {
 
                   {/* Clean Black Heading & Tagline */}
                   <div>
-                    <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#1e1d1b] leading-tight mb-2">
+                    <h3 className="text-xl sm:text-2xl font-arch uppercase font-bold text-[#1e1d1b] leading-tight mb-2">
                       {svc.title}
                     </h3>
                     <p className="text-xs sm:text-sm text-[#6b6863] leading-relaxed">
@@ -560,7 +557,7 @@ export default function ServicesPage() {
             <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#c5a059] block mb-2">
               EXECUTION MATRIX
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-[#1e1d1b] font-normal tracking-tight">
+            <h2 className="text-3xl sm:text-5xl font-arch uppercase text-[#1e1d1b] leading-tight">
               OUR PROCESS
             </h2>
           </div>
@@ -609,7 +606,7 @@ export default function ServicesPage() {
 
           {/* Large Architectural "LET'S DESIGN." Statement from Reference Image */}
           <div className="pt-16 pb-8 text-center scroll-reveal reveal-scale-init">
-            <h3 className="text-5xl sm:text-7xl lg:text-9xl font-serif font-bold tracking-widest outline-heading uppercase select-none">
+            <h3 className="text-5xl sm:text-7xl lg:text-9xl font-arch font-bold tracking-widest outline-heading uppercase select-none">
               LET'S DESIGN.
             </h3>
             <div className="mt-8">

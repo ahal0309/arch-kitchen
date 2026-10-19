@@ -341,115 +341,110 @@ export default function CabinetInstallationPage() {
           </p>
         </div>
 
-        {/* Section Heading with Warm Gold Border Frame (Matching Screenshot 1) */}
-        <div className="border border-[#c5a059]/30 rounded-2xl p-6 sm:p-10 lg:p-12 bg-white shadow-xl scroll-reveal reveal-init">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-[#181715] tracking-tight">
-              What We Offer
+        {/* Section Heading with Minimal Contour styling (Urbantrop Style) */}
+        <div className="space-y-12 scroll-reveal reveal-init">
+          <div className="text-center">
+            <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-2">
+              03 / CAPABILITIES & CRAFTSMANSHIP
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-arch uppercase text-[#1e1d1b]">
+              WHAT WE <span className="text-[#c5a059]">OFFER</span>
             </h2>
-            <div className="w-16 h-1 bg-[#c5a059] mx-auto mt-4 rounded-full" />
           </div>
 
-          {/* 3 Offer Cards (Cabinet Installation, Cabinet Repair [Yellow/Gold highlight card], Cabinet Refinishing) */}
+          {/* 3 Offer Cards in arch-card pill styling */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
             {/* Card 1: Cabinet Installation Services */}
-            <div className="bg-[#fbf9f5] border border-stone-200 rounded-xl p-7 sm:p-8 flex flex-col justify-start shadow-sm hover:shadow-xl transition-all duration-300 scroll-reveal reveal-init hover:-translate-y-1">
-              <h3 className="text-xl font-bold text-[#181715] mb-4">
-                Cabinet Installation Services
-              </h3>
-              <p className="text-stone-600 text-sm leading-relaxed">
-                Ready to upgrade your space with new cabinets? Arch Kitchen Cabinets
-                handles the entire installation process with precision. We ensure
-                that your cabinets are perfectly aligned, securely installed, and
-                seamlessly integrated into your space. Our team also offers the
-                option to rearrange existing cabinets for a fresh look.
-              </p>
+            <div className="arch-card p-7 sm:p-8 flex flex-col justify-between scroll-reveal reveal-init">
+              <div>
+                <h3 className="text-xl font-arch uppercase font-bold text-[#1e1d1b] mb-4">
+                  Cabinet Installation Services
+                </h3>
+                <p className="text-stone-600 text-sm leading-relaxed">
+                  Ready to upgrade your space with new cabinets? Arch Kitchen Cabinets
+                  handles the entire installation process with precision. We ensure
+                  that your cabinets are perfectly aligned, securely installed, and
+                  seamlessly integrated into your space. Our team also offers the
+                  option to rearrange existing cabinets for a fresh look.
+                </p>
+              </div>
             </div>
 
-            {/* Card 2: Cabinet Repair Services (Highlighted with Warm Gold Accent Matching Screenshot 1) */}
-            <div
-              className="bg-[#c5a059] text-white rounded-xl p-7 sm:p-8 flex flex-col justify-start shadow-xl relative transform md:-translate-y-2 hover:shadow-2xl transition-all duration-300 scroll-reveal reveal-init"
-              style={{ transitionDelay: "150ms" }}
-            >
-              <h3 className="text-xl font-bold text-white mb-4">
-                Cabinet Repair Services
-              </h3>
-              <p className="text-stone-100 text-sm leading-relaxed mb-4">
-                If your current cabinets need repair, our experts can address a
-                variety of issues, including:
-              </p>
-              <ul className="space-y-2 text-sm text-stone-100">
-                <li className="flex items-start gap-2">
-                  <span className="text-white text-base leading-none mt-1">•</span>
-                  <span>Slumping or broken shelves</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-white text-base leading-none mt-1">•</span>
-                  <span>Drawers that don’t slide smoothly</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-white text-base leading-none mt-1">•</span>
-                  <span>
-                    Drawers with damaged bottoms or malfunctioning guides
-                  </span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-white text-base leading-none mt-1">•</span>
-                  <span>Broken drawer fronts or warped doors</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-white text-base leading-none mt-1">•</span>
-                  <span>Flaking laminate or broken hinges</span>
-                </li>
-              </ul>
-              <p className="mt-5 text-sm text-stone-100 leading-relaxed pt-4 border-t border-white/20">
+            {/* Card 2: Cabinet Repair Services */}
+            <div className="arch-card p-7 sm:p-8 flex flex-col justify-between scroll-reveal reveal-init border-[#c5a059]/60">
+              <div>
+                <h3 className="text-xl font-arch uppercase font-bold text-[#1e1d1b] mb-4">
+                  Cabinet Repair Services
+                </h3>
+                <p className="text-stone-600 text-sm leading-relaxed mb-4">
+                  If your current cabinets need repair, our experts can address a
+                  variety of issues, including:
+                </p>
+                <ul className="space-y-2 text-sm text-stone-700">
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#c5a059] text-base leading-none mt-1">•</span>
+                    <span>Slumping or broken shelves</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#c5a059] text-base leading-none mt-1">•</span>
+                    <span>Drawers that don't slide smoothly</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#c5a059] text-base leading-none mt-1">•</span>
+                    <span>Drawers with damaged bottoms or malfunctioning guides</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#c5a059] text-base leading-none mt-1">•</span>
+                    <span>Broken drawer fronts or warped doors</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#c5a059] text-base leading-none mt-1">•</span>
+                    <span>Flaking laminate or broken hinges</span>
+                  </li>
+                </ul>
+              </div>
+              <p className="mt-5 text-xs text-stone-500 leading-relaxed pt-4 border-t border-[#ede8df]">
                 Our repair services restore your cabinets to their original condition,
                 extending their lifespan and maintaining their functionality.
               </p>
             </div>
 
             {/* Card 3: Cabinet Refinishing Services */}
-            <div
-              className="bg-[#fbf9f5] border border-stone-200 rounded-xl p-7 sm:p-8 flex flex-col justify-start shadow-sm hover:shadow-xl transition-all duration-300 scroll-reveal reveal-init hover:-translate-y-1"
-              style={{ transitionDelay: "300ms" }}
-            >
-              <h3 className="text-xl font-bold text-[#181715] mb-4">
-                Cabinet Refinishing Services
-              </h3>
-              <p className="text-stone-600 text-sm leading-relaxed mb-4">
-                Refresh your kitchen without the need for new cabinets by choosing
-                our refinishing services. We provide:
-              </p>
-              <ul className="space-y-2 text-sm text-stone-700">
-                <li className="flex items-start gap-2">
-                  <span className="text-[#c5a059] text-base leading-none mt-1">•</span>
-                  <span>Thorough cleaning to remove grease and dirt</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#c5a059] text-base leading-none mt-1">•</span>
-                  <span>
-                    Application of moisture, heat, scratch, and impact-resistant
-                    finishes
-                  </span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#c5a059] text-base leading-none mt-1">•</span>
-                  <span>Installation of new doors, pulls, or knobs</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#c5a059] text-base leading-none mt-1">•</span>
-                  <span>
-                    Custom color and finish changes to match your new look
-                  </span>
-                </li>
-              </ul>
+            <div className="arch-card p-7 sm:p-8 flex flex-col justify-between scroll-reveal reveal-init">
+              <div>
+                <h3 className="text-xl font-arch uppercase font-bold text-[#1e1d1b] mb-4">
+                  Cabinet Refinishing Services
+                </h3>
+                <p className="text-stone-600 text-sm leading-relaxed mb-4">
+                  Refresh your kitchen without the need for new cabinets by choosing
+                  our refinishing services. We provide:
+                </p>
+                <ul className="space-y-2 text-sm text-stone-700">
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#c5a059] text-base leading-none mt-1">•</span>
+                    <span>Thorough cleaning to remove grease and dirt</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#c5a059] text-base leading-none mt-1">•</span>
+                    <span>Application of moisture, heat, scratch, and impact-resistant finishes</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#c5a059] text-base leading-none mt-1">•</span>
+                    <span>Installation of new doors, pulls, or knobs</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#c5a059] text-base leading-none mt-1">•</span>
+                    <span>Custom color and finish changes to match your new look</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* ──────────────── WHY CHOOSE ARCH KITCHEN CABINETS (Screenshot 2) ──────────────── */}
-      <section className="py-20 bg-stone-50 border-y border-stone-200">
+      <section className="py-20 architectural-bg contour-lines border-t border-[#ede8df]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
             {/* Left Column: Framed Image with Yellow/Gold Accent Blocks (matching image 2) */}
@@ -470,12 +465,17 @@ export default function CabinetInstallationPage() {
             </div>
 
             {/* Right Column: Exact Content & Verbatim Bullet Points */}
-            <div className="lg:col-span-7 scroll-reveal reveal-init" style={{ transitionDelay: "150ms" }}>
-              <h2 className="text-2xl sm:text-4xl font-extrabold text-[#181715] tracking-tight">
-                Why Choose Arch Kitchen Cabinets
-              </h2>
+            <div className="lg:col-span-7 scroll-reveal reveal-init space-y-4" style={{ transitionDelay: "150ms" }}>
+              <div>
+                <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-2">
+                  04 / ATELIER STANDARDS
+                </span>
+                <h2 className="text-3xl sm:text-5xl font-arch uppercase text-[#181715] tracking-tight">
+                  WHY CHOOSE <span className="text-[#c5a059]">ARCH KITCHENS</span>
+                </h2>
+              </div>
 
-              <p className="mt-4 text-stone-600 text-sm sm:text-base leading-relaxed">
+              <p className="text-stone-600 text-sm sm:text-base leading-relaxed">
                 At Arch Kitchen Cabinets, we provide professional cabinet installation
                 services in Toronto, enhancing your space with expertly fitted,
                 high-quality cabinetry. From kitchens and bathrooms to custom storage
@@ -564,33 +564,34 @@ export default function CabinetInstallationPage() {
       </section>
 
       {/* ──────────────── CABINET INSTALLATION PROCESS (Screenshot 3) ──────────────── */}
-      <section className="py-20 px-4 sm:px-6 max-w-7xl mx-auto">
+      <section className="py-20 px-6 lg:px-16 max-w-7xl mx-auto architectural-bg contour-lines relative overflow-hidden">
         <div className="text-center mb-16 scroll-reveal reveal-init">
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#181715] tracking-tight">
-            Cabinet Installation Process
+          <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-2">
+            05 / EXECUTION METHODOLOGY
+          </span>
+          <h2 className="text-3xl sm:text-5xl font-arch uppercase text-[#181715] tracking-tight">
+            CABINET INSTALLATION <span className="text-[#c5a059]">PROCESS</span>
           </h2>
-          {/* Subtle Decorative Line Under Title */}
-          <div className="w-20 h-1 bg-[#c5a059] mx-auto mt-4 rounded-full" />
         </div>
 
-        {/* 4 Process Cards with Top-Left Yellow/Gold Badge Numbers */}
+        {/* 4 Process Cards in arch-card pill styling */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6">
           {/* Step 1 */}
           <div
-            className="relative bg-white border border-stone-200 rounded-xl p-7 pt-9 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col items-center text-center scroll-reveal reveal-init hover:-translate-y-1.5"
+            className="relative arch-card p-7 pt-10 flex flex-col items-center text-center scroll-reveal reveal-init"
             style={{ transitionDelay: "100ms" }}
           >
             {/* Number Tab Badge Top-Left */}
-            <div className="absolute top-0 left-0 bg-[#c5a059] text-white font-bold text-sm w-9 h-9 rounded-tl-xl rounded-br-xl flex items-center justify-center shadow-sm">
+            <div className="absolute top-0 left-0 bg-[#c5a059] text-white font-mono font-bold text-xs w-8 h-8 rounded-tl-2xl rounded-br-lg flex items-center justify-center shadow-sm">
               1
             </div>
 
             {/* Line Art Icon in Gold */}
-            <div className="w-16 h-16 rounded-full bg-[#c5a059]/10 flex items-center justify-center mb-5 text-[#c5a059]">
+            <div className="w-16 h-16 rounded-2xl bg-[#c5a059]/10 border border-[#c5a059]/30 flex items-center justify-center mb-5 text-[#c5a059]">
               <Calendar className="w-8 h-8" />
             </div>
 
-            <h3 className="text-lg font-bold text-[#181715] mb-3">
+            <h3 className="text-lg font-arch uppercase font-bold text-[#181715] mb-3">
               Initial Consultation
             </h3>
             <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
@@ -601,18 +602,18 @@ export default function CabinetInstallationPage() {
 
           {/* Step 2 */}
           <div
-            className="relative bg-white border border-stone-200 rounded-xl p-7 pt-9 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col items-center text-center scroll-reveal reveal-init hover:-translate-y-1.5"
+            className="relative arch-card p-7 pt-10 flex flex-col items-center text-center scroll-reveal reveal-init"
             style={{ transitionDelay: "200ms" }}
           >
-            <div className="absolute top-0 left-0 bg-[#c5a059] text-white font-bold text-sm w-9 h-9 rounded-tl-xl rounded-br-xl flex items-center justify-center shadow-sm">
+            <div className="absolute top-0 left-0 bg-[#c5a059] text-white font-mono font-bold text-xs w-8 h-8 rounded-tl-2xl rounded-br-lg flex items-center justify-center shadow-sm">
               2
             </div>
 
-            <div className="w-16 h-16 rounded-full bg-[#c5a059]/10 flex items-center justify-center mb-5 text-[#c5a059]">
+            <div className="w-16 h-16 rounded-2xl bg-[#c5a059]/10 border border-[#c5a059]/30 flex items-center justify-center mb-5 text-[#c5a059]">
               <Compass className="w-8 h-8" />
             </div>
 
-            <h3 className="text-lg font-bold text-[#181715] mb-3">
+            <h3 className="text-lg font-arch uppercase font-bold text-[#181715] mb-3">
               Design & Planning
             </h3>
             <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
@@ -623,18 +624,18 @@ export default function CabinetInstallationPage() {
 
           {/* Step 3 */}
           <div
-            className="relative bg-white border border-stone-200 rounded-xl p-7 pt-9 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col items-center text-center scroll-reveal reveal-init hover:-translate-y-1.5"
+            className="relative arch-card p-7 pt-10 flex flex-col items-center text-center scroll-reveal reveal-init"
             style={{ transitionDelay: "300ms" }}
           >
-            <div className="absolute top-0 left-0 bg-[#c5a059] text-white font-bold text-sm w-9 h-9 rounded-tl-xl rounded-br-xl flex items-center justify-center shadow-sm">
+            <div className="absolute top-0 left-0 bg-[#c5a059] text-white font-mono font-bold text-xs w-8 h-8 rounded-tl-2xl rounded-br-lg flex items-center justify-center shadow-sm">
               3
             </div>
 
-            <div className="w-16 h-16 rounded-full bg-[#c5a059]/10 flex items-center justify-center mb-5 text-[#c5a059]">
+            <div className="w-16 h-16 rounded-2xl bg-[#c5a059]/10 border border-[#c5a059]/30 flex items-center justify-center mb-5 text-[#c5a059]">
               <Hammer className="w-8 h-8" />
             </div>
 
-            <h3 className="text-lg font-bold text-[#181715] mb-3">
+            <h3 className="text-lg font-arch uppercase font-bold text-[#181715] mb-3">
               Installation
             </h3>
             <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
@@ -645,18 +646,18 @@ export default function CabinetInstallationPage() {
 
           {/* Step 4 */}
           <div
-            className="relative bg-white border border-stone-200 rounded-xl p-7 pt-9 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col items-center text-center scroll-reveal reveal-init hover:-translate-y-1.5"
+            className="relative arch-card p-7 pt-10 flex flex-col items-center text-center scroll-reveal reveal-init"
             style={{ transitionDelay: "400ms" }}
           >
-            <div className="absolute top-0 left-0 bg-[#c5a059] text-white font-bold text-sm w-9 h-9 rounded-tl-xl rounded-br-xl flex items-center justify-center shadow-sm">
+            <div className="absolute top-0 left-0 bg-[#c5a059] text-white font-mono font-bold text-xs w-8 h-8 rounded-tl-2xl rounded-br-lg flex items-center justify-center shadow-sm">
               4
             </div>
 
-            <div className="w-16 h-16 rounded-full bg-[#c5a059]/10 flex items-center justify-center mb-5 text-[#c5a059]">
+            <div className="w-16 h-16 rounded-2xl bg-[#c5a059]/10 border border-[#c5a059]/30 flex items-center justify-center mb-5 text-[#c5a059]">
               <ClipboardCheck className="w-8 h-8" />
             </div>
 
-            <h3 className="text-lg font-bold text-[#181715] mb-3">
+            <h3 className="text-lg font-arch uppercase font-bold text-[#181715] mb-3">
               Final Review
             </h3>
             <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">

@@ -420,15 +420,12 @@ export default function CabinetRefacingPage() {
       </section>
 
       {/* ──────────────── WHY CHOOSE ARCH KITCHEN CABINETS (Screenshot 2) ──────────────── */}
-      <section className="py-20 bg-stone-50 border-y border-stone-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <section className="py-20 architectural-bg contour-lines border-t border-[#ede8df]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
-            {/* Left Column: Framed Image with Gold Accent Blocks (Screenshot 2) */}
+            {/* Left Column: Framed Image with Arch Card Border */}
             <div className="lg:col-span-5 relative scroll-reveal reveal-init">
-              <div className="absolute -top-3 -left-3 w-20 h-20 bg-[#c5a059] rounded-tl-2xl -z-0" />
-              <div className="absolute -bottom-3 -right-3 w-16 h-16 bg-[#c5a059] rounded-br-2xl -z-0" />
-
-              <div className="relative z-10 rounded-xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/3] group">
+              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border border-[#ede8df] aspect-[4/3] group">
                 <Image
                   src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop"
                   alt="Modern kitchen why choose arch kitchen cabinets"
@@ -439,12 +436,17 @@ export default function CabinetRefacingPage() {
             </div>
 
             {/* Right Column: Exact Content & Verbatim Bullet Points */}
-            <div className="lg:col-span-7 scroll-reveal reveal-init" style={{ transitionDelay: "150ms" }}>
-              <h2 className="text-2xl sm:text-4xl font-extrabold text-[#181715] tracking-tight">
-                Why Choose Arch Kitchen Cabinets
-              </h2>
+            <div className="lg:col-span-7 scroll-reveal reveal-init space-y-4" style={{ transitionDelay: "150ms" }}>
+              <div>
+                <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-2">
+                  03 / ATELIER STANDARDS
+                </span>
+                <h2 className="text-3xl sm:text-5xl font-arch uppercase text-[#181715] tracking-tight">
+                  WHY CHOOSE <span className="text-[#c5a059]">ARCH KITCHENS</span>
+                </h2>
+              </div>
 
-              <p className="mt-4 text-stone-600 text-sm sm:text-base leading-relaxed">
+              <p className="text-stone-600 text-sm sm:text-base leading-relaxed">
                 Over time, cabinets can show signs of wear and tear, losing their
                 original charm and functionality. Refacing is a cost-effective
                 alternative to replacing cabinets entirely. It allows you to
@@ -536,29 +538,31 @@ export default function CabinetRefacingPage() {
       </section>
 
       {/* ──────────────── WHAT WE OFFER (Screenshot 2) ──────────────── */}
-      <section className="py-20 px-4 sm:px-6 max-w-7xl mx-auto">
+      <section className="py-20 px-6 lg:px-16 max-w-7xl mx-auto architectural-bg contour-lines relative overflow-hidden">
         <div className="text-center mb-16 scroll-reveal reveal-init">
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#181715] tracking-tight">
-            What We Offer
+          <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-2">
+            04 / REFACING SCOPE & CAPABILITIES
+          </span>
+          <h2 className="text-3xl sm:text-5xl font-arch uppercase text-[#181715] tracking-tight">
+            WHAT WE <span className="text-[#c5a059]">OFFER</span>
           </h2>
           <p className="mt-3 text-stone-600 text-sm sm:text-base max-w-2xl mx-auto">
             At Arch Kitchen Cabinets, we provide comprehensive cabinet refacing
             services tailored to meet your needs. Our offerings include:
           </p>
-          <div className="w-20 h-1 bg-[#c5a059] mx-auto mt-4 rounded-full" />
         </div>
 
-        {/* 4 Offering Cards with Line Art Yellow/Gold Icons (Screenshot 2) */}
+        {/* 4 Offering Cards in arch-card pill styling */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6">
           {/* Card 1: Custom Design Consultation */}
           <div
-            className="bg-white border border-stone-200 rounded-xl p-7 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center scroll-reveal reveal-init hover:-translate-y-1.5"
+            className="arch-card p-7 flex flex-col items-center text-center scroll-reveal reveal-init"
             style={{ transitionDelay: "100ms" }}
           >
-            <div className="w-16 h-16 rounded-full bg-[#c5a059]/10 flex items-center justify-center mb-5 text-[#c5a059]">
+            <div className="w-16 h-16 rounded-2xl bg-[#c5a059]/10 border border-[#c5a059]/30 flex items-center justify-center mb-5 text-[#c5a059]">
               <Calendar className="w-8 h-8" />
             </div>
-            <h3 className="text-lg font-bold text-[#181715] mb-3">
+            <h3 className="text-lg font-arch uppercase font-bold text-[#181715] mb-3">
               Custom Design Consultation
             </h3>
             <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
@@ -570,13 +574,13 @@ export default function CabinetRefacingPage() {
 
           {/* Card 2: High-Quality Materials */}
           <div
-            className="bg-white border border-stone-200 rounded-xl p-7 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center scroll-reveal reveal-init hover:-translate-y-1.5"
+            className="arch-card p-7 flex flex-col items-center text-center scroll-reveal reveal-init"
             style={{ transitionDelay: "200ms" }}
           >
-            <div className="w-16 h-16 rounded-full bg-[#c5a059]/10 flex items-center justify-center mb-5 text-[#c5a059]">
+            <div className="w-16 h-16 rounded-2xl bg-[#c5a059]/10 border border-[#c5a059]/30 flex items-center justify-center mb-5 text-[#c5a059]">
               <Wrench className="w-8 h-8" />
             </div>
-            <h3 className="text-lg font-bold text-[#181715] mb-3">
+            <h3 className="text-lg font-arch uppercase font-bold text-[#181715] mb-3">
               High-Quality Materials
             </h3>
             <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
@@ -589,13 +593,13 @@ export default function CabinetRefacingPage() {
 
           {/* Card 3: Expert Craftsmanship */}
           <div
-            className="bg-white border border-stone-200 rounded-xl p-7 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center scroll-reveal reveal-init hover:-translate-y-1.5"
+            className="arch-card p-7 flex flex-col items-center text-center scroll-reveal reveal-init"
             style={{ transitionDelay: "300ms" }}
           >
-            <div className="w-16 h-16 rounded-full bg-[#c5a059]/10 flex items-center justify-center mb-5 text-[#c5a059]">
+            <div className="w-16 h-16 rounded-2xl bg-[#c5a059]/10 border border-[#c5a059]/30 flex items-center justify-center mb-5 text-[#c5a059]">
               <Layers className="w-8 h-8" />
             </div>
-            <h3 className="text-lg font-bold text-[#181715] mb-3">
+            <h3 className="text-lg font-arch uppercase font-bold text-[#181715] mb-3">
               Expert Craftsmanship
             </h3>
             <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
@@ -607,13 +611,13 @@ export default function CabinetRefacingPage() {
 
           {/* Card 4: Efficient Process */}
           <div
-            className="bg-white border border-stone-200 rounded-xl p-7 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center scroll-reveal reveal-init hover:-translate-y-1.5"
+            className="arch-card p-7 flex flex-col items-center text-center scroll-reveal reveal-init"
             style={{ transitionDelay: "400ms" }}
           >
-            <div className="w-16 h-16 rounded-full bg-[#c5a059]/10 flex items-center justify-center mb-5 text-[#c5a059]">
+            <div className="w-16 h-16 rounded-2xl bg-[#c5a059]/10 border border-[#c5a059]/30 flex items-center justify-center mb-5 text-[#c5a059]">
               <Clock3 className="w-8 h-8" />
             </div>
-            <h3 className="text-lg font-bold text-[#181715] mb-3">
+            <h3 className="text-lg font-arch uppercase font-bold text-[#181715] mb-3">
               Efficient Process
             </h3>
             <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
@@ -626,7 +630,7 @@ export default function CabinetRefacingPage() {
       </section>
 
       {/* ──────────────── WHAT SETS US APART (Screenshot 3) ──────────────── */}
-      <section className="py-20 bg-stone-50 border-t border-stone-200">
+      <section className="py-20 architectural-bg contour-lines border-t border-[#ede8df]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
             {/* Left Column: Framed Image with Yellow/Gold Accent Corner (Screenshot 3) */}
@@ -645,12 +649,17 @@ export default function CabinetRefacingPage() {
             </div>
 
             {/* Right Column: Exact Content from Screenshot 3 + Get A Quote button */}
-            <div className="lg:col-span-7 scroll-reveal reveal-init" style={{ transitionDelay: "150ms" }}>
-              <h2 className="text-2xl sm:text-4xl font-extrabold text-[#181715] tracking-tight">
-                What Sets Us Apart
-              </h2>
+            <div className="lg:col-span-7 scroll-reveal reveal-init space-y-4" style={{ transitionDelay: "150ms" }}>
+              <div>
+                <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-2">
+                  05 / ATELIER DISTINCTION
+                </span>
+                <h2 className="text-3xl sm:text-5xl font-arch uppercase text-[#181715] tracking-tight">
+                  WHAT SETS <span className="text-[#c5a059]">US APART</span>
+                </h2>
+              </div>
 
-              <p className="mt-5 text-stone-600 text-sm sm:text-base leading-relaxed">
+              <p className="text-stone-600 text-sm sm:text-base leading-relaxed">
                 At Arch Kitchen Cabinets, we distinguish ourselves through our
                 commitment to personalized service, transparent pricing,
                 exceptional quality, and extensive experience. We tailor our
@@ -660,7 +669,7 @@ export default function CabinetRefacingPage() {
                 estimates to help you manage your budget effectively.
               </p>
 
-              <p className="mt-4 text-stone-600 text-sm sm:text-base leading-relaxed">
+              <p className="text-stone-600 text-sm sm:text-base leading-relaxed">
                 We use only high-quality materials and pay meticulous attention to
                 detail to deliver superior finishes on every project. Our
                 experienced team, with years of industry expertise, is dedicated
@@ -668,11 +677,11 @@ export default function CabinetRefacingPage() {
                 satisfaction.
               </p>
 
-              {/* Exact Yellow/Gold Button "Get A Quote" from Screenshot 3 */}
+              {/* Exact Button "Get A Quote" */}
               <div className="mt-7">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center px-7 py-3 bg-[#c5a059] hover:bg-[#b38e45] text-stone-950 font-bold text-xs uppercase tracking-wider rounded shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5"
+                  className="inline-flex items-center px-8 py-3.5 bg-[#c5a059] hover:bg-[#b38e45] text-white font-medium text-xs uppercase tracking-wider rounded-full shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5"
                 >
                   Get A Quote
                 </Link>
