@@ -806,17 +806,13 @@ export default function HomePage() {
               />
             </svg>
 
-            {/* Seamless Infinite Curved Track */}
-            <div className="curved-carousel-track relative z-10 space-x-6 sm:space-x-8 py-6">
+            {/* Seamless Infinite Curved Track - Cleanly Aligned & Level */}
+            <div className="curved-carousel-track relative z-10 space-x-6 sm:space-x-8 py-8 items-center">
               {[...filteredProjects, ...filteredProjects].map((project, idx) => {
-                // Alternating architectural subtle angle and elevation shift creating the curved wavy ribbon
-                const rotations = ["-rotate-3 translate-y-3", "-rotate-1 -translate-y-2", "rotate-0 -translate-y-4", "rotate-2 -translate-y-1", "rotate-3 translate-y-3"];
-                const curveClass = rotations[idx % rotations.length];
-
                 return (
                   <div
                     key={idx}
-                    className={`relative shrink-0 w-[260px] sm:w-[320px] md:w-[360px] aspect-[4/5] rounded-[2rem] overflow-hidden shadow-[0_12px_36px_rgba(0,0,0,0.12)] border border-white/60 bg-white group transition-all duration-500 hover:scale-105 hover:z-20 hover:rotate-0 ${curveClass}`}
+                    className="relative shrink-0 w-[280px] sm:w-[330px] md:w-[380px] aspect-[4/5] rounded-[2rem] overflow-hidden shadow-[0_12px_36px_rgba(0,0,0,0.14)] border border-[#ede8df] bg-[#ebe7e0] group transition-all duration-500 hover:scale-[1.03] hover:shadow-[0_20px_48px_rgba(197,160,89,0.22)]"
                   >
                     <Image
                       src={project.image}
