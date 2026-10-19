@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -46,6 +46,16 @@ export default function HomePage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 40);
+    };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Form State
   const [formData, setFormData] = useState({
@@ -291,37 +301,51 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Main Header / Navigation */}
-      <header className="sticky top-0 z-50 bg-[#fbf9f5]/95 backdrop-blur-md border-b border-[#ede8df]/80">
-        <div className="max-w-7xl mx-auto px-6 lg:px-16 h-24 flex items-center justify-between">
-          {/* Brand Logo - Pure cropped emblem with generous right margin */}
-          <a href="#" className="flex items-center shrink-0 py-2 mr-6 lg:mr-10">
-            <div className="relative w-36 sm:w-44 h-14 sm:h-16 flex items-center">
-              <Image
-                src="/logo_cropped.png"
-                alt="Arch Kitchens Logo"
-                fill
-                sizes="(max-width: 768px) 144px, 176px"
-                className="object-contain object-left"
-                priority
-              />
+      {/* Main Header / Navigation with Urbantrop Dynamic Floating Capsule Scroll Effect */}
+      <header
+        className={`sticky top-0 z-50 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+          isScrolled
+            ? "py-3 px-4 sm:px-8"
+            : "py-5 px-6 lg:px-16 bg-[#fbf9f5]/90 border-b border-[#ede8df]"
+        }`}
+      >
+        <div
+          className={`mx-auto transition-all duration-500 flex items-center justify-between ${
+            isScrolled
+              ? "max-w-6xl bg-white/90 backdrop-blur-xl border border-[#c5a059]/40 shadow-2xl rounded-full px-6 sm:px-10 h-16 sm:h-20"
+              : "max-w-7xl h-16 sm:h-20"
+          }`}
+        >
+          {/* Brand Logo / Architectural Wordmark */}
+          <Link href="/" className="flex items-center shrink-0 py-2 mr-6 lg:mr-10 group">
+            <div className="flex items-center space-x-3">
+              <div className="relative w-32 sm:w-36 h-10 sm:h-12 flex items-center">
+                <Image
+                  src="/logo_cropped.png"
+                  alt="Arch Kitchens Logo"
+                  fill
+                  sizes="144px"
+                  className="object-contain object-left"
+                  priority
+                />
+              </div>
             </div>
-          </a>
+          </Link>
 
-          {/* Desktop Nav Items - Exact contents: Home, About Us, Our Services, Our Projects, Blog, Contact Us */}
-          <nav className="hidden lg:flex items-center space-x-7 xl:space-x-9 text-[14px] font-medium text-[#3a3834] mx-auto">
-            <a
-              href="#"
-              className="text-[#c5a059] font-semibold transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#c5a059]"
+          {/* Desktop Nav Items - Urbantrop minimal uppercase typography */}
+          <nav className="hidden lg:flex items-center space-x-8 xl:space-x-11 text-xs font-mono font-medium tracking-[0.2em] uppercase text-[#2c2b29] mx-auto">
+            <Link
+              href="/"
+              className="text-[#c5a059] font-semibold transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1.5px] after:bg-[#c5a059]"
             >
               Home
-            </a>
-            <a
+            </Link>
+            <Link
               href="/about"
               className="hover:text-[#c5a059] transition-colors py-1 whitespace-nowrap"
             >
-              About Us
-            </a>
+              About
+            </Link>
 
             {/* Our Services with Dropdown Indicator */}
             <div className="relative group/svc py-2">
@@ -329,45 +353,45 @@ export default function HomePage() {
                 href="/services"
                 className="flex items-center space-x-1 hover:text-[#c5a059] transition-colors whitespace-nowrap"
               >
-                <span>Our Services</span>
-                <ChevronDown className="w-3.5 h-3.5 text-[#78756e] group-hover/svc:text-[#c5a059] transition-transform group-hover/svc:rotate-180" />
+                <span>Services</span>
+                <ChevronDown className="w-3 h-3 text-[#78756e] group-hover/svc:text-[#c5a059] transition-transform group-hover/svc:rotate-180" />
               </Link>
 
-              {/* Exact Dark Dropdown Menu Matching User Screenshot */}
-              <div className="absolute top-full left-0 mt-1 w-64 bg-black/95 backdrop-blur-md rounded-md shadow-2xl border border-stone-800 py-3 opacity-0 invisible group-hover/svc:opacity-100 group-hover/svc:visible transition-all duration-200 z-50">
+              {/* Exact Dark Dropdown Menu */}
+              <div className="absolute top-full left-0 mt-2 w-64 bg-black/95 backdrop-blur-md rounded-2xl shadow-2xl border border-stone-800 py-3 opacity-0 invisible group-hover/svc:opacity-100 group-hover/svc:visible transition-all duration-200 z-50">
                 <Link
                   href="/services/kitchen-renovation"
-                  className="block px-5 py-2.5 text-sm text-[#c5a059] hover:text-white hover:bg-white/5 transition-colors font-medium"
+                  className="block px-5 py-2.5 text-xs text-[#c5a059] hover:text-white hover:bg-white/5 transition-colors font-mono tracking-wider uppercase"
                 >
                   Kitchen Renovation
                 </Link>
                 <Link
                   href="/services/cabinet-installation"
-                  className="block px-5 py-2.5 text-sm text-[#c5a059] hover:text-white hover:bg-white/5 transition-colors font-medium"
+                  className="block px-5 py-2.5 text-xs text-[#c5a059] hover:text-white hover:bg-white/5 transition-colors font-mono tracking-wider uppercase"
                 >
                   Cabinet Installation
                 </Link>
                 <Link
                   href="/services/cabinet-refacing"
-                  className="block px-5 py-2.5 text-sm text-[#c5a059] hover:text-white hover:bg-white/5 transition-colors font-medium"
+                  className="block px-5 py-2.5 text-xs text-[#c5a059] hover:text-white hover:bg-white/5 transition-colors font-mono tracking-wider uppercase"
                 >
                   Cabinet Refacing
                 </Link>
                 <Link
                   href="/services/countertop-installation"
-                  className="block px-5 py-2.5 text-sm text-[#c5a059] hover:text-white hover:bg-white/5 transition-colors font-medium"
+                  className="block px-5 py-2.5 text-xs text-[#c5a059] hover:text-white hover:bg-white/5 transition-colors font-mono tracking-wider uppercase"
                 >
                   Countertop Installation
                 </Link>
                 <Link
                   href="/services/backsplash-installation"
-                  className="block px-5 py-2.5 text-sm text-[#c5a059] hover:text-white hover:bg-white/5 transition-colors font-medium"
+                  className="block px-5 py-2.5 text-xs text-[#c5a059] hover:text-white hover:bg-white/5 transition-colors font-mono tracking-wider uppercase"
                 >
                   Backsplash Installation
                 </Link>
                 <Link
                   href="/services/flooring-installation"
-                  className="block px-5 py-2.5 text-sm text-[#c5a059] hover:text-white hover:bg-white/5 transition-colors font-medium"
+                  className="block px-5 py-2.5 text-xs text-[#c5a059] hover:text-white hover:bg-white/5 transition-colors font-mono tracking-wider uppercase"
                 >
                   Flooring Installation
                 </Link>
@@ -378,7 +402,7 @@ export default function HomePage() {
               href="#portfolio"
               className="hover:text-[#c5a059] transition-colors py-1 whitespace-nowrap"
             >
-              Our Projects
+              Projects
             </a>
             <a
               href="#reviews"
@@ -386,22 +410,26 @@ export default function HomePage() {
             >
               Blog
             </a>
-            <a
+            <Link
               href="/contact"
               className="hover:text-[#c5a059] transition-colors py-1 whitespace-nowrap"
             >
-              Contact Us
-            </a>
+              Contacts
+            </Link>
           </nav>
 
           {/* Action Button: Get A Quote */}
-          <div className="hidden sm:flex items-center shrink-0 ml-6 lg:ml-8">
-            <a
-              href="#contact"
-              className="px-6 py-3.5 bg-[#c5a059] hover:bg-[#b38e45] text-white font-medium text-xs tracking-wider uppercase rounded-sm shadow-sm transition-all hover:shadow-md transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
+          <div className="hidden sm:flex items-center shrink-0 ml-6">
+            <Link
+              href="/contact"
+              className={`transition-all duration-300 font-medium text-xs tracking-wider uppercase whitespace-nowrap ${
+                isScrolled
+                  ? "px-5 py-2.5 bg-[#c5a059] hover:bg-[#b38e45] text-white rounded-full shadow-sm hover:shadow-md"
+                  : "px-6 py-3 bg-[#c5a059] hover:bg-[#b38e45] text-white rounded-full shadow-sm hover:shadow-md"
+              }`}
             >
               Get A Quote
-            </a>
+            </Link>
           </div>
 
           {/* Mobile menu hamburger */}
