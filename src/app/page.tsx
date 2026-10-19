@@ -1241,7 +1241,8 @@ export default function HomePage() {
                 return (
                   <div
                     key={idx}
-                    className={`rounded-xl border transition-all duration-500 overflow-hidden ${
+                    onMouseEnter={() => setOpenFaq(idx)}
+                    className={`rounded-xl border transition-all duration-500 overflow-hidden cursor-pointer ${
                       isOpen
                         ? "bg-[#fbf9f5] border-[#c5a059] shadow-md ring-1 ring-[#c5a059]/20"
                         : "bg-white border-[#ede8df] hover:border-[#c5a059]/60 hover:shadow-sm"
