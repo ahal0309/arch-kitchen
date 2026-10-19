@@ -512,15 +512,9 @@ export default function ServicesPage() {
                 }`}
               >
                 <div>
-                  <span className="text-xs font-semibold uppercase tracking-widest text-[#c5a059] block mb-2">
-                    {svc.category} SPECIALIZATION
-                  </span>
                   <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#1e1d1b] leading-tight">
                     {svc.title}
                   </h2>
-                  <p className="text-sm font-medium text-[#c5a059] mt-1 italic">
-                    {svc.tagline}
-                  </p>
                   <p className="text-sm sm:text-base text-[#6b6863] leading-relaxed mt-3">
                     {svc.description}
                   </p>
