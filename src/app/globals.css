@@ -193,52 +193,19 @@ html {
 .delay-400 { transition-delay: 400ms; }
 .delay-500 { transition-delay: 500ms; }
 
-/* Architectural Animated Golden Contour Lines (Topographic Motion) */
-@keyframes contourFlow {
-  0% {
-    background-position: 0% 0%, 0% 0%, 0% 0%;
-  }
-  50% {
-    background-position: 100px 30px, -60px 40px, 0% 0%;
-  }
-  100% {
-    background-position: 0% 0%, 0% 0%, 0% 0%;
-  }
-}
-
-/* Architectural Golden Contour Lines (Organic Topographic Elevation Lines matching Urbantrop / Logo Gold) */
 .architectural-bg,
 .contour-lines {
   background-color: #fbf9f5;
-  background-image:
-    /* Concentric topographic contour line rings */
-    repeating-radial-gradient(
-      circle at 82% 18%,
-      transparent 0,
-      transparent 58px,
-      rgba(212, 175, 55, 0.16) 59px,
-      rgba(212, 175, 55, 0.22) 60px,
-      transparent 61px,
-      transparent 118px
-    ),
-    repeating-radial-gradient(
-      circle at 12% 88%,
-      transparent 0,
-      transparent 68px,
-      rgba(228, 190, 108, 0.14) 69px,
-      rgba(228, 190, 108, 0.20) 70px,
-      transparent 71px,
-      transparent 138px
-    ),
-    /* Delicate survey contour arcs */
-    radial-gradient(ellipse 90% 70% at 50% 0%, rgba(212, 175, 55, 0.08) 0%, transparent 60%);
-  background-attachment: scroll;
+  background-image: url("/contour-lines.svg");
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+  background-position: top center;
 }
 
 .arch-card {
   border-radius: 2rem;
   border: 1px solid rgba(197, 160, 89, 0.35);
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(8px);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -252,4 +219,28 @@ html {
 .outline-heading {
   color: transparent;
   -webkit-text-stroke: 1.5px #c5a059;
+}
+
+/* Subtle, elegant drifting movement for architectural contour lines */
+@keyframes contourDrift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  25% {
+    transform: translate3d(-12px, -8px, 0) scale(1.015);
+  }
+  50% {
+    transform: translate3d(10px, -15px, 0) scale(1.02);
+  }
+  75% {
+    transform: translate3d(15px, 8px, 0) scale(1.01);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.contour-animated-bg {
+  animation: contourDrift 28s ease-in-out infinite;
+  will-change: transform;
 }

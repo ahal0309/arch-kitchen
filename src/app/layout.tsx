@@ -56,8 +56,15 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="antialiased bg-[#fbf9f5] text-[#2c2b29] font-sans selection:bg-[#cbb17b] selection:text-white">
-        <ScrollAnimationProvider>{children}</ScrollAnimationProvider>
+      <body className="antialiased bg-[#fbf9f5] text-[#2c2b29] font-sans selection:bg-[#cbb17b] selection:text-white relative">
+        {/* Architectural Contour Lines Background with gentle organic drifting movement */}
+        <div
+          aria-hidden="true"
+          className="fixed -inset-10 pointer-events-none z-0 bg-[url('/contour-lines.svg')] bg-repeat-y bg-[length:1400px_auto] bg-top opacity-80 contour-animated-bg"
+        />
+        <div className="relative z-10">
+          <ScrollAnimationProvider>{children}</ScrollAnimationProvider>
+        </div>
       </body>
     </html>
   );

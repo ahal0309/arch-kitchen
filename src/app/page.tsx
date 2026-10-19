@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Navbar from "@/components/Navbar";
 import {
   Phone,
   Clock,
@@ -277,281 +278,12 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#fbf9f5] text-[#2c2b29] font-sans antialiased selection:bg-[#c5a059] selection:text-white architectural-bg contour-lines">
-      {/* Top Utility Bar */}
-      <div className="bg-transparent text-[#6b6863] text-xs py-2 px-6 lg:px-16 transition-colors border-b border-[#ede8df]/60">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
-          <div className="flex items-center space-x-6">
-            <a
-              href="tel:+14164749094"
-              className="flex items-center space-x-1.5 hover:text-[#c5a059] transition-colors"
-            >
-              <Phone className="w-3.5 h-3.5 text-[#c5a059]" />
-              <span className="font-medium tracking-wide">+1 416-474-9094</span>
-            </a>
-            <div className="hidden sm:flex items-center space-x-1.5">
-              <Clock className="w-3.5 h-3.5 text-[#c5a059]" />
-              <span>08:00AM – 18:00PM</span>
-            </div>
-          </div>
-          <div className="flex items-center space-x-1.5 text-xs">
-            <MapPin className="w-3.5 h-3.5 text-[#c5a059]" />
-            <span>Greater Toronto Area & Surrounding Cities</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Header / Navigation with Urbantrop Dynamic Floating Capsule Scroll Effect */}
-      <header
-        className={`sticky top-0 z-50 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-          isScrolled
-            ? "py-3 px-4 sm:px-8 bg-transparent"
-            : "py-4 px-6 lg:px-16 bg-transparent"
-        }`}
-      >
-        <div
-          className={`mx-auto transition-all duration-500 flex items-center justify-between ${
-            isScrolled
-              ? "max-w-6xl bg-white/95 backdrop-blur-xl border border-[#c5a059]/40 shadow-2xl rounded-full px-6 sm:px-10 h-16 sm:h-20"
-              : "max-w-7xl h-16 sm:h-20 bg-transparent"
-          }`}
-        >
-          {/* Brand Logo / Architectural Wordmark */}
-          <Link href="/" className="flex items-center shrink-0 py-2 mr-6 lg:mr-10 group">
-            <div className="flex items-center space-x-3">
-              <div className="relative w-32 sm:w-36 h-10 sm:h-12 flex items-center">
-                <Image
-                  src="/logo_cropped.png"
-                  alt="Arch Kitchens Logo"
-                  fill
-                  sizes="144px"
-                  className="object-contain object-left"
-                  priority
-                />
-              </div>
-            </div>
-          </Link>
-
-          {/* Desktop Nav Items - Urbantrop minimal uppercase typography */}
-          <nav className="hidden lg:flex items-center space-x-8 xl:space-x-11 text-xs font-mono font-medium tracking-[0.2em] uppercase text-[#2c2b29] mx-auto">
-            <Link
-              href="/"
-              className="text-[#c5a059] font-semibold transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1.5px] after:bg-[#c5a059]"
-            >
-              Home
-            </Link>
-            <Link
-              href="/about"
-              className="hover:text-[#c5a059] transition-colors py-1 whitespace-nowrap"
-            >
-              About
-            </Link>
-
-            {/* Our Services with Dropdown Indicator */}
-            <div className="relative group/svc py-2">
-              <Link
-                href="/services"
-                className="flex items-center space-x-1 hover:text-[#c5a059] transition-colors whitespace-nowrap"
-              >
-                <span>Services</span>
-                <ChevronDown className="w-3 h-3 text-[#78756e] group-hover/svc:text-[#c5a059] transition-transform group-hover/svc:rotate-180" />
-              </Link>
-
-              {/* Exact Dark Dropdown Menu */}
-              <div className="absolute top-full left-0 mt-2 w-64 bg-black/95 backdrop-blur-md rounded-2xl shadow-2xl border border-stone-800 py-3 opacity-0 invisible group-hover/svc:opacity-100 group-hover/svc:visible transition-all duration-200 z-50">
-                <Link
-                  href="/services/kitchen-renovation"
-                  className="block px-5 py-2.5 text-xs text-[#c5a059] hover:text-white hover:bg-white/5 transition-colors font-mono tracking-wider uppercase"
-                >
-                  Kitchen Renovation
-                </Link>
-                <Link
-                  href="/services/cabinet-installation"
-                  className="block px-5 py-2.5 text-xs text-[#c5a059] hover:text-white hover:bg-white/5 transition-colors font-mono tracking-wider uppercase"
-                >
-                  Cabinet Installation
-                </Link>
-                <Link
-                  href="/services/cabinet-refacing"
-                  className="block px-5 py-2.5 text-xs text-[#c5a059] hover:text-white hover:bg-white/5 transition-colors font-mono tracking-wider uppercase"
-                >
-                  Cabinet Refacing
-                </Link>
-                <Link
-                  href="/services/countertop-installation"
-                  className="block px-5 py-2.5 text-xs text-[#c5a059] hover:text-white hover:bg-white/5 transition-colors font-mono tracking-wider uppercase"
-                >
-                  Countertop Installation
-                </Link>
-                <Link
-                  href="/services/backsplash-installation"
-                  className="block px-5 py-2.5 text-xs text-[#c5a059] hover:text-white hover:bg-white/5 transition-colors font-mono tracking-wider uppercase"
-                >
-                  Backsplash Installation
-                </Link>
-                <Link
-                  href="/services/flooring-installation"
-                  className="block px-5 py-2.5 text-xs text-[#c5a059] hover:text-white hover:bg-white/5 transition-colors font-mono tracking-wider uppercase"
-                >
-                  Flooring Installation
-                </Link>
-              </div>
-            </div>
-
-            <a
-              href="#portfolio"
-              className="hover:text-[#c5a059] transition-colors py-1 whitespace-nowrap"
-            >
-              Projects
-            </a>
-            <a
-              href="#reviews"
-              className="hover:text-[#c5a059] transition-colors py-1 whitespace-nowrap"
-            >
-              Blog
-            </a>
-            <Link
-              href="/contact"
-              className="hover:text-[#c5a059] transition-colors py-1 whitespace-nowrap"
-            >
-              Contacts
-            </Link>
-          </nav>
-
-          {/* Action Button: Get A Quote */}
-          <div className="hidden sm:flex items-center shrink-0 ml-6">
-            <Link
-              href="/contact"
-              className={`transition-all duration-300 font-medium text-xs tracking-wider uppercase whitespace-nowrap ${
-                isScrolled
-                  ? "px-5 py-2.5 bg-[#c5a059] hover:bg-[#b38e45] text-white rounded-full shadow-sm hover:shadow-md"
-                  : "px-6 py-3 bg-[#c5a059] hover:bg-[#b38e45] text-white rounded-full shadow-sm hover:shadow-md"
-              }`}
-            >
-              Get A Quote
-            </Link>
-          </div>
-
-          {/* Mobile menu hamburger */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-[#4a4742] hover:text-[#c5a059] transition-colors ml-2"
-            aria-label="Toggle Navigation Menu"
-          >
-            {mobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
-          </button>
-        </div>
-
-        {/* Mobile Dropdown Menu */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden bg-[#fbf9f5] border-b border-[#ede8df] px-6 py-4 space-y-3">
-            <a
-              href="#"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-[#c5a059] font-medium py-1"
-            >
-              Home
-            </a>
-            <a
-              href="/about"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-[#4a4742] hover:text-[#c5a059] py-1"
-            >
-              About Us
-            </a>
-            <div className="py-1">
-              <Link
-                href="/services"
-                onClick={() => setMobileMenuOpen(false)}
-                className="block text-[#4a4742] hover:text-[#c5a059] font-medium py-1"
-              >
-                Our Services
-              </Link>
-              <div className="pl-4 pt-1 pb-2 space-y-1.5 border-l-2 border-[#c5a059]/40 ml-1">
-                <Link
-                  href="/services/kitchen-renovation"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-xs text-[#c5a059] hover:underline"
-                >
-                  Kitchen Renovation
-                </Link>
-                <Link
-                  href="/services/cabinet-installation"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-xs text-[#c5a059] hover:underline"
-                >
-                  Cabinet Installation
-                </Link>
-                <Link
-                  href="/services/cabinet-refacing"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-xs text-[#c5a059] hover:underline"
-                >
-                  Cabinet Refacing
-                </Link>
-                <Link
-                  href="/services/countertop-installation"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-xs text-[#c5a059] hover:underline"
-                >
-                  Countertop Installation
-                </Link>
-                <Link
-                  href="/services/backsplash-installation"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-xs text-[#c5a059] hover:underline"
-                >
-                  Backsplash Installation
-                </Link>
-                <Link
-                  href="/services/flooring-installation"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-xs text-[#c5a059] hover:underline"
-                >
-                  Flooring Installation
-                </Link>
-              </div>
-            </div>
-            <a
-              href="#portfolio"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-[#4a4742] hover:text-[#c5a059] py-1"
-            >
-              Our Projects
-            </a>
-            <a
-              href="#reviews"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-[#4a4742] hover:text-[#c5a059] py-1"
-            >
-              Blog
-            </a>
-            <a
-              href="/contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-[#4a4742] hover:text-[#c5a059] py-1"
-            >
-              Contact Us
-            </a>
-            <div className="pt-2">
-              <a
-                href="#contact"
-                onClick={() => setMobileMenuOpen(false)}
-                className="block text-center w-full px-6 py-3 bg-[#c5a059] text-white font-medium text-xs tracking-wider uppercase rounded-sm"
-              >
-                Get A Quote
-              </a>
-            </div>
-          </div>
-        )}
-      </header>
+    <div className="min-h-screen bg-transparent text-[#2c2b29] font-sans antialiased selection:bg-[#c5a059] selection:text-white">
+      {/* Dynamic Unified Navbar */}
+      <Navbar activePage="home" />
 
       {/* Architectural Hero Presentation (Urbantrop Reference Style) */}
-      <section className="relative pt-8 pb-16 lg:pt-14 lg:pb-24 px-6 lg:px-16 architectural-bg contour-lines overflow-hidden border-b border-[#ede8df]">
+      <section className="relative pt-8 pb-16 lg:pt-14 lg:pb-24 px-6 lg:px-16 overflow-hidden">
         <div className="max-w-7xl mx-auto space-y-12 lg:space-y-16">
           {/* Top 3-Panel Architectural Photography Strip (from Reference Image 1) */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
@@ -653,7 +385,7 @@ export default function HomePage() {
 
             {/* Inset Curated Interior Preview Box */}
             <div className="lg:col-span-5 relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-stone-100 aspect-[4/3] group">
+              <div className="relative rounded-3xl overflow-hidden shadow-xl border border-[#ede8df] bg-stone-100 aspect-[4/3] group">
                 <Image
                   src="/image_from_https_www.archkitchencabinets.com_wp_content_uploads_2024_05_home.png"
                   alt="Arch Kitchens Architectural Interior"
@@ -671,7 +403,7 @@ export default function HomePage() {
       </section>
 
       {/* Know More About Us - Luxury Architectural Profile & Achievements */}
-      <section id="about" className="py-20 lg:py-28 px-6 lg:px-16 bg-[#fbf9f5] border-t border-[#ede8df]">
+      <section id="about" className="py-20 lg:py-28 px-6 lg:px-16">
         <div className="max-w-7xl mx-auto space-y-16 lg:space-y-20">
           {/* Main About Us Split Presentation */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
@@ -724,10 +456,7 @@ export default function HomePage() {
 
             {/* Right Media Column with Inset Testimonial Card */}
             <div className="lg:col-span-6 relative">
-              {/* Champagne Brass Architectural Backing Frame */}
-              <div className="absolute -top-3 -right-3 sm:-top-5 sm:-right-5 w-4/5 h-4/5 bg-[#e8d5a8]/60 rounded-2xl -z-0" />
-
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-stone-100 aspect-[4/3] sm:aspect-[1.15/1] z-10 group">
+              <div className="relative rounded-2xl overflow-hidden shadow-xl border border-[#ede8df] bg-stone-100 aspect-[4/3] sm:aspect-[1.15/1] z-10 group">
                 <Image
                   src="/image_from_https_www.archkitchencabinets.com_wp_content_uploads_2024_05_home.png"
                   alt="Arch Kitchen Cabinets Master Interior Showcase"
@@ -828,7 +557,7 @@ export default function HomePage() {
       {/* Why Choose Us? - Your Kitchen Specialist Toronto (Luxury Redesign) */}
       <section
         id="why-us"
-        className="py-20 lg:py-28 px-6 lg:px-16 bg-[#fbf9f5] border-t border-b border-[#ede8df]"
+        className="py-20 lg:py-28 px-6 lg:px-16"
       >
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
@@ -904,12 +633,9 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Media Column with Champagne Brass Architectural Frame & 3 Floating Steps */}
+            {/* Right Media Column with 3 Floating Steps */}
             <div className="lg:col-span-6 relative">
-              {/* Architectural Champagne Brass Background Layer */}
-              <div className="absolute -top-3 -left-3 sm:-top-5 sm:-left-5 w-3/4 h-3/4 bg-[#e8d5a8]/60 rounded-2xl -z-0" />
-
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-stone-100 aspect-[4/3] sm:aspect-[1.15/1] z-10 group">
+              <div className="relative rounded-2xl overflow-hidden shadow-xl border border-[#ede8df] bg-stone-100 aspect-[4/3] sm:aspect-[1.15/1] z-10 group">
                 <Image
                   src="/hero_main.png"
                   alt="Your Kitchen Specialist Toronto Showcase"
@@ -1014,7 +740,7 @@ export default function HomePage() {
       {/* Portfolio / Latest Transformations */}
       <section
         id="portfolio"
-        className="py-20 lg:py-28 px-6 lg:px-16 bg-[#fbf9f5] border-t border-[#ede8df]"
+        className="py-20 lg:py-28 px-6 lg:px-16"
       >
         <div className="max-w-7xl mx-auto">
           {/* Header and Filter */}
@@ -1108,7 +834,7 @@ export default function HomePage() {
       {/* The 3-Step Architectural Journey */}
       <section
         id="process"
-        className="py-20 lg:py-28 px-6 lg:px-16 border-t border-[#ede8df]"
+        className="py-20 lg:py-28 px-6 lg:px-16"
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
@@ -1156,7 +882,7 @@ export default function HomePage() {
       {/* Reviews / Verified Client Acclaim */}
       <section
         id="reviews"
-        className="py-20 lg:py-28 px-6 lg:px-16 bg-[#f7f4ee]/70 border-t border-b border-[#ede8df]"
+        className="py-20 lg:py-28 px-6 lg:px-16"
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
@@ -1211,7 +937,7 @@ export default function HomePage() {
       </section>
 
       {/* The Most Question We Had - Frequently Asked Questions */}
-      <section id="faq" className="py-20 lg:py-28 px-6 lg:px-16 border-t border-[#ede8df] bg-[#fbf9f5]">
+      <section id="faq" className="py-20 lg:py-28 px-6 lg:px-16">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
             {/* Left Column Content */}
@@ -1233,7 +959,7 @@ export default function HomePage() {
               <div className="pt-4">
                 <a
                   href="#contact"
-                  className="inline-flex items-center space-x-2 px-7 py-3.5 bg-[#fbf9f5] border border-[#c5a059] hover:bg-[#c5a059] text-[#1e1d1b] hover:text-white font-medium text-xs uppercase tracking-wider rounded-sm transition-all group"
+                  className="inline-flex items-center space-x-2 px-7 py-3.5 bg-white border border-[#c5a059] hover:bg-[#c5a059] text-[#1e1d1b] hover:text-white font-medium text-xs uppercase tracking-wider rounded-sm transition-all group"
                 >
                   <span>Ask A Custom Question</span>
                   <ArrowRight className="w-4 h-4 text-[#c5a059] group-hover:text-white transition-colors" />
@@ -1272,7 +998,7 @@ export default function HomePage() {
                     onMouseEnter={() => setOpenFaq(idx)}
                     className={`rounded-xl border transition-all duration-500 overflow-hidden cursor-pointer ${
                       isOpen
-                        ? "bg-[#fbf9f5] border-[#c5a059] shadow-md ring-1 ring-[#c5a059]/20"
+                        ? "bg-white border-[#c5a059] shadow-md ring-1 ring-[#c5a059]/20"
                         : "bg-white border-[#ede8df] hover:border-[#c5a059]/60 hover:shadow-sm"
                     }`}
                   >
@@ -1319,7 +1045,7 @@ export default function HomePage() {
       </section>
 
       {/* Get In Touch - Have Any Question? We Always Ready For You */}
-      <section id="contact" className="py-20 lg:py-28 px-6 lg:px-16 bg-[#fbf9f5]">
+      <section id="contact" className="py-20 lg:py-28 px-6 lg:px-16">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
             {/* Left Column: Get In Touch, Direct Info & Map Preview */}
@@ -1420,9 +1146,6 @@ export default function HomePage() {
 
             {/* Right Column: Enquiry Form matching user layout & fields */}
             <div className="lg:col-span-7 bg-white rounded-xl p-8 lg:p-12 border border-[#ede8df] shadow-2xl relative">
-              {/* Luxury Gold Vertical Accent Block */}
-              <div className="absolute top-1/4 -right-4 lg:-right-6 w-10 lg:w-12 h-3/5 bg-[#c5a059] rounded-r-xl -z-10" />
-
               {formSubmitted ? (
                 <div className="h-full py-16 flex flex-col items-center justify-center text-center space-y-4">
                   <div className="w-16 h-16 rounded-full bg-[#f7f1e5] border border-[#c5a059] flex items-center justify-center text-[#c5a059]">
@@ -1563,7 +1286,7 @@ export default function HomePage() {
       </section>
 
       {/* Areas We Serve - High-Featured Luxury Architectural Grid */}
-      <section className="py-20 lg:py-24 px-6 lg:px-16 bg-[#fbf9f5] border-t border-b border-[#ede8df]">
+      <section className="py-20 lg:py-24 px-6 lg:px-16">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center max-w-2xl mx-auto mb-14">

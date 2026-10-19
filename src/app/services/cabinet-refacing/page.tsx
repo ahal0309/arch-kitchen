@@ -19,6 +19,7 @@ import {
   Wrench,
   Clock3,
 } from "lucide-react";
+import Navbar from "@/components/Navbar";
 
 export default function CabinetRefacingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -45,265 +46,14 @@ export default function CabinetRefacingPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#fbf9f5] text-[#2c2a29] font-sans selection:bg-[#c5a059] selection:text-white animate-page-enter">
-      {/* ──────────────── Top Utility Bar (Exact Home Page Style) ──────────────── */}
-      <div className="border-b border-[#ede8df] bg-[#f7f4ee]/80 text-[#6b6863] text-xs py-2 px-6 lg:px-16 transition-colors">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
-          <div className="flex items-center space-x-6">
-            <a
-              href="tel:+14164749094"
-              className="flex items-center space-x-1.5 hover:text-[#c5a059] transition-colors"
-            >
-              <Phone className="w-3.5 h-3.5 text-[#c5a059]" />
-              <span className="font-medium tracking-wide">+1 416-474-9094</span>
-            </a>
-            <div className="hidden sm:flex items-center space-x-1.5">
-              <Clock className="w-3.5 h-3.5 text-[#c5a059]" />
-              <span>08:00AM – 18:00PM</span>
-            </div>
-          </div>
-          <div className="flex items-center space-x-1.5 text-xs">
-            <MapPin className="w-3.5 h-3.5 text-[#c5a059]" />
-            <span>Greater Toronto Area & Surrounding Cities</span>
-          </div>
-        </div>
-      </div>
+    <div className="min-h-screen bg-transparent text-[#2c2a29] font-sans selection:bg-[#c5a059] selection:text-white animate-page-enter">
+      {/* Unified Navbar */}
+      <Navbar activePage="services" />
 
-      {/* ──────────────── Main Header / Navigation (Exact Home Page Style) ──────────────── */}
-      <header className="sticky top-0 z-50 bg-[#fbf9f5]/95 backdrop-blur-md border-b border-[#ede8df]/80">
-        <div className="max-w-7xl mx-auto px-6 lg:px-16 h-24 flex items-center justify-between">
-          {/* Brand Logo - Pure cropped emblem with generous right margin */}
-          <Link href="/" className="flex items-center shrink-0 py-2 mr-6 lg:mr-10">
-            <div className="relative w-36 sm:w-44 h-14 sm:h-16 flex items-center">
-              <Image
-                src="/logo_cropped.png"
-                alt="Arch Kitchens Logo"
-                fill
-                sizes="(max-width: 768px) 144px, 176px"
-                className="object-contain object-left"
-                priority
-              />
-            </div>
-          </Link>
-
-          {/* Desktop Nav Items */}
-          <nav className="hidden lg:flex items-center space-x-7 xl:space-x-9 text-[14px] font-medium text-[#3a3834] mx-auto">
-            <Link
-              href="/"
-              className="hover:text-[#c5a059] transition-colors py-1 whitespace-nowrap"
-            >
-              Home
-            </Link>
-            <Link
-              href="/about"
-              className="hover:text-[#c5a059] transition-colors py-1 whitespace-nowrap"
-            >
-              About Us
-            </Link>
-
-            {/* Our Services - Active with Dropdown */}
-            <div className="relative group/svc py-1">
-              <Link
-                href="/services"
-                className="flex items-center space-x-1 text-[#c5a059] font-semibold transition-colors whitespace-nowrap relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#c5a059]"
-              >
-                <span>Our Services</span>
-                <ChevronDown className="w-3.5 h-3.5 text-[#c5a059] transition-transform group-hover/svc:rotate-180" />
-              </Link>
-
-              {/* Exact Dark Dropdown Menu Matching User Screenshot */}
-              <div className="absolute top-full left-0 mt-1 w-64 bg-black/95 backdrop-blur-md rounded-md shadow-2xl border border-stone-800 py-3 opacity-0 invisible group-hover/svc:opacity-100 group-hover/svc:visible transition-all duration-200 z-50">
-                <Link
-                  href="/services/kitchen-renovation"
-                  className="block px-5 py-2.5 text-sm text-[#c5a059] hover:text-white hover:bg-white/5 transition-colors font-medium"
-                >
-                  Kitchen Renovation
-                </Link>
-                <Link
-                  href="/services/cabinet-installation"
-                  className="block px-5 py-2.5 text-sm text-[#c5a059] hover:text-white hover:bg-white/5 transition-colors font-medium"
-                >
-                  Cabinet Installation
-                </Link>
-                <Link
-                  href="/services/cabinet-refacing"
-                  className="block px-5 py-2.5 text-sm text-[#c5a059] hover:text-white hover:bg-white/5 transition-colors font-medium"
-                >
-                  Cabinet Refacing
-                </Link>
-                <Link
-                  href="/services/countertop-installation"
-                  className="block px-5 py-2.5 text-sm text-[#c5a059] hover:text-white hover:bg-white/5 transition-colors font-medium"
-                >
-                  Countertop Installation
-                </Link>
-                <Link
-                  href="/services/backsplash-installation"
-                  className="block px-5 py-2.5 text-sm text-[#c5a059] hover:text-white hover:bg-white/5 transition-colors font-medium"
-                >
-                  Backsplash Installation
-                </Link>
-                <Link
-                  href="/services/flooring-installation"
-                  className="block px-5 py-2.5 text-sm text-[#c5a059] hover:text-white hover:bg-white/5 transition-colors font-medium"
-                >
-                  Flooring Installation
-                </Link>
-              </div>
-            </div>
-
-            <Link
-              href="/#portfolio"
-              className="hover:text-[#c5a059] transition-colors py-1 whitespace-nowrap"
-            >
-              Our Projects
-            </Link>
-            <Link
-              href="/#reviews"
-              className="hover:text-[#c5a059] transition-colors py-1 whitespace-nowrap"
-            >
-              Blog
-            </Link>
-            <Link
-              href="/contact"
-              className="hover:text-[#c5a059] transition-colors py-1 whitespace-nowrap"
-            >
-              Contact Us
-            </Link>
-          </nav>
-
-          {/* Action Button: Get A Quote */}
-          <div className="hidden sm:flex items-center shrink-0 ml-6 lg:ml-8">
-            <Link
-              href="/contact"
-              className="px-6 py-3.5 bg-[#c5a059] hover:bg-[#b38e45] text-white font-medium text-xs tracking-wider uppercase rounded-sm shadow-sm transition-all hover:shadow-md transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
-            >
-              Get A Quote
-            </Link>
-          </div>
-
-          {/* Mobile menu hamburger */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-[#4a4742] hover:text-[#c5a059] transition-colors ml-2"
-            aria-label="Toggle Navigation Menu"
-          >
-            {mobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
-          </button>
-        </div>
-
-        {/* Mobile Dropdown Menu (Exact Home Page Style) */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden bg-[#fbf9f5] border-b border-[#ede8df] px-6 py-4 space-y-3">
-            <Link
-              href="/"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-[#4a4742] hover:text-[#c5a059] py-1"
-            >
-              Home
-            </Link>
-            <Link
-              href="/about"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-[#4a4742] hover:text-[#c5a059] py-1"
-            >
-              About Us
-            </Link>
-            <div className="py-1">
-              <Link
-                href="/services"
-                onClick={() => setMobileMenuOpen(false)}
-                className="block text-[#c5a059] font-medium py-1"
-              >
-                Our Services
-              </Link>
-              <div className="pl-4 pt-1 pb-2 space-y-1.5 border-l-2 border-[#c5a059]/40 ml-1">
-                <Link
-                  href="/services/kitchen-renovation"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-xs text-[#c5a059] hover:underline"
-                >
-                  Kitchen Renovation
-                </Link>
-                <Link
-                  href="/services/cabinet-installation"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-xs text-[#c5a059] hover:underline"
-                >
-                  Cabinet Installation
-                </Link>
-                <Link
-                  href="/services/cabinet-refacing"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-xs text-[#c5a059] hover:underline font-semibold"
-                >
-                  Cabinet Refacing
-                </Link>
-                <Link
-                  href="/services/countertop-installation"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-xs text-[#c5a059] hover:underline"
-                >
-                  Countertop Installation
-                </Link>
-                <Link
-                  href="/services/backsplash-installation"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-xs text-[#c5a059] hover:underline"
-                >
-                  Backsplash Installation
-                </Link>
-                <Link
-                  href="/services/flooring-installation"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-xs text-[#c5a059] hover:underline"
-                >
-                  Flooring Installation
-                </Link>
-              </div>
-            </div>
-            <Link
-              href="/#portfolio"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-[#4a4742] hover:text-[#c5a059] py-1"
-            >
-              Our Projects
-            </Link>
-            <Link
-              href="/#reviews"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-[#4a4742] hover:text-[#c5a059] py-1"
-            >
-              Blog
-            </Link>
-            <Link
-              href="/contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-[#4a4742] hover:text-[#c5a059] py-1"
-            >
-              Contact Us
-            </Link>
-            <div className="pt-2">
-              <Link
-                href="/contact"
-                onClick={() => setMobileMenuOpen(false)}
-                className="block text-center w-full px-5 py-3 bg-[#c5a059] text-white font-medium text-xs tracking-wider uppercase rounded-sm shadow-sm"
-              >
-                Get A Quote
-              </Link>
-            </div>
-          </div>
-        )}
-      </header>
-
-      {/* Architectural Hero Header Section (Urbantrop Style) */}
-      <section className="relative pt-16 pb-12 lg:pt-24 lg:pb-16 px-6 lg:px-16 architectural-bg contour-lines border-b border-[#ede8df] overflow-hidden">
+      {/* Architectural Hero Header Section (Unified Single Page) */}
+      <section className="relative pt-12 pb-6 lg:pt-16 lg:pb-8 px-6 lg:px-16 overflow-hidden">
         <div className="max-w-7xl mx-auto space-y-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#ede8df]/80">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6">
             <div>
               <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-3">
                 01 / SERVICES / PRECISION REFACING
@@ -323,7 +73,7 @@ export default function CabinetRefacingPage() {
       </section>
 
       {/* ──────────────── EXPERT CABINET REFACING SERVICES IN TORONTO (Screenshot 1) ──────────────── */}
-      <section className="py-20 px-6 lg:px-16 max-w-7xl mx-auto architectural-bg contour-lines relative overflow-hidden">
+      <section className="pt-6 pb-20 px-6 lg:px-16 max-w-7xl mx-auto relative overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           {/* Left Column: Numbered Points 1 to 5 */}
           <div className="lg:col-span-7 scroll-reveal reveal-init">
@@ -420,7 +170,7 @@ export default function CabinetRefacingPage() {
       </section>
 
       {/* ──────────────── WHY CHOOSE ARCH KITCHEN CABINETS (Screenshot 2) ──────────────── */}
-      <section className="py-20 architectural-bg contour-lines border-t border-[#ede8df]">
+      <section className="py-20 border-t border-[#ede8df]">
         <div className="max-w-7xl mx-auto px-6 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
             {/* Left Column: Framed Image with Arch Card Border */}
@@ -538,7 +288,7 @@ export default function CabinetRefacingPage() {
       </section>
 
       {/* ──────────────── WHAT WE OFFER (Screenshot 2) ──────────────── */}
-      <section className="py-20 px-6 lg:px-16 max-w-7xl mx-auto architectural-bg contour-lines relative overflow-hidden">
+      <section className="py-20 px-6 lg:px-16 max-w-7xl mx-auto relative overflow-hidden">
         <div className="text-center mb-16 scroll-reveal reveal-init">
           <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-2">
             04 / REFACING SCOPE & CAPABILITIES
@@ -630,7 +380,7 @@ export default function CabinetRefacingPage() {
       </section>
 
       {/* ──────────────── WHAT SETS US APART (Screenshot 3) ──────────────── */}
-      <section className="py-20 architectural-bg contour-lines border-t border-[#ede8df]">
+      <section className="py-20 border-t border-[#ede8df]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
             {/* Left Column: Framed Image with Yellow/Gold Accent Corner (Screenshot 3) */}
