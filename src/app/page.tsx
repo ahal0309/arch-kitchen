@@ -784,8 +784,8 @@ export default function HomePage() {
             </span>
           </div>
 
-          {/* 3D Curved Flow Ribbon Gallery (Matching User Reference Image) */}
-          <div className="relative w-full overflow-hidden py-10 my-4 -mx-6 sm:-mx-8 lg:-mx-16 px-4">
+          {/* 3D Curved Flow Ribbon Gallery (Centered Full-Bleed Viewport) */}
+          <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden py-10 my-4">
             {/* Subtle Arc Elevation Overlay Line */}
             <svg
               className="absolute top-1/2 left-0 w-full -translate-y-1/2 pointer-events-none opacity-40 z-0 h-40"
