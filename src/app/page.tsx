@@ -283,8 +283,8 @@ export default function HomePage() {
       <Navbar activePage="home" />
 
       {/* Architectural Hero Presentation (Urbantrop Reference Style) */}
-      <section className="relative pt-8 pb-16 lg:pt-14 lg:pb-24 px-6 lg:px-16 overflow-hidden">
-        <div className="max-w-7xl mx-auto space-y-12 lg:space-y-16">
+      <section className="relative pt-6 pb-12 sm:pt-8 sm:pb-16 lg:pt-14 lg:pb-24 px-4 sm:px-6 lg:px-16 overflow-hidden">
+        <div className="max-w-7xl mx-auto space-y-8 sm:space-y-12 lg:space-y-16">
           {/* Top 3-Panel Architectural Photography Strip (from Reference Image 1) */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
             <div className="relative aspect-[3/4] sm:aspect-[4/5] rounded-3xl overflow-hidden shadow-lg border border-[#ede8df] group">

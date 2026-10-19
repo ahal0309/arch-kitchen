@@ -23,41 +23,41 @@ export default function Navbar({ activePage = "home" }: NavbarProps) {
 
   return (
     <>
-      {/* Top Utility Bar */}
-      <div className="bg-transparent text-[#6b6863] text-xs py-2 px-6 lg:px-16 transition-colors">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
-          <div className="flex items-center space-x-6">
+      {/* Top Utility Bar - Clean and compact on mobile */}
+      <div className="bg-transparent text-[#6b6863] text-xs py-2 px-4 sm:px-6 lg:px-16 transition-colors">
+        <div className="max-w-7xl mx-auto flex flex-row items-center justify-between gap-2 text-[11px] sm:text-xs">
+          <div className="flex items-center space-x-4 sm:space-x-6">
             <a
               href="tel:+14164749094"
               className="flex items-center space-x-1.5 hover:text-[#c5a059] transition-colors"
             >
-              <Phone className="w-3.5 h-3.5 text-[#c5a059]" />
+              <Phone className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#c5a059]" />
               <span className="font-medium tracking-wide">+1 416-474-9094</span>
             </a>
-            <div className="hidden sm:flex items-center space-x-1.5">
+            <div className="hidden md:flex items-center space-x-1.5">
               <Clock className="w-3.5 h-3.5 text-[#c5a059]" />
               <span>08:00AM – 18:00PM</span>
             </div>
           </div>
-          <div className="flex items-center space-x-1.5 text-xs">
-            <MapPin className="w-3.5 h-3.5 text-[#c5a059]" />
-            <span>Greater Toronto Area & Surrounding Cities</span>
+          <div className="flex items-center space-x-1.5 text-[10px] sm:text-xs truncate">
+            <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#c5a059] shrink-0" />
+            <span className="truncate">Greater Toronto Area</span>
           </div>
         </div>
       </div>
 
       {/* Main Header / Navigation - Floating pill box only, completely transparent outer area */}
       <header className="sticky top-0 z-50 pointer-events-none transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
-          <div className="w-full pointer-events-auto bg-[#ebe7e0]/98 backdrop-blur-md rounded-full px-6 sm:px-8 lg:px-10 h-16 sm:h-20 flex items-center justify-between border border-[#ded8cd] shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2 sm:py-4">
+          <div className="w-full pointer-events-auto bg-[#ebe7e0]/98 backdrop-blur-md rounded-full px-4 sm:px-8 lg:px-10 h-14 sm:h-20 flex items-center justify-between border border-[#ded8cd] shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
             {/* Brand Logo / Architectural Wordmark */}
             <Link href="/" className="flex items-center shrink-0 py-1 group">
-              <div className="relative w-28 sm:w-36 h-10 sm:h-12 flex items-center">
+              <div className="relative w-24 sm:w-36 h-9 sm:h-12 flex items-center">
                 <Image
                   src="/logo_cropped.png"
                   alt="Arch Kitchens Logo"
                   fill
-                  sizes="(max-width: 768px) 112px, 144px"
+                  sizes="(max-width: 640px) 96px, 144px"
                   className="object-contain object-left"
                   priority
                 />
@@ -198,7 +198,7 @@ export default function Navbar({ activePage = "home" }: NavbarProps) {
 
         {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-[#fbf9f5]/98 backdrop-blur-xl border border-[#e2dcd2] rounded-3xl shadow-2xl mt-2 mx-4 px-6 py-5 space-y-3 z-[999]">
+          <div className="lg:hidden pointer-events-auto bg-[#ebe7e0]/98 backdrop-blur-2xl border border-[#ded8cd] rounded-3xl shadow-[0_16px_40px_rgba(0,0,0,0.12)] mt-2 mx-3 px-6 py-5 space-y-3 z-[999]">
             <Link
               href="/"
               onClick={() => setMobileMenuOpen(false)}
