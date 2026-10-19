@@ -543,21 +543,7 @@ export default function ServicesPage() {
                   </ul>
                 </div>
 
-                {/* Meta details: Ideal For & Typical Timeline */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 rounded-xl bg-[#f7f4ee] border border-[#ede8df] text-xs">
-                  <div>
-                    <span className="font-semibold text-[#1e1d1b] block mb-1">
-                      Ideal For:
-                    </span>
-                    <span className="text-[#6b6863]">{svc.idealFor}</span>
-                  </div>
-                  <div>
-                    <span className="font-semibold text-[#1e1d1b] block mb-1">
-                      Typical Timeline:
-                    </span>
-                    <span className="text-[#c5a059] font-bold">{svc.timeline}</span>
-                  </div>
-                </div>
+
 
                 {/* Action CTA */}
                 <div className="pt-2 flex flex-wrap gap-4 items-center">
