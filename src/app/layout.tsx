@@ -46,6 +46,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${cormorant.variable} ${jakarta.variable} ${spaceGrotesk.variable}`}>
+      <head>
+        <link
+          href="https://api.fontshare.com/v2/css?f[]=nohemi@400,300,500,600,700,200,100&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="antialiased bg-[#fbf9f5] text-[#2c2b29] font-sans selection:bg-[#cbb17b] selection:text-white">
         <ScrollAnimationProvider>{children}</ScrollAnimationProvider>
       </body>

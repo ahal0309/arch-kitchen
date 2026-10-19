@@ -1,9 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --font-serif: 'Cormorant Garamond', Georgia, serif;
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  --font-arch: 'Space Grotesk', var(--font-sans);
+  --font-nohemi: 'Nohemi', 'Space Grotesk', var(--font-sans);
+  --font-poppins: 'Poppins', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Nohemi', 'Cormorant Garamond', Georgia, serif;
+  --font-sans: var(--font-poppins);
+  --font-arch: var(--font-nohemi);
   --cream-bg: #fbf9f5;
   --cream-card: #ffffff;
   --champagne-brass: #c5a059;
@@ -16,19 +18,15 @@
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-poppins);
   background-color: var(--cream-bg);
   color: var(--charcoal-text);
   overflow-x: hidden;
 }
 
-h1, h2, h3, .font-serif-title {
-  font-family: var(--font-arch), var(--font-sans);
-  letter-spacing: -0.03em;
-}
-
-.font-arch {
-  font-family: var(--font-arch), var(--font-sans);
+h1, h2, h3, .font-serif-title, .font-arch, .font-serif {
+  font-family: var(--font-nohemi);
+  letter-spacing: -0.02em;
 }
 
 /* Custom smooth transitions & luxury styling */
