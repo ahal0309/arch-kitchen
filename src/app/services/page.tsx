@@ -480,37 +480,9 @@ export default function ServicesPage() {
             <section
               key={svc.id}
               id={svc.id}
-              className={`scroll-mt-36 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center ${
-                idx % 2 === 1 ? "lg:flex-row-reverse" : ""
-              }`}
+              className="scroll-mt-36 p-8 sm:p-12 rounded-2xl bg-white border border-[#ede8df] shadow-sm hover:shadow-md transition-shadow"
             >
-              {/* Media Column */}
-              <div
-                className={`lg:col-span-6 relative scroll-reveal reveal-init ${
-                  idx % 2 === 1 ? "lg:order-2" : "lg:order-1"
-                }`}
-              >
-                <div className="absolute -top-3 -left-3 sm:-top-5 sm:-left-5 w-3/4 h-3/4 bg-[#e8d5a8]/50 rounded-2xl -z-0" />
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-stone-100 aspect-[4/3] sm:aspect-[1.2/1] group z-10">
-                  <Image
-                    src={svc.image}
-                    alt={svc.title}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover object-center transform group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute top-4 left-4 bg-black/85 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-stone-700 text-white text-xs font-mono font-medium">
-                    {svc.num} / {svc.category}
-                  </div>
-                </div>
-              </div>
-
-              {/* Text & Spec Details Column */}
-              <div
-                className={`lg:col-span-6 space-y-6 scroll-reveal reveal-init delay-150 ${
-                  idx % 2 === 1 ? "lg:order-1" : "lg:order-2"
-                }`}
-              >
+              <div className="max-w-4xl space-y-6 scroll-reveal reveal-init">
                 <div>
                   <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#1e1d1b] leading-tight">
                     {svc.title}
@@ -525,7 +497,7 @@ export default function ServicesPage() {
                   <h4 className="text-xs font-semibold uppercase tracking-wider text-[#1e1d1b]">
                     What's Included in This Service:
                   </h4>
-                  <ul className="space-y-2.5">
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
                     {svc.features.map((feat, fIdx) => (
                       <li key={fIdx} className="flex items-start space-x-3 text-sm text-[#4a4742]">
                         <div className="w-5 h-5 rounded-full bg-[#f7f1e5] border border-[#c5a059] flex items-center justify-center text-[#c5a059] shrink-0 mt-0.5">
@@ -537,10 +509,8 @@ export default function ServicesPage() {
                   </ul>
                 </div>
 
-
-
                 {/* Action CTA */}
-                <div className="pt-2 flex flex-wrap gap-4 items-center">
+                <div className="pt-4 flex flex-wrap gap-4 items-center">
                   <Link
                     href="/contact"
                     className="inline-flex items-center space-x-2 px-7 py-3.5 bg-[#c5a059] hover:bg-[#b38e45] text-white font-medium text-xs uppercase tracking-wider rounded-sm shadow transition-all hover:shadow-lg transform hover:-translate-y-0.5"
