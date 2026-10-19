@@ -598,33 +598,38 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Architectural Statement Block (Matching Reference: "WHERE PLANS BECOME LANDMARKS.") */}
+          {/* Restored Original Content & Heading with Architectural Styling */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center pt-4">
             <div className="lg:col-span-7 space-y-6">
               <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block">
                 ARCH KITCHENS — TORONTO ATELIER
               </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif text-[#1e1d1b] font-normal leading-[1.08] tracking-tight">
-                WHERE PLANS BECOME <br className="hidden sm:inline" />
-                <span className="text-[#c5a059] italic">LANDMARKS.</span>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-arch uppercase text-[#1e1d1b] leading-[1.08] tracking-tight">
+                Toronto's Best <br className="hidden sm:inline" />
+                <span className="text-[#c5a059]">Kitchen Contractor</span>
               </h1>
               <p className="text-base sm:text-lg text-[#615e58] font-normal leading-relaxed max-w-xl">
-                Toronto's premier kitchen contractor and remodeler. We engineer full kitchen renovations, custom cabinet joinery, luxury quartz & stone countertops, and flooring designed to elevate your living architecture.
+                Transform your kitchen with Arch Kitchen Cabinets, Toronto's top kitchen remodeler. We offer full kitchen renovations, custom cabinet installations and repairs, countertop solutions, and flooring services. Experience exceptional craftsmanship and outstanding service for your dream kitchen.
               </p>
 
-              {/* Value checks */}
-              <div className="space-y-2.5 text-sm text-[#4a4742] pt-2">
-                <div className="flex items-center space-x-3">
-                  <span className="text-[#c5a059] font-mono font-bold">•</span>
-                  <span>Unique Solution tailored to fit your architectural style & needs</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <span className="text-[#c5a059] font-mono font-bold">•</span>
-                  <span>High-Quality In-House Materials & Detailed CNC Woodwork</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <span className="text-[#c5a059] font-mono font-bold">•</span>
-                  <span>Systematic Turnkey Renovation from site survey to white-glove handover</span>
+              {/* Subheading & Value checks */}
+              <div className="pt-2 space-y-3">
+                <h3 className="text-base sm:text-lg font-arch uppercase text-[#1e1d1b] tracking-wide">
+                  We Provide The Best Kitchen For You
+                </h3>
+                <div className="space-y-2.5 text-sm sm:text-base text-[#4a4742]">
+                  <div className="flex items-center space-x-3">
+                    <span className="text-[#c5a059] font-bold">✓</span>
+                    <span>Unique Solution to fit your style and needs</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <span className="text-[#c5a059] font-bold">✓</span>
+                    <span>High Quality Materials and Detailed Work</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <span className="text-[#c5a059] font-bold">✓</span>
+                    <span>Smooth Renovation from start to finish</span>
+                  </div>
                 </div>
               </div>
 
@@ -634,7 +639,7 @@ export default function HomePage() {
                   href="#contact"
                   className="inline-flex items-center space-x-3 px-8 py-4 bg-[#c5a059] hover:bg-[#b38e45] text-white font-medium text-xs uppercase tracking-widest rounded-full shadow-md transition-all hover:shadow-xl transform hover:-translate-y-0.5"
                 >
-                  <span>Let's Design</span>
+                  <span>Let's Start</span>
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <a
