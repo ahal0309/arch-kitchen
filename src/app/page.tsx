@@ -277,9 +277,9 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#fbf9f5] text-[#2c2b29] font-sans antialiased selection:bg-[#c5a059] selection:text-white">
+    <div className="min-h-screen bg-[#fbf9f5] text-[#2c2b29] font-sans antialiased selection:bg-[#c5a059] selection:text-white architectural-bg contour-lines">
       {/* Top Utility Bar */}
-      <div className="bg-transparent text-[#6b6863] text-xs py-2 px-6 lg:px-16 transition-colors">
+      <div className="bg-transparent text-[#6b6863] text-xs py-2 px-6 lg:px-16 transition-colors border-b border-[#ede8df]/60">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
           <div className="flex items-center space-x-6">
             <a

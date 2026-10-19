@@ -206,25 +206,33 @@ html {
   }
 }
 
+/* Architectural Golden Contour Lines (Organic Topographic Elevation Lines matching Urbantrop / Logo Gold) */
 .architectural-bg,
 .contour-lines {
   background-color: #fbf9f5;
   background-image:
-    repeating-linear-gradient(
-      -38deg,
-      transparent,
-      transparent 85px,
-      rgba(197, 160, 89, 0.22) 85px,
-      rgba(197, 160, 89, 0.22) 86.5px,
-      transparent 86.5px,
-      transparent 145px,
-      rgba(216, 188, 126, 0.16) 145px,
-      rgba(216, 188, 126, 0.16) 146px
+    /* Concentric topographic contour line rings */
+    repeating-radial-gradient(
+      circle at 82% 18%,
+      transparent 0,
+      transparent 58px,
+      rgba(212, 175, 55, 0.16) 59px,
+      rgba(212, 175, 55, 0.22) 60px,
+      transparent 61px,
+      transparent 118px
     ),
-    radial-gradient(ellipse 110% 65% at 90% 12%, rgba(197, 160, 89, 0.15) 0%, transparent 65%),
-    radial-gradient(ellipse 95% 55% at 10% 85%, rgba(197, 160, 89, 0.12) 0%, transparent 60%);
-  background-size: 320px 320px, 100% 100%, 100% 100%;
-  animation: contourFlow 24s ease-in-out infinite;
+    repeating-radial-gradient(
+      circle at 12% 88%,
+      transparent 0,
+      transparent 68px,
+      rgba(228, 190, 108, 0.14) 69px,
+      rgba(228, 190, 108, 0.20) 70px,
+      transparent 71px,
+      transparent 138px
+    ),
+    /* Delicate survey contour arcs */
+    radial-gradient(ellipse 90% 70% at 50% 0%, rgba(212, 175, 55, 0.08) 0%, transparent 60%);
+  background-attachment: scroll;
 }
 
 .arch-card {
