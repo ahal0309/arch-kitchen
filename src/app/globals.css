@@ -169,19 +169,37 @@ html {
 .delay-400 { transition-delay: 400ms; }
 .delay-500 { transition-delay: 500ms; }
 
-/* Architectural Template Styling (Urbantrop-inspired, preserved champagne brass palette) */
+/* Architectural Template Styling (Urbantrop-inspired, smooth plain cream + champagne brass contour lines) */
 .architectural-bg {
   background-color: #fbf9f5;
-  background-image: 
-    radial-gradient(circle at 1px 1px, rgba(197, 160, 89, 0.12) 1px, transparent 0),
-    linear-gradient(to right, rgba(237, 232, 223, 0.4) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(237, 232, 223, 0.4) 1px, transparent 1px);
-  background-size: 32px 32px, 96px 96px, 96px 96px;
+  background-image:
+    repeating-linear-gradient(
+      -35deg,
+      transparent,
+      transparent 90px,
+      rgba(197, 160, 89, 0.14) 90px,
+      rgba(197, 160, 89, 0.14) 91.5px
+    ),
+    repeating-linear-gradient(
+      -55deg,
+      transparent,
+      transparent 180px,
+      rgba(197, 160, 89, 0.1) 180px,
+      rgba(197, 160, 89, 0.1) 181.5px
+    );
 }
 
 .contour-lines {
-  background-image: radial-gradient(ellipse at 80% 20%, rgba(197, 160, 89, 0.08) 0%, transparent 60%),
-                    radial-gradient(ellipse at 20% 80%, rgba(197, 160, 89, 0.05) 0%, transparent 50%);
+  background-image: 
+    repeating-linear-gradient(
+      -35deg,
+      transparent,
+      transparent 90px,
+      rgba(197, 160, 89, 0.14) 90px,
+      rgba(197, 160, 89, 0.14) 91.5px
+    ),
+    radial-gradient(ellipse at 85% 15%, rgba(197, 160, 89, 0.12) 0%, transparent 65%),
+    radial-gradient(ellipse at 15% 85%, rgba(197, 160, 89, 0.08) 0%, transparent 55%);
 }
 
 .arch-card {
