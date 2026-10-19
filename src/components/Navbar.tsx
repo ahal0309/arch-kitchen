@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Phone, Clock, MapPin, ChevronDown, Menu, X } from "lucide-react";
 
 interface NavbarProps {
@@ -10,9 +11,15 @@ interface NavbarProps {
 }
 
 export default function Navbar({ activePage = "home" }: NavbarProps) {
+  const router = useRouter();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+
+  const navigateTo = (path: string) => {
+    setMobileMenuOpen(false);
+    router.push(path);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -200,10 +207,10 @@ export default function Navbar({ activePage = "home" }: NavbarProps) {
         {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
           <div className="lg:hidden pointer-events-auto bg-[#ebe7e0] border border-[#ded8cd] rounded-3xl shadow-[0_16px_40px_rgba(0,0,0,0.18)] mt-2 mx-3 px-5 py-4 space-y-2 z-[9999]">
-            <Link
-              href="/"
-              onClick={() => setMobileMenuOpen(false)}
-              className={`flex items-center justify-between py-2.5 px-3 rounded-xl text-xs font-mono tracking-[0.2em] uppercase transition-colors ${
+            <button
+              type="button"
+              onClick={() => navigateTo("/")}
+              className={`w-full flex items-center justify-between py-2.5 px-3 rounded-xl text-xs font-mono tracking-[0.2em] uppercase transition-colors text-left ${
                 activePage === "home"
                   ? "text-[#c5a059] bg-black/[0.04] font-semibold"
                   : "text-[#3a3834] hover:text-[#c5a059] hover:bg-black/[0.03]"
@@ -211,12 +218,12 @@ export default function Navbar({ activePage = "home" }: NavbarProps) {
             >
               <span>HOME</span>
               <span className="text-[10px] text-[#c5a059] font-mono">01</span>
-            </Link>
+            </button>
 
-            <Link
-              href="/about"
-              onClick={() => setMobileMenuOpen(false)}
-              className={`flex items-center justify-between py-2.5 px-3 rounded-xl text-xs font-mono tracking-[0.2em] uppercase transition-colors ${
+            <button
+              type="button"
+              onClick={() => navigateTo("/about")}
+              className={`w-full flex items-center justify-between py-2.5 px-3 rounded-xl text-xs font-mono tracking-[0.2em] uppercase transition-colors text-left ${
                 activePage === "about"
                   ? "text-[#c5a059] bg-black/[0.04] font-semibold"
                   : "text-[#3a3834] hover:text-[#c5a059] hover:bg-black/[0.03]"
@@ -224,38 +231,45 @@ export default function Navbar({ activePage = "home" }: NavbarProps) {
             >
               <span>ABOUT</span>
               <span className="text-[10px] text-[#c5a059] font-mono">02</span>
-            </Link>
+            </button>
 
-            <Link
-              href="/#portfolio"
-              onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center justify-between py-2.5 px-3 rounded-xl text-xs font-mono tracking-[0.2em] uppercase text-[#3a3834] hover:text-[#c5a059] hover:bg-black/[0.03] transition-colors"
+            <button
+              type="button"
+              onClick={() => navigateTo("/#portfolio")}
+              className="w-full flex items-center justify-between py-2.5 px-3 rounded-xl text-xs font-mono tracking-[0.2em] uppercase text-[#3a3834] hover:text-[#c5a059] hover:bg-black/[0.03] transition-colors text-left"
             >
               <span>PROJECTS</span>
               <span className="text-[10px] text-[#c5a059] font-mono">03</span>
-            </Link>
+            </button>
 
             {/* Services with Expandable Accordion on Mobile */}
             <div className="rounded-xl overflow-hidden">
-              <div className="flex items-center justify-between py-1 px-3">
-                <Link
-                  href="/services"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`text-xs font-mono tracking-[0.2em] uppercase transition-colors ${
+              <div
+                className={`flex items-center justify-between py-1.5 px-3 rounded-xl transition-colors ${
+                  activePage === "services"
+                    ? "bg-black/[0.04]"
+                    : "hover:bg-black/[0.03]"
+                }`}
+              >
+                <button
+                  type="button"
+                  onClick={() => navigateTo("/services")}
+                  className={`text-xs font-mono tracking-[0.2em] uppercase transition-colors flex-1 py-1.5 text-left ${
                     activePage === "services"
                       ? "text-[#c5a059] font-semibold"
                       : "text-[#3a3834] hover:text-[#c5a059]"
                   }`}
                 >
                   SERVICES
-                </Link>
+                </button>
                 <button
                   type="button"
                   onClick={(e) => {
+                    e.preventDefault();
                     e.stopPropagation();
                     setMobileServicesOpen(!mobileServicesOpen);
                   }}
-                  className="p-1.5 text-[#78756e] hover:text-[#c5a059] transition-colors"
+                  className="p-2 text-[#78756e] hover:text-[#c5a059] transition-colors rounded-lg hover:bg-black/[0.05]"
                   aria-label="Toggle Services List"
                 >
                   <ChevronDown
@@ -268,55 +282,55 @@ export default function Navbar({ activePage = "home" }: NavbarProps) {
 
               {/* Sub-services list (always visible or expanded) */}
               <div className={`pl-4 pt-1 pb-2 space-y-1 border-l-2 border-[#c5a059]/40 ml-3 ${mobileServicesOpen ? "block" : "hidden sm:block"}`}>
-                <Link
-                  href="/services/kitchen-renovation"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block py-1.5 px-2 text-xs text-[#55524d] hover:text-[#c5a059] rounded-lg hover:bg-black/[0.03] transition-colors font-sans"
+                <button
+                  type="button"
+                  onClick={() => navigateTo("/services/kitchen-renovation")}
+                  className="w-full text-left block py-1.5 px-2 text-xs text-[#55524d] hover:text-[#c5a059] rounded-lg hover:bg-black/[0.03] transition-colors font-sans"
                 >
                   Kitchen Renovation
-                </Link>
-                <Link
-                  href="/services/cabinet-installation"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block py-1.5 px-2 text-xs text-[#55524d] hover:text-[#c5a059] rounded-lg hover:bg-black/[0.03] transition-colors font-sans"
+                </button>
+                <button
+                  type="button"
+                  onClick={() => navigateTo("/services/cabinet-installation")}
+                  className="w-full text-left block py-1.5 px-2 text-xs text-[#55524d] hover:text-[#c5a059] rounded-lg hover:bg-black/[0.03] transition-colors font-sans"
                 >
                   Cabinet Installation
-                </Link>
-                <Link
-                  href="/services/cabinet-refacing"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block py-1.5 px-2 text-xs text-[#55524d] hover:text-[#c5a059] rounded-lg hover:bg-black/[0.03] transition-colors font-sans"
+                </button>
+                <button
+                  type="button"
+                  onClick={() => navigateTo("/services/cabinet-refacing")}
+                  className="w-full text-left block py-1.5 px-2 text-xs text-[#55524d] hover:text-[#c5a059] rounded-lg hover:bg-black/[0.03] transition-colors font-sans"
                 >
                   Cabinet Refacing
-                </Link>
-                <Link
-                  href="/services/countertop-installation"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block py-1.5 px-2 text-xs text-[#55524d] hover:text-[#c5a059] rounded-lg hover:bg-black/[0.03] transition-colors font-sans"
+                </button>
+                <button
+                  type="button"
+                  onClick={() => navigateTo("/services/countertop-installation")}
+                  className="w-full text-left block py-1.5 px-2 text-xs text-[#55524d] hover:text-[#c5a059] rounded-lg hover:bg-black/[0.03] transition-colors font-sans"
                 >
                   Countertop Installation
-                </Link>
-                <Link
-                  href="/services/backsplash-installation"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block py-1.5 px-2 text-xs text-[#55524d] hover:text-[#c5a059] rounded-lg hover:bg-black/[0.03] transition-colors font-sans"
+                </button>
+                <button
+                  type="button"
+                  onClick={() => navigateTo("/services/backsplash-installation")}
+                  className="w-full text-left block py-1.5 px-2 text-xs text-[#55524d] hover:text-[#c5a059] rounded-lg hover:bg-black/[0.03] transition-colors font-sans"
                 >
                   Backsplash Installation
-                </Link>
-                <Link
-                  href="/services/flooring-installation"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block py-1.5 px-2 text-xs text-[#55524d] hover:text-[#c5a059] rounded-lg hover:bg-black/[0.03] transition-colors font-sans"
+                </button>
+                <button
+                  type="button"
+                  onClick={() => navigateTo("/services/flooring-installation")}
+                  className="w-full text-left block py-1.5 px-2 text-xs text-[#55524d] hover:text-[#c5a059] rounded-lg hover:bg-black/[0.03] transition-colors font-sans"
                 >
                   Flooring Installation
-                </Link>
+                </button>
               </div>
             </div>
 
-            <Link
-              href="/contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className={`flex items-center justify-between py-2.5 px-3 rounded-xl text-xs font-mono tracking-[0.2em] uppercase transition-colors ${
+            <button
+              type="button"
+              onClick={() => navigateTo("/contact")}
+              className={`w-full flex items-center justify-between py-2.5 px-3 rounded-xl text-xs font-mono tracking-[0.2em] uppercase transition-colors text-left ${
                 activePage === "contact"
                   ? "text-[#c5a059] bg-black/[0.04] font-semibold"
                   : "text-[#3a3834] hover:text-[#c5a059] hover:bg-black/[0.03]"
@@ -324,16 +338,16 @@ export default function Navbar({ activePage = "home" }: NavbarProps) {
             >
               <span>CONTACTS</span>
               <span className="text-[10px] text-[#c5a059] font-mono">04</span>
-            </Link>
+            </button>
 
             <div className="pt-2">
-              <Link
-                href="/contact"
-                onClick={() => setMobileMenuOpen(false)}
+              <button
+                type="button"
+                onClick={() => navigateTo("/contact")}
                 className="block text-center w-full px-6 py-3 bg-[#c5a059] hover:bg-[#b38e45] text-white font-medium text-xs tracking-[0.2em] uppercase rounded-full shadow-sm transition-all"
               >
                 Get A Quote
-              </Link>
+              </button>
             </div>
           </div>
         )}
