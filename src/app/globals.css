@@ -244,3 +244,23 @@ html {
   animation: contourDrift 28s ease-in-out infinite;
   will-change: transform;
 }
+
+/* 3D Curved Architectural Panorama Carousel (Urbantrop / Afana's Angel Style) */
+@keyframes curvedScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.curved-carousel-track {
+  display: flex;
+  width: max-content;
+  animation: curvedScroll 38s linear infinite;
+}
+
+.curved-carousel-track:hover {
+  animation-play-state: paused;
+}

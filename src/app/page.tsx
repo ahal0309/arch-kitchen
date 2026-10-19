@@ -758,18 +758,20 @@ export default function HomePage() {
                 individuality and artisanal execution.
               </p>
             </div>
+          </div>
 
-            {/* Filter buttons */}
+          {/* Filter buttons */}
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-10">
             <div className="flex flex-wrap items-center gap-2">
               {["ALL", "MODERN MINIMALIST", "CLASSIC SHAKER", "WHITE OAK"].map(
                 (cat) => (
                   <button
                     key={cat}
                     onClick={() => setActiveCategory(cat)}
-                    className={`px-4 py-2 text-xs font-semibold tracking-wider uppercase rounded-sm transition-all ${
+                    className={`px-4 py-2 text-xs font-semibold tracking-wider uppercase rounded-full transition-all ${
                       activeCategory === cat
-                        ? "bg-[#c5a059] text-white shadow-sm"
-                        : "bg-white text-[#6b6863] hover:text-[#1e1d1b] border border-[#ede8df]"
+                        ? "bg-[#c5a059] text-white shadow-md"
+                        : "bg-white/80 text-[#6b6863] hover:text-[#1e1d1b] border border-[#ede8df]"
                     }`}
                   >
                     {cat}
@@ -777,55 +779,90 @@ export default function HomePage() {
                 )
               )}
             </div>
+            <span className="text-xs font-mono text-[#c5a059] tracking-widest uppercase hidden md:inline-block">
+              [ PANORAMIC ATELIER VIEW ]
+            </span>
           </div>
 
-          {/* Project Gallery */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project, idx) => (
-              <div
-                key={idx}
-                className="bg-white rounded-xl overflow-hidden border border-[#ede8df] hover:border-[#c5a059]/50 transition-all hover:shadow-xl group flex flex-col"
-              >
-                <div className="relative aspect-[4/3] w-full overflow-hidden bg-stone-100">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-sm text-[11px] font-medium text-[#2c2b29] border border-[#ede8df]">
-                    {project.location}
-                  </div>
-                </div>
+          {/* 3D Curved Flow Ribbon Gallery (Matching User Reference Image) */}
+          <div className="relative w-full overflow-hidden py-10 my-4 -mx-6 sm:-mx-8 lg:-mx-16 px-4">
+            {/* Subtle Arc Elevation Overlay Line */}
+            <svg
+              className="absolute top-1/2 left-0 w-full -translate-y-1/2 pointer-events-none opacity-40 z-0 h-40"
+              viewBox="0 0 1600 200"
+              preserveAspectRatio="none"
+              fill="none"
+            >
+              <path
+                d="M -50 160 C 400 30, 1200 30, 1650 160"
+                stroke="#c5a059"
+                strokeWidth="1.5"
+                strokeDasharray="10 8"
+              />
+              <path
+                d="M -50 190 C 400 60, 1200 60, 1650 190"
+                stroke="#c5a059"
+                strokeWidth="1"
+              />
+            </svg>
 
-                <div className="p-6 flex-1 flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <h4 className="text-xl font-serif font-semibold text-[#1e1d1b]">
-                        {project.title}
-                      </h4>
-                      <span className="text-[11px] text-[#9d9990] font-mono">
-                        {project.year}
-                      </span>
+            {/* Seamless Infinite Curved Track */}
+            <div className="curved-carousel-track relative z-10 space-x-6 sm:space-x-8 py-6">
+              {[...filteredProjects, ...filteredProjects].map((project, idx) => {
+                // Alternating architectural subtle angle and elevation shift creating the curved wavy ribbon
+                const rotations = ["-rotate-3 translate-y-3", "-rotate-1 -translate-y-2", "rotate-0 -translate-y-4", "rotate-2 -translate-y-1", "rotate-3 translate-y-3"];
+                const curveClass = rotations[idx % rotations.length];
+
+                return (
+                  <div
+                    key={idx}
+                    className={`relative shrink-0 w-[260px] sm:w-[320px] md:w-[360px] aspect-[4/5] rounded-[2rem] overflow-hidden shadow-[0_12px_36px_rgba(0,0,0,0.12)] border border-white/60 bg-white group transition-all duration-500 hover:scale-105 hover:z-20 hover:rotate-0 ${curveClass}`}
+                  >
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      sizes="(max-width: 768px) 260px, 360px"
+                      className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+
+                    {/* Gradient Overlay & Architecture Card Info */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-between p-5 text-white">
+                      <div className="flex items-center justify-between">
+                        <span className="bg-black/60 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-mono tracking-widest uppercase border border-white/20">
+                          {project.location}
+                        </span>
+                        <span className="text-[10px] font-mono text-[#c5a059] tracking-widest">
+                          {project.year}
+                        </span>
+                      </div>
+
+                      <div className="space-y-1.5 transform group-hover:-translate-y-1 transition-transform duration-300">
+                        <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#c5a059]">
+                          {project.category}
+                        </span>
+                        <h4 className="text-lg sm:text-xl font-arch uppercase font-bold text-white tracking-tight">
+                          {project.title}
+                        </h4>
+                        <p className="text-xs text-stone-300 line-clamp-2 font-normal leading-relaxed">
+                          {project.description}
+                        </p>
+                      </div>
                     </div>
-                    <p className="text-xs text-[#6b6863] leading-relaxed">
-                      {project.description}
-                    </p>
                   </div>
-                </div>
-              </div>
-            ))}
+                );
+              })}
+            </div>
           </div>
 
           {/* View Full Portfolio Button */}
-          <div className="mt-14 text-center">
+          <div className="mt-8 text-center relative z-20">
             <a
               href="#contact"
-              className="inline-flex items-center space-x-2 px-8 py-3.5 bg-white border border-[#ded8cb] hover:border-[#c5a059] text-[#2c2b29] hover:text-[#c5a059] font-medium text-xs uppercase tracking-wider rounded-sm transition-all shadow-sm hover:shadow"
+              className="inline-flex items-center space-x-3 px-8 py-3.5 bg-[#ebe7e0] border border-[#ded8cd] hover:border-[#c5a059] text-[#2c2b29] hover:text-[#c5a059] font-medium text-xs uppercase tracking-wider rounded-full transition-all shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
             >
               <span>View Complete Portfolio Gallery (45+ Projects)</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 text-[#c5a059]" />
             </a>
           </div>
         </div>
