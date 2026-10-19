@@ -283,44 +283,41 @@ export default function ContactPage() {
         )}
       </header>
 
-      {/* Hero Section Banner for Contact Us */}
-      <section className="relative py-16 lg:py-24 px-6 lg:px-16 bg-[#1f1e1c] text-white overflow-hidden border-b border-[#33312f]">
-        <div className="absolute inset-0 opacity-25">
-          <Image
-            src="/project2.png"
-            alt="Arch Kitchens Luxury Showroom"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center"
-          />
-        </div>
-        <div className="relative max-w-7xl mx-auto text-center space-y-4">
-          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#c5a059] block">
-            Direct Atelier Inquiries
-          </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-normal tracking-tight">
-            Contact <span className="text-[#c5a059]">Arch Kitchens</span>
-          </h1>
-          <p className="text-sm sm:text-base text-[#cfcbc4] max-w-2xl mx-auto leading-relaxed">
-            Connect with our master joiners and interior specialists in Toronto. Let's start planning your dream custom kitchen today.
+      {/* Architectural Hero Header Banner for Contact Us (Urbantrop Style) */}
+      <section className="relative pt-16 pb-12 lg:pt-24 lg:pb-16 px-6 lg:px-16 architectural-bg contour-lines border-b border-[#ede8df] overflow-hidden">
+        <div className="max-w-7xl mx-auto space-y-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#ede8df]/80">
+            <div>
+              <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-3">
+                01 / DIRECT ATELIER INQUIRIES
+              </span>
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-arch uppercase tracking-tight text-[#1e1d1b]">
+                CONTACT <span className="text-[#c5a059]">ARCH KITCHENS</span>
+              </h1>
+            </div>
+            <p className="text-xs sm:text-sm font-mono uppercase tracking-widest text-[#78756e] max-w-sm">
+              [ 1940 ELLESMERE RD, SCARBOROUGH, ON ]
+            </p>
+          </div>
+          <p className="text-base sm:text-lg text-[#5a5750] max-w-3xl leading-relaxed">
+            Connect directly with our master joiners and interior specialists in Toronto. Let's start planning your dream custom kitchen space today.
           </p>
         </div>
       </section>
 
       {/* Main Enquiry & Contact Page Body */}
-      <main className="py-16 lg:py-24 px-6 lg:px-16" id="contact-form">
+      <main className="py-16 lg:py-24 px-6 lg:px-16 architectural-bg contour-lines relative overflow-hidden" id="contact-form">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
             {/* Left Column: Get In Touch, Direct Info & Map Preview */}
             <div className="lg:col-span-5 space-y-8">
               <div>
-                <span className="text-xs font-semibold uppercase tracking-widest text-[#c5a059] block mb-2">
-                  Get In Touch
+                <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-2">
+                  02 / GET IN TOUCH
                 </span>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-[#1e1d1b] font-bold leading-tight">
-                  Have Any <span className="text-[#c5a059]">Question ?</span> We Always Ready For You
-                </h1>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-arch uppercase text-[#1e1d1b] leading-tight">
+                  HAVE ANY <span className="text-[#c5a059]">QUESTION?</span> WE ARE ALWAYS READY FOR YOU
+                </h2>
                 <p className="text-sm sm:text-base text-[#6b6863] mt-3">
                   We are always ready to assist you.
                 </p>
@@ -330,7 +327,7 @@ export default function ContactPage() {
               <div>
                 <a
                   href="#contact-form"
-                  className="inline-block px-7 py-3.5 bg-[#c5a059] hover:bg-[#b38e45] text-white font-semibold text-xs sm:text-sm rounded-md transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+                  className="inline-block px-8 py-3.5 bg-[#c5a059] hover:bg-[#b38e45] text-white font-medium text-xs uppercase tracking-wider rounded-full transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
                 >
                   Schedule A Free Consultation
                 </a>
@@ -409,16 +406,13 @@ export default function ContactPage() {
             </div>
 
             {/* Right Column: Enquiry Form matching user layout & fields */}
-            <div className="lg:col-span-7 bg-white rounded-xl p-8 lg:p-12 border border-[#ede8df] shadow-2xl relative">
-              {/* Luxury Gold Vertical Accent Block */}
-              <div className="absolute top-1/4 -right-4 lg:-right-6 w-10 lg:w-12 h-3/5 bg-[#c5a059] rounded-r-xl -z-10" />
-
+            <div className="lg:col-span-7 arch-card p-8 lg:p-12 relative">
               {formSubmitted ? (
                 <div className="h-full py-16 flex flex-col items-center justify-center text-center space-y-4">
                   <div className="w-16 h-16 rounded-full bg-[#f7f1e5] border border-[#c5a059] flex items-center justify-center text-[#c5a059]">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
-                  <h3 className="text-2xl font-serif font-bold text-[#1e1d1b]">
+                  <h3 className="text-2xl font-arch uppercase font-bold text-[#1e1d1b]">
                     Thank You for Your Enquiry
                   </h3>
                   <p className="text-sm text-[#6b6863] max-w-md">
@@ -540,9 +534,9 @@ export default function ContactPage() {
                   <div>
                     <button
                       type="submit"
-                      className="w-full sm:w-auto px-12 py-3.5 bg-[#c5a059] hover:bg-[#b38e45] text-white font-semibold text-sm rounded-md shadow-md transition-all transform hover:-translate-y-0.5 active:translate-y-0 text-center"
+                      className="w-full sm:w-auto px-12 py-3.5 bg-[#c5a059] hover:bg-[#b38e45] text-white font-medium text-xs uppercase tracking-wider rounded-full shadow-md transition-all transform hover:-translate-y-0.5 active:translate-y-0 text-center"
                     >
-                      Submit
+                      Submit Enquiry
                     </button>
                   </div>
                 </form>

@@ -484,40 +484,44 @@ export default function FlooringInstallationPage() {
         )}
       </header>
 
-      {/* ──────────────── Hero Header Section (Exact Text from Screenshot 1) ──────────────── */}
-      <section className="relative py-28 sm:py-36 lg:py-44 bg-[#181715] text-white px-6 lg:px-16 overflow-hidden flex items-center justify-center">
-        <div className="absolute inset-0 opacity-40">
-          <Image
-            src="/hero_main.png"
-            alt="Flooring Installation"
-            fill
-            sizes="100vw"
-            className="object-cover object-center"
-            priority
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#181715]" />
-
-        <div className="relative max-w-7xl mx-auto text-center space-y-4">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold tracking-tight text-white drop-shadow-md">
-            Flooring Installation
-          </h1>
+      {/* Architectural Hero Header Section (Urbantrop Style) */}
+      <section className="relative pt-16 pb-12 lg:pt-24 lg:pb-16 px-6 lg:px-16 architectural-bg contour-lines border-b border-[#ede8df] overflow-hidden">
+        <div className="max-w-7xl mx-auto space-y-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#ede8df]/80">
+            <div>
+              <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-3">
+                01 / SERVICES / ARCHITECTURAL FLOORING
+              </span>
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-arch uppercase tracking-tight text-[#1e1d1b]">
+                FLOORING INSTALLATION <span className="text-[#c5a059]">TORONTO</span>
+              </h1>
+            </div>
+            <p className="text-xs sm:text-sm font-mono uppercase tracking-widest text-[#78756e] max-w-sm">
+              [ HARDWOOD, ENGINEERED OAK & PORCELAIN TILE ]
+            </p>
+          </div>
+          <p className="text-base sm:text-lg text-[#5a5750] max-w-3xl leading-relaxed">
+            Professional flooring installation services across the GTA designed to enhance the foundation and aesthetic cohesion of your home.
+          </p>
         </div>
       </section>
 
       {/* ──────────────── Section 1: Types Of Flooring We Install (Exact Text & Layout from Screenshot 1) ──────────────── */}
-      <section className="py-20 lg:py-28 px-6 lg:px-16 bg-[#fbf9f5]">
+      <section className="py-20 lg:py-28 px-6 lg:px-16 architectural-bg contour-lines relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* Left Column: Intro & Types of Flooring */}
             <div className="lg:col-span-6 space-y-6 scroll-reveal reveal-init">
+              <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block">
+                02 / MATERIAL SELECTION
+              </span>
               <p className="text-sm sm:text-base text-[#6b6863] leading-relaxed">
                 At Arch Kitchen Cabinets, we offer professional flooring installation services in Toronto designed to enhance the beauty and functionality of your home. Our skilled team ensures precise installation, using high-quality materials that meet your style and practical needs. Explore our comprehensive range of flooring options and discover how we can help you achieve the perfect look for your space.
               </p>
 
               <div>
-                <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#1e1d1b] mb-4">
-                  Types Of Flooring We Install:
+                <h2 className="text-2xl sm:text-4xl font-arch uppercase text-[#1e1d1b] mb-4">
+                  TYPES OF FLOORING <span className="text-[#c5a059]">WE INSTALL:</span>
                 </h2>
 
                 <div className="space-y-3.5">

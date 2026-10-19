@@ -260,42 +260,41 @@ export default function AboutPage() {
         )}
       </header>
 
-      {/* Hero Header Banner for About Us */}
-      <section className="relative py-16 lg:py-24 px-6 lg:px-16 bg-[#1f1e1c] text-white overflow-hidden border-b border-[#33312f]">
-        <div className="absolute inset-0 opacity-20">
-          <Image
-            src="/hero_main.png"
-            alt="Arch Kitchens Workshop Craftsmanship"
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div className="relative max-w-7xl mx-auto text-center space-y-4">
-          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#c5a059] block">
-            Atelier Heritage & Craftsmanship
-          </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-normal tracking-tight">
-            About <span className="text-[#c5a059]">Arch Kitchens</span>
-          </h1>
-          <p className="text-sm sm:text-base text-[#cfcbc4] max-w-2xl mx-auto leading-relaxed">
-            Transforming spaces across the Greater Toronto Area with uncompromising precision, in-house joinery, and architectural elegance.
+      {/* Architectural Hero Header Banner for About Us (Urbantrop Style) */}
+      <section className="relative pt-16 pb-12 lg:pt-24 lg:pb-16 px-6 lg:px-16 architectural-bg contour-lines border-b border-[#ede8df] overflow-hidden">
+        <div className="max-w-7xl mx-auto space-y-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#ede8df]/80">
+            <div>
+              <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-3">
+                01 / ATELIER HERITAGE & CRAFTSMANSHIP
+              </span>
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-arch uppercase tracking-tight text-[#1e1d1b]">
+                ABOUT <span className="text-[#c5a059]">ARCH KITCHENS</span>
+              </h1>
+            </div>
+            <p className="text-xs sm:text-sm font-mono uppercase tracking-widest text-[#78756e] max-w-sm">
+              [ TORONTO BESPOKE JOINERY & ARCHITECTURAL INTERIORS ]
+            </p>
+          </div>
+          <p className="text-base sm:text-lg text-[#5a5750] max-w-3xl leading-relaxed">
+            Transforming residential living spaces across the Greater Toronto Area with uncompromising millwork precision, in-house joinery, and enduring architectural elegance.
           </p>
         </div>
       </section>
 
       {/* Main Know More About Us Section */}
-      <section className="py-20 lg:py-28 px-6 lg:px-16 bg-[#fbf9f5]">
+      <section className="py-20 lg:py-28 px-6 lg:px-16 architectural-bg contour-lines relative overflow-hidden">
         <div className="max-w-7xl mx-auto space-y-20">
           {/* Main Story & Showcase */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
             {/* Left Content Column with Exact Requested Text */}
             <div className="lg:col-span-6 space-y-6">
               <div>
-                <span className="text-xs font-semibold uppercase tracking-widest text-[#c5a059] block mb-2">
-                  Atelier Heritage
+                <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-2">
+                  02 / OUR PHILOSOPHY
                 </span>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-[#1e1d1b] font-normal leading-tight">
-                  Know More <span className="text-[#c5a059]">About Us</span>
+                <h2 className="text-3xl sm:text-5xl lg:text-6xl font-arch uppercase text-[#1e1d1b] leading-tight">
+                  KNOW MORE <span className="text-[#c5a059]">ABOUT US</span>
                 </h2>
               </div>
 
@@ -321,14 +320,14 @@ export default function AboutPage() {
               <div className="pt-2 flex flex-wrap items-center gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center space-x-2 px-7 py-3.5 bg-[#c5a059] hover:bg-[#b38e45] text-white font-medium text-xs uppercase tracking-wider rounded-sm shadow-sm transition-all hover:shadow-md transform hover:-translate-y-0.5"
+                  className="inline-flex items-center space-x-2 px-8 py-3.5 bg-[#c5a059] hover:bg-[#b38e45] text-white font-medium text-xs uppercase tracking-wider rounded-full shadow-sm transition-all hover:shadow-md transform hover:-translate-y-0.5"
                 >
                   <span>Connect With Our Team</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   href="/#portfolio"
-                  className="inline-flex items-center space-x-2 px-7 py-3.5 bg-white border border-[#ded8cb] hover:border-[#c5a059] text-[#2c2b29] font-medium text-xs uppercase tracking-wider rounded-sm transition-all shadow-sm"
+                  className="inline-flex items-center space-x-2 px-8 py-3.5 bg-white border border-[#ded8cb] hover:border-[#c5a059] text-[#2c2b29] font-medium text-xs uppercase tracking-wider rounded-full transition-all shadow-sm"
                 >
                   <span>View Our Work</span>
                 </Link>
@@ -337,10 +336,7 @@ export default function AboutPage() {
 
             {/* Right Media Column with Inset Testimonial Card */}
             <div className="lg:col-span-6 relative">
-              {/* Champagne Brass Architectural Backing Frame */}
-              <div className="absolute -top-3 -right-3 sm:-top-5 sm:-right-5 w-4/5 h-4/5 bg-[#e8d5a8]/60 rounded-2xl -z-0" />
-
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-stone-100 aspect-[4/3] sm:aspect-[1.15/1] z-10 group">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-[#ede8df] bg-stone-100 aspect-[4/3] sm:aspect-[1.15/1] z-10 group">
                 <Image
                   src="/image_from_https_www.archkitchencabinets.com_wp_content_uploads_2024_05_home.png"
                   alt="Arch Kitchen Cabinets Master Interior Showcase"
@@ -350,9 +346,9 @@ export default function AboutPage() {
                 />
 
                 {/* Floating Verified Client Quote Overlay Card */}
-                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md rounded-xl p-5 border border-[#ede8df] shadow-xl z-20">
+                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md rounded-2xl p-5 border border-[#ede8df] shadow-xl z-20">
                   <div className="flex items-center justify-between mb-2">
-                    <Quote className="w-6 h-6 text-[#c5a059]" />
+                    <Quote className="w-5 h-5 text-[#c5a059]" />
                     <div className="flex text-[#c5a059] space-x-1">
                       {[...Array(5)].map((_, i) => (
                         <Star key={i} className="w-3.5 h-3.5 fill-current" />
@@ -367,45 +363,44 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* 4 Attractive Achievements Metric Cards */}
+          {/* 4 Architectural Achievements Metric Cards */}
           <div className="pt-4">
             <div className="text-center max-w-xl mx-auto mb-10">
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#c5a059] block mb-1">
-                Milestones & Proven Excellence
+              <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-1">
+                03 / MILESTONES & PROVEN EXCELLENCE
               </span>
-              <h3 className="text-2xl sm:text-3xl font-serif text-[#1e1d1b]">
-                Our Proud <span className="text-[#c5a059]">Achievements</span>
+              <h3 className="text-3xl sm:text-4xl font-arch uppercase text-[#1e1d1b]">
+                OUR PROUD <span className="text-[#c5a059]">ACHIEVEMENTS</span>
               </h3>
             </div>
 
-            {/* 4 Metrics Cards - Sideways on mobile, Grid on desktop */}
-            <div className="flex overflow-x-auto sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-6 pb-2 sm:pb-0 no-scrollbar snap-x snap-mandatory -mx-6 px-6 sm:mx-0 sm:px-0">
+            {/* 4 Metrics Cards - Minimal pill cards */}
+            <div className="flex overflow-x-auto sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 pb-2 sm:pb-0 no-scrollbar snap-x snap-mandatory -mx-6 px-6 sm:mx-0 sm:px-0">
               {/* Stat 1: Satisfied Clients */}
-              <div className="min-w-[240px] sm:min-w-0 flex-1 snap-center bg-gradient-to-br from-[#c5a059] to-[#b38e45] text-white rounded-2xl p-5 sm:p-7 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden group shrink-0 sm:shrink">
-                <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-white/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500" />
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white mb-4 sm:mb-6 border border-white/20">
+              <div className="min-w-[240px] sm:min-w-0 flex-1 snap-center arch-card p-6 sm:p-7 relative overflow-hidden group shrink-0 sm:shrink">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-[#c5a059]/10 border border-[#c5a059]/30 flex items-center justify-center text-[#c5a059] mb-4 sm:mb-6">
                   <Award className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
-                <div className="text-3xl sm:text-4xl font-serif font-bold tracking-tight">
+                <div className="text-3xl sm:text-4xl font-arch font-bold tracking-tight text-[#1e1d1b]">
                   500 +
                 </div>
-                <div className="text-[11px] sm:text-xs uppercase tracking-widest text-white/95 font-semibold mt-1">
+                <div className="text-[11px] sm:text-xs font-mono uppercase tracking-widest text-[#78756e] font-semibold mt-1">
                   Satisfied Clients
                 </div>
-                <p className="text-[11px] text-white/80 mt-1.5 sm:mt-2 font-normal line-clamp-2 sm:line-clamp-none">
+                <p className="text-[11px] text-[#8c8880] mt-1.5 sm:mt-2 font-normal line-clamp-2 sm:line-clamp-none">
                   Homeowners across GTA who trust our joinery.
                 </p>
               </div>
 
               {/* Stat 2: Employees */}
-              <div className="min-w-[240px] sm:min-w-0 flex-1 snap-center bg-white rounded-2xl p-5 sm:p-7 lg:p-8 border border-[#ede8df] shadow-sm hover:border-[#c5a059] hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group shrink-0 sm:shrink">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#fbf9f5] border border-[#ede8df] group-hover:bg-[#f7f1e5] flex items-center justify-center text-[#c5a059] mb-4 sm:mb-6 transition-colors">
+              <div className="min-w-[240px] sm:min-w-0 flex-1 snap-center arch-card p-6 sm:p-7 relative overflow-hidden group shrink-0 sm:shrink">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-[#c5a059]/10 border border-[#c5a059]/30 flex items-center justify-center text-[#c5a059] mb-4 sm:mb-6">
                   <Users className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
-                <div className="text-3xl sm:text-4xl font-serif font-bold text-[#1e1d1b] tracking-tight">
+                <div className="text-3xl sm:text-4xl font-arch font-bold text-[#1e1d1b] tracking-tight">
                   15 +
                 </div>
-                <div className="text-[11px] sm:text-xs uppercase tracking-widest text-[#78756e] font-semibold mt-1">
+                <div className="text-[11px] sm:text-xs font-mono uppercase tracking-widest text-[#78756e] font-semibold mt-1">
                   Employees
                 </div>
                 <p className="text-[11px] text-[#8c8880] mt-1.5 sm:mt-2 font-normal line-clamp-2 sm:line-clamp-none">
@@ -414,31 +409,30 @@ export default function AboutPage() {
               </div>
 
               {/* Stat 3: Project Done */}
-              <div className="min-w-[240px] sm:min-w-0 flex-1 snap-center bg-gradient-to-br from-[#c5a059] to-[#b38e45] text-white rounded-2xl p-5 sm:p-7 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden group shrink-0 sm:shrink">
-                <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-white/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500" />
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white mb-4 sm:mb-6 border border-white/20">
+              <div className="min-w-[240px] sm:min-w-0 flex-1 snap-center arch-card p-6 sm:p-7 relative overflow-hidden group shrink-0 sm:shrink">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-[#c5a059]/10 border border-[#c5a059]/30 flex items-center justify-center text-[#c5a059] mb-4 sm:mb-6">
                   <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
-                <div className="text-3xl sm:text-4xl font-serif font-bold tracking-tight">
+                <div className="text-3xl sm:text-4xl font-arch font-bold tracking-tight text-[#1e1d1b]">
                   500 +
                 </div>
-                <div className="text-[11px] sm:text-xs uppercase tracking-widest text-white/95 font-semibold mt-1">
+                <div className="text-[11px] sm:text-xs font-mono uppercase tracking-widest text-[#78756e] font-semibold mt-1">
                   Project Done
                 </div>
-                <p className="text-[11px] text-white/80 mt-1.5 sm:mt-2 font-normal line-clamp-2 sm:line-clamp-none">
+                <p className="text-[11px] text-[#8c8880] mt-1.5 sm:mt-2 font-normal line-clamp-2 sm:line-clamp-none">
                   Master residential transformations completed.
                 </p>
               </div>
 
               {/* Stat 4: Work Hours */}
-              <div className="min-w-[240px] sm:min-w-0 flex-1 snap-center bg-white rounded-2xl p-5 sm:p-7 lg:p-8 border border-[#ede8df] shadow-sm hover:border-[#c5a059] hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group shrink-0 sm:shrink">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#fbf9f5] border border-[#ede8df] group-hover:bg-[#f7f1e5] flex items-center justify-center text-[#c5a059] mb-4 sm:mb-6 transition-colors">
+              <div className="min-w-[240px] sm:min-w-0 flex-1 snap-center arch-card p-6 sm:p-7 relative overflow-hidden group shrink-0 sm:shrink">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-[#c5a059]/10 border border-[#c5a059]/30 flex items-center justify-center text-[#c5a059] mb-4 sm:mb-6">
                   <Clock className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
-                <div className="text-3xl sm:text-4xl font-serif font-bold text-[#1e1d1b] tracking-tight">
+                <div className="text-3xl sm:text-4xl font-arch font-bold text-[#1e1d1b] tracking-tight">
                   15,000 +
                 </div>
-                <div className="text-[11px] sm:text-xs uppercase tracking-widest text-[#78756e] font-semibold mt-1">
+                <div className="text-[11px] sm:text-xs font-mono uppercase tracking-widest text-[#78756e] font-semibold mt-1">
                   Work Hours
                 </div>
                 <p className="text-[11px] text-[#8c8880] mt-1.5 sm:mt-2 font-normal line-clamp-2 sm:line-clamp-none">
@@ -449,42 +443,42 @@ export default function AboutPage() {
           </div>
 
           {/* Core Values / Why Homeowners Choose Arch Kitchens */}
-          <div className="bg-[#f7f4ee]/70 rounded-3xl p-8 lg:p-14 border border-[#ede8df] space-y-10">
+          <div className="arch-card p-8 lg:p-14 space-y-10">
             <div className="text-center max-w-2xl mx-auto">
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#c5a059] block mb-1">
-                The Arch Kitchens Standard
+              <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-1">
+                04 / THE ARCH KITCHENS STANDARD
               </span>
-              <h3 className="text-3xl font-serif text-[#1e1d1b]">
-                Why Homeowners Choose Our <span className="text-[#c5a059]">Atelier</span>
+              <h3 className="text-3xl font-arch uppercase text-[#1e1d1b]">
+                WHY HOMEOWNERS CHOOSE OUR <span className="text-[#c5a059]">ATELIER</span>
               </h3>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-white p-7 rounded-2xl border border-[#ede8df] space-y-3 shadow-sm hover:border-[#c5a059] transition-all">
+              <div className="bg-white/80 p-7 rounded-2xl border border-[#ede8df] space-y-3 shadow-sm hover:border-[#c5a059] transition-all">
                 <div className="w-12 h-12 rounded-xl bg-[#fbf9f5] text-[#c5a059] flex items-center justify-center border border-[#ede8df]">
                   <Hammer className="w-6 h-6" />
                 </div>
-                <h4 className="font-serif font-bold text-lg text-[#1e1d1b]">100% In-House Built</h4>
+                <h4 className="font-arch font-bold text-lg text-[#1e1d1b]">100% In-House Built</h4>
                 <p className="text-xs text-[#66635e] leading-relaxed">
                   Every cabinet box, dovetail drawer, and lacquer door is precision crafted in our private Toronto millwork studio without third-party outsourcing.
                 </p>
               </div>
 
-              <div className="bg-white p-7 rounded-2xl border border-[#ede8df] space-y-3 shadow-sm hover:border-[#c5a059] transition-all">
+              <div className="bg-white/80 p-7 rounded-2xl border border-[#ede8df] space-y-3 shadow-sm hover:border-[#c5a059] transition-all">
                 <div className="w-12 h-12 rounded-xl bg-[#fbf9f5] text-[#c5a059] flex items-center justify-center border border-[#ede8df]">
                   <Gem className="w-6 h-6" />
                 </div>
-                <h4 className="font-serif font-bold text-lg text-[#1e1d1b]">Premium Materials</h4>
+                <h4 className="font-arch font-bold text-lg text-[#1e1d1b]">Premium Materials</h4>
                 <p className="text-xs text-[#66635e] leading-relaxed">
                   Solid Canadian hardwoods, imported European white oak, luxury quartzite and marble slabs, and Blum concealed soft-close mechanics.
                 </p>
               </div>
 
-              <div className="bg-white p-7 rounded-2xl border border-[#ede8df] space-y-3 shadow-sm hover:border-[#c5a059] transition-all">
+              <div className="bg-white/80 p-7 rounded-2xl border border-[#ede8df] space-y-3 shadow-sm hover:border-[#c5a059] transition-all">
                 <div className="w-12 h-12 rounded-xl bg-[#fbf9f5] text-[#c5a059] flex items-center justify-center border border-[#ede8df]">
                   <ShieldCheck className="w-6 h-6" />
                 </div>
-                <h4 className="font-serif font-bold text-lg text-[#1e1d1b]">Comprehensive Warranty</h4>
+                <h4 className="font-arch font-bold text-lg text-[#1e1d1b]">Comprehensive Warranty</h4>
                 <p className="text-xs text-[#66635e] leading-relaxed">
                   Full warranty coverage on all custom installations and lifetime manufacturer warranty on all functional concealed hardware.
                 </p>

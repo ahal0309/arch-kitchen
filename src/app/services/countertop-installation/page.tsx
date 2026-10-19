@@ -432,34 +432,38 @@ export default function CountertopInstallationPage() {
         )}
       </header>
 
-      {/* ──────────────── Hero Header Section (Exact Text from Screenshot 1) ──────────────── */}
-      <section className="relative py-28 sm:py-36 lg:py-44 bg-[#181715] text-white px-6 lg:px-16 overflow-hidden flex items-center justify-center">
-        <div className="absolute inset-0 opacity-40">
-          <Image
-            src="/hero_main.png"
-            alt="Countertops Installation Toronto"
-            fill
-            sizes="100vw"
-            className="object-cover object-center"
-            priority
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#181715]" />
-
-        <div className="relative max-w-7xl mx-auto text-center space-y-4">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold tracking-tight text-white drop-shadow-md">
-            Countertops Installation Toronto
-          </h1>
+      {/* Architectural Hero Header Section (Urbantrop Style) */}
+      <section className="relative pt-16 pb-12 lg:pt-24 lg:pb-16 px-6 lg:px-16 architectural-bg contour-lines border-b border-[#ede8df] overflow-hidden">
+        <div className="max-w-7xl mx-auto space-y-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#ede8df]/80">
+            <div>
+              <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-3">
+                01 / SERVICES / STONE FABRICATION
+              </span>
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-arch uppercase tracking-tight text-[#1e1d1b]">
+                COUNTERTOPS INSTALLATION <span className="text-[#c5a059]">TORONTO</span>
+              </h1>
+            </div>
+            <p className="text-xs sm:text-sm font-mono uppercase tracking-widest text-[#78756e] max-w-sm">
+              [ TAJ MAHAL QUARTZITE, CALACATTA & SOLID QUARTZ ]
+            </p>
+          </div>
+          <p className="text-base sm:text-lg text-[#5a5750] max-w-3xl leading-relaxed">
+            Direct stone slab sourcing, precision laser templating, and mitred waterfall fabrication across Toronto and the GTA.
+          </p>
         </div>
       </section>
 
       {/* ──────────────── Section 1: Transform Your Space With Premium Countertops (Exact Text from Screenshot 1) ──────────────── */}
-      <section className="py-20 lg:py-28 px-6 lg:px-16 bg-[#fbf9f5]">
+      <section className="py-20 lg:py-28 px-6 lg:px-16 architectural-bg contour-lines relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
           {/* Header Block */}
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4 scroll-reveal reveal-init">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-[#1e1d1b] font-bold tracking-tight">
-              Transform Your Space With Premium Countertops
+            <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block">
+              02 / CURATED STONE SLABS
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-arch uppercase text-[#1e1d1b] leading-tight">
+              TRANSFORM YOUR SPACE WITH <span className="text-[#c5a059]">PREMIUM COUNTERTOPS</span>
             </h2>
             <p className="text-sm sm:text-base text-[#6b6863] leading-relaxed">
               At Arch Kitchen Cabinets, we provide professional countertop installation services in Toronto, offering stylish, durable, and high-quality surfaces that enhance the beauty and functionality of your kitchen or bathroom.

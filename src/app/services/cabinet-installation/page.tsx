@@ -303,38 +303,36 @@ export default function CabinetInstallationPage() {
         )}
       </header>
 
-      {/* ──────────────── HERO SECTION (Exact Title from Screenshot 1) ──────────────── */}
-      <section className="relative min-h-[380px] sm:min-h-[440px] flex items-center justify-center overflow-hidden bg-black">
-        {/* Background Kitchen Image with Dark Luxury Overlay */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=2070&auto=format&fit=crop"
-            alt="Cabinet Installation Toronto"
-            fill
-            priority
-            className="object-cover object-center opacity-45 brightness-90"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
-        </div>
-
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center py-20">
-          {/* Exact Verbatim Header */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
-            Cabinet Installation Toronto
-          </h1>
-
-          <p className="mt-4 text-base sm:text-lg text-stone-200 max-w-2xl mx-auto font-light">
-            Expert cabinet installation, repair, and refinishing services designed
-            to elevate your kitchen’s elegance, durability, and daily efficiency.
+      {/* Architectural Hero Header Section (Urbantrop Style) */}
+      <section className="relative pt-16 pb-12 lg:pt-24 lg:pb-16 px-6 lg:px-16 architectural-bg contour-lines border-b border-[#ede8df] overflow-hidden">
+        <div className="max-w-7xl mx-auto space-y-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#ede8df]/80">
+            <div>
+              <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-3">
+                01 / SERVICES / BESPOKE JOINERY
+              </span>
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-arch uppercase tracking-tight text-[#1e1d1b]">
+                CABINET INSTALLATION <span className="text-[#c5a059]">TORONTO</span>
+              </h1>
+            </div>
+            <p className="text-xs sm:text-sm font-mono uppercase tracking-widest text-[#78756e] max-w-sm">
+              [ IN-HOUSE CNC WOODWORKING & CUSTOM MILLWORK ]
+            </p>
+          </div>
+          <p className="text-base sm:text-lg text-[#5a5750] max-w-3xl leading-relaxed">
+            Expert cabinet installation, repair, and refinishing services designed to elevate your kitchen's elegance, durability, and daily efficiency.
           </p>
         </div>
       </section>
 
       {/* ──────────────── INTRO + WHAT WE OFFER SECTION (Screenshot 1) ──────────────── */}
-      <section className="py-20 px-4 sm:px-6 max-w-7xl mx-auto">
+      <section className="py-20 px-6 lg:px-16 max-w-7xl mx-auto architectural-bg contour-lines relative overflow-hidden">
         {/* Exact Intro Paragraph */}
         <div className="max-w-4xl mx-auto text-center mb-16 scroll-reveal reveal-init">
-          <p className="text-stone-700 text-base sm:text-lg leading-relaxed font-normal">
+          <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-2">
+            02 / BESPOKE ATELIER MILLWORK
+          </span>
+          <p className="text-[#5a5750] text-base sm:text-lg leading-relaxed font-normal">
             Is your kitchen or any other room in need of a fresh update? Arch Kitchen
             Cabinets offers expert cabinet installation services in Toronto to enhance
             the functionality and aesthetics of your home. Whether you need new

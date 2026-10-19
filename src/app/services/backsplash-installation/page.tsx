@@ -417,37 +417,35 @@ export default function BacksplashInstallationPage() {
         )}
       </header>
 
-      {/* ──────────────── Hero Header Section (Exact Text from Screenshot 1) ──────────────── */}
-      <section className="relative py-28 sm:py-36 lg:py-44 bg-[#181715] text-white px-6 lg:px-16 overflow-hidden flex items-center justify-center">
-        <div className="absolute inset-0 opacity-40">
-          <Image
-            src="/hero_main.png"
-            alt="Backsplash Installation Toronto"
-            fill
-            sizes="100vw"
-            className="object-cover object-center"
-            priority
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#181715]" />
-
-        <div className="relative max-w-7xl mx-auto text-center space-y-4">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold tracking-tight text-white drop-shadow-md">
-            Backsplash Installation Toronto
-          </h1>
+      {/* Architectural Hero Header Section (Urbantrop Style) */}
+      <section className="relative pt-16 pb-12 lg:pt-24 lg:pb-16 px-6 lg:px-16 architectural-bg contour-lines border-b border-[#ede8df] overflow-hidden">
+        <div className="max-w-7xl mx-auto space-y-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#ede8df]/80">
+            <div>
+              <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-3">
+                01 / SERVICES / TILE & SLAB
+              </span>
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-arch uppercase tracking-tight text-[#1e1d1b]">
+                BACKSPLASH INSTALLATION <span className="text-[#c5a059]">TORONTO</span>
+              </h1>
+            </div>
+            <p className="text-xs sm:text-sm font-mono uppercase tracking-widest text-[#78756e] max-w-sm">
+              [ SEAMLESS SLAB CONTINUITY & MOSAIC TILING ]
+            </p>
+          </div>
+          <p className="text-base sm:text-lg text-[#5a5750] max-w-3xl leading-relaxed">
+            Elevate your kitchen aesthetic with full-height stone slabs, artisan zellige, and precision herringbone backsplash installations in Toronto.
+          </p>
         </div>
       </section>
 
       {/* ──────────────── Section 1: Why Choose Arch Kitchen Cabinets (Exact Text & Layout from Screenshot 1) ──────────────── */}
-      <section className="py-20 lg:py-28 px-6 lg:px-16 bg-[#fbf9f5]">
+      <section className="py-20 lg:py-28 px-6 lg:px-16 architectural-bg contour-lines relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            {/* Left Image Showcase with Luxury Yellow/Gold Background Block matching Screenshot 1 */}
+            {/* Left Image Showcase with Rounded Arch Frame */}
             <div className="lg:col-span-6 relative scroll-reveal reveal-init">
-              {/* Yellow / Gold Graphic Accent Block behind top-left */}
-              <div className="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 w-3/4 h-3/4 bg-[#e8c75e] rounded-xl -z-0" />
-
-              <div className="relative rounded-xl overflow-hidden shadow-2xl border-4 border-white bg-stone-100 aspect-[4/3] sm:aspect-[1.15/1] z-10 group">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-[#ede8df] bg-stone-100 aspect-[4/3] sm:aspect-[1.15/1] z-10 group">
                 <Image
                   src="/project4.png"
                   alt="Why Choose Arch Kitchen Cabinets Backsplash"

@@ -362,37 +362,38 @@ export default function KitchenRenovationPage() {
         )}
       </header>
 
-      {/* Hero Header Section - Exact Text Matching Screenshot 1 */}
-      <section className="relative py-24 sm:py-28 lg:py-36 bg-[#181715] text-white px-6 lg:px-16 overflow-hidden">
-        <div className="absolute inset-0 opacity-40">
-          <Image
-            src="/hero_main.png"
-            alt="Kitchen Renovation Toronto"
-            fill
-            sizes="100vw"
-            className="object-cover object-center"
-            priority
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#181715]" />
-        
-        <div className="relative max-w-7xl mx-auto text-center space-y-4">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold tracking-tight text-white drop-shadow-md">
-            Kitchen Renovation Toronto
-          </h1>
-          <p className="text-sm sm:text-base text-[#ded8cb] max-w-2xl mx-auto">
+      {/* Architectural Hero Header Section (Urbantrop Style) */}
+      <section className="relative pt-16 pb-12 lg:pt-24 lg:pb-16 px-6 lg:px-16 architectural-bg contour-lines border-b border-[#ede8df] overflow-hidden">
+        <div className="max-w-7xl mx-auto space-y-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#ede8df]/80">
+            <div>
+              <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-3">
+                01 / SERVICES / TURNKEY LIVING
+              </span>
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-arch uppercase tracking-tight text-[#1e1d1b]">
+                KITCHEN RENOVATION <span className="text-[#c5a059]">TORONTO</span>
+              </h1>
+            </div>
+            <p className="text-xs sm:text-sm font-mono uppercase tracking-widest text-[#78756e] max-w-sm">
+              [ COMPLETE RESIDENTIAL OVERHAUL & PROJECT DELIVERY ]
+            </p>
+          </div>
+          <p className="text-base sm:text-lg text-[#5a5750] max-w-3xl leading-relaxed">
             Transforming kitchens with quality craftsmanship, functional designs, and customized solutions across the Greater Toronto Area.
           </p>
         </div>
       </section>
 
-      {/* Section 1: Our Complete Kitchen Remodeling Services Include (Exact text & 3 cards from Screenshot 1) */}
-      <section className="py-20 lg:py-28 px-6 lg:px-16 bg-[#fbf9f5]">
+      {/* Section 1: Our Complete Kitchen Remodeling Services Include (Exact text from Screenshot 1) */}
+      <section className="py-20 lg:py-28 px-6 lg:px-16 architectural-bg contour-lines relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
           {/* Header Block */}
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-3 scroll-reveal reveal-init">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-[#1e1d1b] font-bold tracking-tight">
-              Our Complete Kitchen Remodeling Services Include
+            <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block">
+              02 / COMPREHENSIVE CAPABILITIES
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-arch uppercase text-[#1e1d1b] leading-tight">
+              OUR COMPLETE KITCHEN REMODELING <span className="text-[#c5a059]">SERVICES INCLUDE</span>
             </h2>
             <p className="text-sm sm:text-base text-[#6b6863] leading-relaxed">
               At Arch Kitchen Cabinets, we provide expert kitchen renovation services in Toronto, transforming kitchens with quality craftsmanship, functional designs, and customized solutions.
@@ -404,7 +405,7 @@ export default function KitchenRenovationPage() {
             {completeServices.map((card, idx) => (
               <div
                 key={idx}
-                className={`bg-white rounded-xl overflow-hidden border border-[#ede8df] shadow-sm hover:shadow-xl hover:border-[#c5a059] transition-all duration-300 flex flex-col group transform hover:-translate-y-1 scroll-reveal reveal-init ${
+                className={`arch-card overflow-hidden flex flex-col group transform hover:-translate-y-1 scroll-reveal reveal-init ${
                   idx === 0 ? "delay-100" : idx === 1 ? "delay-200" : "delay-300"
                 }`}
               >
@@ -422,7 +423,7 @@ export default function KitchenRenovationPage() {
                 {/* Card Content */}
                 <div className="p-7 sm:p-8 flex-1 flex flex-col justify-between space-y-4 text-center">
                   <div>
-                    <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#1e1d1b] mb-3 group-hover:text-[#c5a059] transition-colors leading-snug">
+                    <h3 className="text-xl sm:text-2xl font-arch uppercase font-bold text-[#1e1d1b] mb-3 group-hover:text-[#c5a059] transition-colors leading-snug">
                       {card.title}
                     </h3>
                     <p className="text-sm text-[#6b6863] leading-relaxed text-left sm:text-center">
@@ -433,7 +434,7 @@ export default function KitchenRenovationPage() {
                   <div className="pt-2">
                     <Link
                       href="/contact"
-                      className="inline-flex items-center space-x-1.5 text-xs font-semibold uppercase tracking-wider text-[#c5a059] hover:text-[#b38e45] group-hover:translate-x-1 transition-all"
+                      className="inline-flex items-center space-x-1.5 text-xs font-mono font-semibold uppercase tracking-wider text-[#c5a059] hover:text-[#b38e45] group-hover:translate-x-1 transition-all"
                     >
                       <span>Inquire About This Service</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -447,16 +448,12 @@ export default function KitchenRenovationPage() {
       </section>
 
       {/* Section 2: Why Choose Arch Kitchen Cabinets (Exact Text & Layout from Screenshot 2) */}
-      <section className="py-20 lg:py-28 px-6 lg:px-16 bg-[#f7f4ee]/70 border-t border-[#ede8df]">
+      <section className="py-20 lg:py-28 px-6 lg:px-16 architectural-bg contour-lines border-t border-[#ede8df]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            {/* Left Image Showcase with Luxury Gold Corner Accent Block matching Screenshot 2 */}
+            {/* Left Image Showcase with Rounded Arch Frame */}
             <div className="lg:col-span-6 relative scroll-reveal reveal-init">
-              {/* Gold Graphic Accent Block in top-left & bottom corners */}
-              <div className="absolute -top-3 -left-3 sm:-top-5 sm:-left-5 w-24 sm:w-32 h-24 sm:h-32 bg-[#c5a059] rounded-tl-2xl -z-0" />
-              <div className="absolute -bottom-3 -left-3 sm:-bottom-5 sm:-left-5 w-24 sm:w-32 h-24 sm:h-32 bg-[#c5a059] rounded-bl-2xl -z-0" />
-
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-stone-100 aspect-[4/3] sm:aspect-[1.15/1] z-10 group">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-[#ede8df] bg-stone-100 aspect-[4/3] sm:aspect-[1.15/1] z-10 group">
                 <Image
                   src="/hero_main.png"
                   alt="Arch Kitchen Cabinets Renovation Toronto"
@@ -470,11 +467,11 @@ export default function KitchenRenovationPage() {
             {/* Right Text Column - Exact text matching screenshot 2 */}
             <div className="lg:col-span-6 space-y-6 scroll-reveal reveal-init delay-150">
               <div>
-                <span className="text-xs font-semibold uppercase tracking-widest text-[#c5a059] block mb-2">
-                  Atelier Excellence
+                <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-2">
+                  03 / ATELIER EXCELLENCE
                 </span>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#1e1d1b] leading-tight">
-                  Why Choose Arch Kitchen Cabinets
+                <h2 className="text-3xl sm:text-5xl font-arch uppercase text-[#1e1d1b] leading-tight">
+                  WHY CHOOSE <span className="text-[#c5a059]">ARCH KITCHENS</span>
                 </h2>
                 <p className="text-sm sm:text-base text-[#6b6863] leading-relaxed mt-4">
                   At Arch Kitchen Cabinets, we create beautiful and functional kitchens that enhance your home. Our full kitchen renovation services in Toronto cover everything from layout and cabinetry to countertops and flooring, delivering quality craftsmanship and lasting results.
@@ -504,7 +501,7 @@ export default function KitchenRenovationPage() {
               <div className="pt-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center space-x-2 px-8 py-4 bg-[#c5a059] hover:bg-[#b38e45] text-white font-medium text-xs uppercase tracking-wider rounded-sm shadow-md transition-all hover:shadow-lg transform hover:-translate-y-0.5"
+                  className="inline-flex items-center space-x-2 px-8 py-4 bg-[#c5a059] hover:bg-[#b38e45] text-white font-medium text-xs uppercase tracking-wider rounded-full shadow-md transition-all hover:shadow-lg transform hover:-translate-y-0.5"
                 >
                   <span>Schedule A Free In-Home Consultation</span>
                   <ArrowRight className="w-4 h-4" />
@@ -516,22 +513,24 @@ export default function KitchenRenovationPage() {
       </section>
 
       {/* Section 3: Kitchen Renovation Process (Exact 4 Cards from Screenshot 2) */}
-      <section className="py-20 lg:py-28 px-6 lg:px-16 bg-[#fbf9f5] border-t border-[#ede8df]">
+      <section className="py-20 lg:py-28 px-6 lg:px-16 architectural-bg contour-lines border-t border-[#ede8df]">
         <div className="max-w-7xl mx-auto space-y-16">
           {/* Header with decorative center accent line */}
           <div className="text-center max-w-2xl mx-auto space-y-3 scroll-reveal reveal-init">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#1e1d1b]">
-              Kitchen Renovation Process
+            <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block">
+              04 / EXECUTION METHODOLOGY
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-arch uppercase text-[#1e1d1b]">
+              KITCHEN RENOVATION <span className="text-[#c5a059]">PROCESS</span>
             </h2>
-            <div className="w-20 h-0.5 bg-[#c5a059] mx-auto mt-2" />
           </div>
 
-          {/* 4 Process Cards with top-left badge tab - exact from screenshot 2 */}
+          {/* 4 Process Cards - Minimal arch-cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {processSteps.map((step, sIdx) => (
               <div
                 key={step.num}
-                className={`bg-white rounded-xl p-7 pt-10 border border-[#ede8df] shadow-sm hover:shadow-xl hover:border-[#c5a059] transition-all duration-300 relative group flex flex-col justify-between text-center scroll-reveal reveal-init ${
+                className={`arch-card p-7 pt-10 relative group flex flex-col justify-between text-center scroll-reveal reveal-init ${
                   sIdx === 0
                     ? "delay-100"
                     : sIdx === 1
@@ -542,18 +541,18 @@ export default function KitchenRenovationPage() {
                 }`}
               >
                 {/* Yellow / Gold Tab Badge with number in top-left */}
-                <div className="absolute top-0 left-0 bg-[#c5a059] text-white font-bold text-sm w-9 h-9 flex items-center justify-center rounded-tl-xl rounded-br-lg shadow-sm">
+                <div className="absolute top-0 left-0 bg-[#c5a059] text-white font-mono font-bold text-xs w-8 h-8 flex items-center justify-center rounded-tl-2xl rounded-br-lg shadow-sm">
                   {step.num}
                 </div>
 
                 <div>
                   {/* Clean Icon */}
-                  <div className="w-16 h-16 mx-auto mb-5 rounded-full bg-[#fbf9f5] border border-[#ede8df] flex items-center justify-center group-hover:bg-[#f7f1e5] transition-colors">
+                  <div className="w-16 h-16 mx-auto mb-5 rounded-2xl bg-[#c5a059]/10 border border-[#c5a059]/30 flex items-center justify-center text-[#c5a059] transition-colors">
                     {step.icon}
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-serif font-bold text-[#1e1d1b] mb-3 group-hover:text-[#c5a059] transition-colors">
+                  <h3 className="text-lg font-arch uppercase font-bold text-[#1e1d1b] mb-3 group-hover:text-[#c5a059] transition-colors">
                     {step.title}
                   </h3>
 
@@ -567,12 +566,12 @@ export default function KitchenRenovationPage() {
           </div>
 
           {/* Bottom CTA Banner */}
-          <div className="p-8 sm:p-12 rounded-2xl bg-gradient-to-r from-[#181715] via-[#23211e] to-[#181715] text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl border border-stone-800 scroll-reveal reveal-init">
+          <div className="p-8 sm:p-12 rounded-3xl bg-black text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl border border-stone-800 scroll-reveal reveal-init">
             <div className="space-y-2 text-center md:text-left">
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#c5a059]">
+              <span className="text-xs font-mono uppercase tracking-widest text-[#c5a059]">
                 Ready to Begin Your Kitchen Transformation?
               </span>
-              <h3 className="text-2xl sm:text-3xl font-serif font-bold text-white">
+              <h3 className="text-2xl sm:text-3xl font-arch uppercase text-white">
                 Book Your Design Session with Arch Kitchen Cabinets
               </h3>
               <p className="text-xs sm:text-sm text-[#ded8cb] max-w-xl">
@@ -582,13 +581,13 @@ export default function KitchenRenovationPage() {
             <div className="shrink-0 flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="px-8 py-4 bg-[#c5a059] hover:bg-[#b38e45] text-white font-semibold text-xs uppercase tracking-wider rounded-sm shadow-md transition-all transform hover:-translate-y-0.5 whitespace-nowrap"
+                className="px-8 py-4 bg-[#c5a059] hover:bg-[#b38e45] text-white font-semibold text-xs uppercase tracking-wider rounded-full shadow-md transition-all transform hover:-translate-y-0.5 whitespace-nowrap"
               >
                 Get A Free Quote
               </Link>
               <a
                 href="tel:+14164749094"
-                className="px-6 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold text-xs uppercase tracking-wider rounded-sm border border-white/20 transition-all whitespace-nowrap"
+                className="px-6 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold text-xs uppercase tracking-wider rounded-full border border-white/20 transition-all whitespace-nowrap"
               >
                 +1 416-474-9094
               </a>
