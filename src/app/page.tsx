@@ -279,7 +279,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-[#fbf9f5] text-[#2c2b29] font-sans antialiased selection:bg-[#c5a059] selection:text-white">
       {/* Top Utility Bar */}
-      <div className="border-b border-[#ede8df] bg-[#f7f4ee]/80 text-[#6b6863] text-xs py-2 px-6 lg:px-16 transition-colors">
+      <div className="border-b border-[#ede8df] bg-[#fbf9f5] text-[#6b6863] text-xs py-2 px-6 lg:px-16 transition-colors">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
           <div className="flex items-center space-x-6">
             <a
@@ -823,7 +823,7 @@ export default function HomePage() {
       {/* Why Choose Us? - Your Kitchen Specialist Toronto (Luxury Redesign) */}
       <section
         id="why-us"
-        className="py-20 lg:py-28 px-6 lg:px-16 bg-[#f7f4ee]/70 border-t border-b border-[#ede8df]"
+        className="py-20 lg:py-28 px-6 lg:px-16 bg-[#fbf9f5] border-t border-b border-[#ede8df]"
       >
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
@@ -1009,7 +1009,7 @@ export default function HomePage() {
       {/* Portfolio / Latest Transformations */}
       <section
         id="portfolio"
-        className="py-20 lg:py-28 px-6 lg:px-16 bg-[#f7f4ee]/50 border-t border-[#ede8df]"
+        className="py-20 lg:py-28 px-6 lg:px-16 bg-[#fbf9f5] border-t border-[#ede8df]"
       >
         <div className="max-w-7xl mx-auto">
           {/* Header and Filter */}
@@ -1206,7 +1206,7 @@ export default function HomePage() {
       </section>
 
       {/* The Most Question We Had - Frequently Asked Questions */}
-      <section id="faq" className="py-20 lg:py-28 px-6 lg:px-16 border-t border-[#ede8df] bg-white">
+      <section id="faq" className="py-20 lg:py-28 px-6 lg:px-16 border-t border-[#ede8df] bg-[#fbf9f5]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
             {/* Left Column Content */}
@@ -1558,7 +1558,7 @@ export default function HomePage() {
       </section>
 
       {/* Areas We Serve - High-Featured Luxury Architectural Grid */}
-      <section className="py-20 lg:py-24 px-6 lg:px-16 bg-[#f7f4ee]/70 border-t border-b border-[#ede8df]">
+      <section className="py-20 lg:py-24 px-6 lg:px-16 bg-[#fbf9f5] border-t border-b border-[#ede8df]">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center max-w-2xl mx-auto mb-14">
