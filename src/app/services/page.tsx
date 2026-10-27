@@ -33,7 +33,7 @@ export default function ServicesPage() {
 
   const services = [
     {
-      id: "full-kitchen-renovation",
+      id: "kitchen-renovation",
       num: "01",
       icon: <Layers className="w-6 h-6 text-[#c5a059]" />,
       title: "FULL KITCHEN RENOVATION",
@@ -42,7 +42,7 @@ export default function ServicesPage() {
       image: "/arch_kitchen/ACM_5339.webp",
     },
     {
-      id: "custom-cabinet-installation",
+      id: "cabinet-installation",
       num: "02",
       icon: <LayoutGrid className="w-6 h-6 text-[#c5a059]" />,
       title: "CUSTOM CABINET INSTALLATION",
@@ -149,10 +149,12 @@ export default function ServicesPage() {
                     </span>
                   </div>
 
-                  {/* Clean Heading matching SERVICES color */}
-                  <h3 className="text-xl sm:text-2xl font-arch uppercase font-bold text-[#c5a059] leading-tight">
-                    {svc.title}
-                  </h3>
+                  {/* Clean Heading matching SERVICES color - Clickable */}
+                  <Link href={`/services/${svc.id}`} className="block group/title">
+                    <h3 className="text-xl sm:text-2xl font-arch uppercase font-bold text-[#c5a059] group-hover/title:text-[#b38e45] transition-colors leading-tight">
+                      {svc.title}
+                    </h3>
+                  </Link>
 
                   {/* Description Paragraph */}
                   <p className="text-xs sm:text-sm text-[#5a5750] leading-relaxed">
@@ -162,16 +164,19 @@ export default function ServicesPage() {
 
                 {/* Card Bottom: High Quality Architecture Showcase Image matching reference */}
                 <div className="mt-8 space-y-5">
-                  <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[#fbf9f5] border border-[#ede8df]/80 shadow-sm">
+                  <Link
+                    href={`/services/${svc.id}`}
+                    className="block relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[#fbf9f5] border border-[#ede8df]/80 shadow-sm group/img cursor-pointer"
+                  >
                     <Image
                       src={svc.image}
                       alt={svc.title}
                       fill
                       quality={100}
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                      className="object-cover object-center group-hover/img:scale-105 transition-transform duration-700"
                     />
-                  </div>
+                  </Link>
 
                   {/* Card Footer Link */}
                   <div className="pt-2 flex items-center justify-between">
