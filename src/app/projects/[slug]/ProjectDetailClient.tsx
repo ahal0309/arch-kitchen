@@ -44,7 +44,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
         <div className="mb-6 sm:mb-8">
           <Link
             href="/projects"
-            className="inline-flex items-center space-x-2 text-xs font-mono uppercase tracking-[0.25em] text-[#8a3324] hover:text-[#c5a059] transition-colors group"
+            className="inline-flex items-center space-x-2 text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] hover:text-[#b38e45] transition-colors group"
           >
             <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform" />
             <span>BACK TO PROJECTS</span>
@@ -112,7 +112,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
                     onClick={() => setSelectedImageIndex(idx)}
                     className={`relative shrink-0 w-20 sm:w-24 aspect-[4/3] rounded-xl overflow-hidden border-2 transition-all ${
                       selectedImageIndex === idx
-                        ? "border-[#8a3324] shadow-md scale-105"
+                        ? "border-[#c5a059] shadow-md scale-105"
                         : "border-transparent opacity-60 hover:opacity-100 hover:border-[#c5a059]"
                     }`}
                   >
@@ -131,9 +131,9 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
 
           {/* Right Column: Architectural Metadata & Description matching reference (5 cols) */}
           <div className="lg:col-span-5 space-y-8 pt-2">
-            {/* Title matching Urbantrop red/burgundy styling */}
+            {/* Title matching light golden styling */}
             <div className="space-y-1">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-arch uppercase font-bold text-[#8a3324] tracking-tight leading-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-arch uppercase font-bold text-[#c5a059] tracking-tight leading-tight">
                 {project.title}
               </h1>
             </div>

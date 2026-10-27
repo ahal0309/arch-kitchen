@@ -85,7 +85,7 @@ export default function ProjectsPage() {
 
                   {/* Clean Urbantrop Title & Subtitle Styling */}
                   <div className="pt-2 space-y-1">
-                    <h2 className="text-base sm:text-lg lg:text-xl font-arch uppercase font-bold text-[#8a3324] group-hover:text-[#c5a059] transition-colors leading-tight tracking-wide">
+                    <h2 className="text-base sm:text-lg lg:text-xl font-arch uppercase font-bold text-[#c5a059] group-hover:text-[#b38e45] transition-colors leading-tight tracking-wide">
                       {project.title}
                     </h2>
                     <p className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.2em] text-[#9c978e]">
