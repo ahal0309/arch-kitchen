@@ -31,182 +31,157 @@ export default function Navbar({ activePage = "home" }: NavbarProps) {
 
   return (
     <>
-      {/* Top Utility Bar - Clean and compact on mobile */}
-      <div className="bg-transparent text-[#6b6863] text-xs py-2 px-4 sm:px-6 lg:px-16 transition-colors">
-        <div className="max-w-7xl mx-auto flex flex-row items-center justify-between gap-2 text-[11px] sm:text-xs">
-          <div className="flex items-center space-x-4 sm:space-x-6">
-            <a
-              href="tel:+14164749094"
-              className="flex items-center space-x-1.5 hover:text-[#c5a059] transition-colors"
-            >
-              <Phone className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#c5a059]" />
-              <span className="font-medium tracking-wide">+1 416-474-9094</span>
-            </a>
-            <div className="hidden md:flex items-center space-x-1.5">
-              <Clock className="w-3.5 h-3.5 text-[#c5a059]" />
-              <span>08:00AM – 18:00PM</span>
+      {/* Main Header / Navigation - Transparent, minimal architectural layout matching Urbantrop reference */}
+      <header className="sticky top-0 z-50 transition-all duration-300 bg-[#fbf9f5]/90 backdrop-blur-sm sm:bg-transparent">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 py-2 sm:pt-4 sm:pb-3 lg:pt-5 lg:pb-3 flex items-center justify-between">
+          {/* Brand Logo / Arch Kitchens Logo (Crisp logo.webp, enhanced readability and prominent sizing) */}
+          <Link href="/" className="flex items-center shrink-0 group">
+            <div className="relative w-40 sm:w-56 md:w-64 lg:w-72 xl:w-80 h-14 sm:h-18 md:h-20 lg:h-22 xl:h-24 flex items-center">
+              <Image
+                src="/logo.webp"
+                alt="Arch Kitchens Logo"
+                fill
+                sizes="(max-width: 640px) 180px, (max-width: 768px) 224px, (max-width: 1024px) 256px, (max-width: 1280px) 288px, 320px"
+                className="object-contain object-left transition-transform duration-300 group-hover:scale-105"
+                priority
+              />
             </div>
-          </div>
-          <div className="flex items-center space-x-1.5 text-[10px] sm:text-xs truncate">
-            <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#c5a059] shrink-0" />
-            <span className="truncate">Greater Toronto Area</span>
-          </div>
-        </div>
-      </div>
+          </Link>
 
-      {/* Main Header / Navigation - Floating pill box only, completely transparent outer area */}
-      <header className="sticky top-0 z-50 pointer-events-none transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2 sm:py-4">
-          <div className="w-full pointer-events-auto bg-[#ebe7e0]/98 backdrop-blur-md rounded-full px-4 sm:px-8 lg:px-10 h-14 sm:h-20 flex items-center justify-between border border-[#ded8cd] shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
-            {/* Brand Logo / Architectural Wordmark */}
-            <Link href="/" className="flex items-center shrink-0 py-1 group">
-              <div className="relative w-24 sm:w-36 h-9 sm:h-12 flex items-center">
-                <Image
-                  src="/logo_cropped.png"
-                  alt="Arch Kitchens Logo"
-                  fill
-                  sizes="(max-width: 640px) 96px, 144px"
-                  className="object-contain object-left"
-                  priority
-                />
-              </div>
+          {/* Desktop Nav Items - Minimal, large uppercase architectural typography matching Urbantrop */}
+          <nav className="hidden lg:flex items-center space-x-10 xl:space-x-14 text-base xl:text-lg tracking-[0.24em] uppercase font-normal font-sans text-[#2c2b29]">
+            <Link
+              href="/"
+              className={`py-1 transition-colors ${
+                activePage === "home"
+                  ? "text-[#c5a059] font-medium"
+                  : "hover:text-[#c5a059]"
+              }`}
+            >
+              HOME
+            </Link>
+            <Link
+              href="/about"
+              className={`py-1 whitespace-nowrap transition-colors ${
+                activePage === "about"
+                  ? "text-[#c5a059] font-medium"
+                  : "hover:text-[#c5a059]"
+              }`}
+            >
+              ABOUT
+            </Link>
+            <Link
+              href="/#portfolio"
+              className="hover:text-[#c5a059] transition-colors py-1 whitespace-nowrap"
+            >
+              PROJECTS
             </Link>
 
-            {/* Desktop Nav Items - Architectural uppercase typography in champagne gold */}
-            <nav className="hidden lg:flex items-center space-x-9 xl:space-x-12 text-[13px] tracking-[0.25em] uppercase text-[#3a3834] font-normal font-sans">
+            {/* Services with Dropdown */}
+            <div className="relative group/svc py-2">
               <Link
-                href="/"
-                className={`py-1 transition-colors ${
-                  activePage === "home"
+                href="/services"
+                className={`flex items-center space-x-1.5 py-1 whitespace-nowrap transition-colors ${
+                  activePage === "services"
                     ? "text-[#c5a059] font-medium"
                     : "hover:text-[#c5a059]"
                 }`}
               >
-                HOME
-              </Link>
-              <Link
-                href="/about"
-                className={`py-1 whitespace-nowrap transition-colors ${
-                  activePage === "about"
-                    ? "text-[#c5a059] font-medium"
-                    : "hover:text-[#c5a059]"
-                }`}
-              >
-                ABOUT
-              </Link>
-              <Link
-                href="/#portfolio"
-                className="hover:text-[#c5a059] transition-colors py-1 whitespace-nowrap"
-              >
-                PROJECTS
+                <span>SERVICES</span>
+                <ChevronDown className="w-3.5 h-3.5 text-[#78756e] group-hover/svc:text-[#c5a059] transition-transform duration-200 group-hover/svc:rotate-180" />
               </Link>
 
-              {/* Services with Dropdown */}
-              <div className="relative group/svc py-2">
-                <Link
-                  href="/services"
-                  className={`flex items-center space-x-1.5 py-1 whitespace-nowrap transition-colors ${
-                    activePage === "services"
-                      ? "text-[#c5a059] font-semibold border-b-2 border-[#c5a059] pb-0.5"
-                      : "hover:text-[#c5a059]"
-                  }`}
-                >
-                  <span>SERVICES</span>
-                  <ChevronDown className="w-3.5 h-3.5 text-[#78756e] group-hover/svc:text-[#c5a059] transition-transform duration-200 group-hover/svc:rotate-180" />
-                </Link>
-
-                {/* Dropdown Menu - matching navbar pill color & gold accents */}
-                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-72 opacity-0 invisible group-hover/svc:opacity-100 group-hover/svc:visible transition-all duration-200 z-[999] pointer-events-none group-hover/svc:pointer-events-auto">
-                  <div className="bg-[#ebe7e0]/98 backdrop-blur-xl rounded-2xl shadow-[0_12px_32px_rgba(0,0,0,0.08)] border border-[#ded8cd] py-3 px-1.5 overflow-hidden">
-                    <div className="px-3.5 py-1 mb-1 text-[10px] font-mono tracking-[0.2em] uppercase text-[#c5a059] font-semibold border-b border-[#ded8cd]/80">
-                      All Services
-                    </div>
-                    <Link
-                      href="/services/kitchen-renovation"
-                      className="flex items-center justify-between px-3.5 py-2.5 text-xs text-[#2c2b29] hover:text-[#c5a059] hover:bg-black/[0.04] rounded-xl transition-colors font-sans tracking-normal normal-case font-medium"
-                    >
-                      <span>Kitchen Renovation</span>
-                      <span className="text-[10px] font-mono text-[#c5a059]">01</span>
-                    </Link>
-                    <Link
-                      href="/services/cabinet-installation"
-                      className="flex items-center justify-between px-3.5 py-2.5 text-xs text-[#2c2b29] hover:text-[#c5a059] hover:bg-black/[0.04] rounded-xl transition-colors font-sans tracking-normal normal-case font-medium"
-                    >
-                      <span>Cabinet Installation</span>
-                      <span className="text-[10px] font-mono text-[#c5a059]">02</span>
-                    </Link>
-                    <Link
-                      href="/services/cabinet-refacing"
-                      className="flex items-center justify-between px-3.5 py-2.5 text-xs text-[#2c2b29] hover:text-[#c5a059] hover:bg-black/[0.04] rounded-xl transition-colors font-sans tracking-normal normal-case font-medium"
-                    >
-                      <span>Cabinet Refacing</span>
-                      <span className="text-[10px] font-mono text-[#c5a059]">03</span>
-                    </Link>
-                    <Link
-                      href="/services/countertop-installation"
-                      className="flex items-center justify-between px-3.5 py-2.5 text-xs text-[#2c2b29] hover:text-[#c5a059] hover:bg-black/[0.04] rounded-xl transition-colors font-sans tracking-normal normal-case font-medium"
-                    >
-                      <span>Countertop Installation</span>
-                      <span className="text-[10px] font-mono text-[#c5a059]">04</span>
-                    </Link>
-                    <Link
-                      href="/services/backsplash-installation"
-                      className="flex items-center justify-between px-3.5 py-2.5 text-xs text-[#2c2b29] hover:text-[#c5a059] hover:bg-black/[0.04] rounded-xl transition-colors font-sans tracking-normal normal-case font-medium"
-                    >
-                      <span>Backsplash Installation</span>
-                      <span className="text-[10px] font-mono text-[#c5a059]">05</span>
-                    </Link>
-                    <Link
-                      href="/services/flooring-installation"
-                      className="flex items-center justify-between px-3.5 py-2.5 text-xs text-[#2c2b29] hover:text-[#c5a059] hover:bg-black/[0.04] rounded-xl transition-colors font-sans tracking-normal normal-case font-medium"
-                    >
-                      <span>Flooring Installation</span>
-                      <span className="text-[10px] font-mono text-[#c5a059]">06</span>
-                    </Link>
+              {/* Dropdown Menu */}
+              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 w-80 opacity-0 invisible group-hover/svc:opacity-100 group-hover/svc:visible transition-all duration-200 z-[999] pointer-events-none group-hover/svc:pointer-events-auto">
+                <div className="bg-[#fbf9f5] rounded-xl shadow-xl border border-[#ede8df] py-4 px-2 overflow-hidden">
+                  <div className="px-3.5 py-1.5 mb-2 text-xs font-sans tracking-[0.24em] uppercase text-[#c5a059] font-medium border-b border-[#ede8df]">
+                    All Services
                   </div>
+                  <Link
+                    href="/services/kitchen-renovation"
+                    className="flex items-center justify-between px-3.5 py-2.5 text-[13px] text-[#2c2b29] hover:text-[#c5a059] hover:bg-black/[0.03] rounded-lg transition-colors font-sans tracking-[0.16em] uppercase font-normal"
+                  >
+                    <span>Kitchen Renovation</span>
+                    <span className="text-[11px] font-sans text-[#c5a059] font-medium tracking-widest">01</span>
+                  </Link>
+                  <Link
+                    href="/services/cabinet-installation"
+                    className="flex items-center justify-between px-3.5 py-2.5 text-[13px] text-[#2c2b29] hover:text-[#c5a059] hover:bg-black/[0.03] rounded-lg transition-colors font-sans tracking-[0.16em] uppercase font-normal"
+                  >
+                    <span>Cabinet Installation</span>
+                    <span className="text-[11px] font-sans text-[#c5a059] font-medium tracking-widest">02</span>
+                  </Link>
+                  <Link
+                    href="/services/cabinet-refacing"
+                    className="flex items-center justify-between px-3.5 py-2.5 text-[13px] text-[#2c2b29] hover:text-[#c5a059] hover:bg-black/[0.03] rounded-lg transition-colors font-sans tracking-[0.16em] uppercase font-normal"
+                  >
+                    <span>Cabinet Refacing</span>
+                    <span className="text-[11px] font-sans text-[#c5a059] font-medium tracking-widest">03</span>
+                  </Link>
+                  <Link
+                    href="/services/countertop-installation"
+                    className="flex items-center justify-between px-3.5 py-2.5 text-[13px] text-[#2c2b29] hover:text-[#c5a059] hover:bg-black/[0.03] rounded-lg transition-colors font-sans tracking-[0.16em] uppercase font-normal"
+                  >
+                    <span>Countertop Installation</span>
+                    <span className="text-[11px] font-sans text-[#c5a059] font-medium tracking-widest">04</span>
+                  </Link>
+                  <Link
+                    href="/services/backsplash-installation"
+                    className="flex items-center justify-between px-3.5 py-2.5 text-[13px] text-[#2c2b29] hover:text-[#c5a059] hover:bg-black/[0.03] rounded-lg transition-colors font-sans tracking-[0.16em] uppercase font-normal"
+                  >
+                    <span>Backsplash Installation</span>
+                    <span className="text-[11px] font-sans text-[#c5a059] font-medium tracking-widest">05</span>
+                  </Link>
+                  <Link
+                    href="/services/flooring-installation"
+                    className="flex items-center justify-between px-3.5 py-2.5 text-[13px] text-[#2c2b29] hover:text-[#c5a059] hover:bg-black/[0.03] rounded-lg transition-colors font-sans tracking-[0.16em] uppercase font-normal"
+                  >
+                    <span>Flooring Installation</span>
+                    <span className="text-[11px] font-sans text-[#c5a059] font-medium tracking-widest">06</span>
+                  </Link>
                 </div>
               </div>
-
-              <Link
-                href="/contact"
-                className={`py-1 whitespace-nowrap transition-colors ${
-                  activePage === "contact"
-                    ? "text-[#c5a059] font-medium"
-                    : "hover:text-[#c5a059]"
-                }`}
-              >
-                CONTACTS
-              </Link>
-            </nav>
-
-            {/* Action Button: Get A Quote in Gold */}
-            <div className="hidden sm:flex items-center shrink-0">
-              <Link
-                href="/contact"
-                className="px-5 py-2.5 bg-[#c5a059] hover:bg-[#b38e45] text-white font-normal text-[11px] tracking-[0.2em] uppercase rounded-full shadow-sm transition-all hover:shadow-md transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
-              >
-                Get A Quote
-              </Link>
             </div>
 
-            {/* Mobile menu hamburger */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-[#78756e] hover:text-[#c5a059] transition-colors ml-2"
-              aria-label="Toggle Navigation Menu"
+            <Link
+              href="/contact"
+              className={`py-1 whitespace-nowrap transition-colors ${
+                activePage === "contact"
+                  ? "text-[#c5a059] font-medium"
+                  : "hover:text-[#c5a059]"
+              }`}
             >
-              {mobileMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
-            </button>
-          </div>
+              CONTACTS
+            </Link>
+          </nav>
+
+          {/* Minimal Hamburger (Two crisp horizontal lines matching reference image with identical thickness) */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="lg:hidden p-2 text-[#1e1d1b] hover:text-[#c5a059] transition-colors -mr-2 focus:outline-none"
+            aria-label="Toggle Navigation Menu"
+          >
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6 stroke-[1.5]" />
+            ) : (
+              <svg
+                width="28"
+                height="14"
+                viewBox="0 0 28 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="stroke-current transition-colors"
+              >
+                <line x1="0" y1="2" x2="28" y2="2" strokeWidth="1.5" strokeLinecap="round" />
+                <line x1="0" y1="12" x2="28" y2="12" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
+            )}
+          </button>
         </div>
 
         {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden pointer-events-auto bg-[#ebe7e0] border border-[#ded8cd] rounded-3xl shadow-[0_16px_40px_rgba(0,0,0,0.18)] mt-2 mx-3 px-5 py-4 space-y-2 z-[9999]">
+          <div className="lg:hidden pointer-events-auto bg-[#fbf9f5] border-b border-[#ede8df] shadow-lg px-6 py-5 space-y-3 z-[9999]">
             <button
               type="button"
               onClick={() => navigateTo("/")}

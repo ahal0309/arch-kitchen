@@ -495,7 +495,7 @@ export default function CabinetRefacingPage() {
             <div className="lg:col-span-4 space-y-5">
               <div className="w-[110px] h-[110px] relative">
                 <Image
-                  src="/brand_footer_logo.png"
+                  src="/brand_footer_logo.webp"
                   alt="Arch Kitchen Cabinets Logo"
                   fill
                   sizes="110px"

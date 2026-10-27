@@ -54,38 +54,15 @@ export default function ContactPage() {
       {/* Unified Navbar */}
       <Navbar activePage="contact" />
 
-      {/* Architectural Hero Header Banner for Contact Us (Unified Single Page) */}
-      <section className="relative pt-12 pb-6 lg:pt-16 lg:pb-8 px-6 lg:px-16 overflow-hidden">
-        <div className="max-w-7xl mx-auto space-y-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6">
-            <div>
-              <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-3">
-                01 / DIRECT ATELIER INQUIRIES
-              </span>
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-arch uppercase tracking-tight text-[#1e1d1b]">
-                CONTACT <span className="text-[#c5a059]">ARCH KITCHENS</span>
-              </h1>
-            </div>
-            <p className="text-xs sm:text-sm font-mono uppercase tracking-widest text-[#78756e] max-w-sm">
-              [ 1940 ELLESMERE RD, SCARBOROUGH, ON ]
-            </p>
-          </div>
-          <p className="text-base sm:text-lg text-[#5a5750] max-w-3xl leading-relaxed">
-            Connect directly with our master joiners and interior specialists in Toronto. Let's start planning your dream custom kitchen space today.
-          </p>
-        </div>
-      </section>
+
 
       {/* Main Enquiry & Contact Page Body */}
-      <main className="pt-6 pb-16 lg:pt-8 lg:pb-24 px-6 lg:px-16 relative overflow-hidden" id="contact-form">
+      <main className="pt-10 pb-16 lg:pt-14 lg:pb-24 px-6 lg:px-16 relative overflow-hidden" id="contact-form">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
             {/* Left Column: Get In Touch, Direct Info & Map Preview */}
             <div className="lg:col-span-5 space-y-8">
               <div>
-                <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-2">
-                  02 / GET IN TOUCH
-                </span>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-arch uppercase text-[#1e1d1b] leading-tight">
                   HAVE ANY <span className="text-[#c5a059]">QUESTION?</span> WE ARE ALWAYS READY FOR YOU
                 </h2>
@@ -326,7 +303,7 @@ export default function ContactPage() {
             <div className="lg:col-span-4 space-y-5">
               <div className="w-[110px] h-[110px] relative">
                 <Image
-                  src="/brand_footer_logo.png"
+                  src="/brand_footer_logo.webp"
                   alt="Arch Kitchen Cabinets Logo"
                   fill
                   sizes="110px"

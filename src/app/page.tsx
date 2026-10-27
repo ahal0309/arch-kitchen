@@ -58,6 +58,28 @@ export default function HomePage() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Client Testimonials Slider State (for mobile horizontal navigation)
+  const [activeReviewIndex, setActiveReviewIndex] = useState(0);
+
+  const prevReview = () => {
+    setActiveReviewIndex((prev) => (prev === 0 ? 2 : prev - 1));
+  };
+
+  const nextReview = () => {
+    setActiveReviewIndex((prev) => (prev === 2 ? 0 : prev + 1));
+  };
+
+  // Achievements Metrics Slider State (for mobile horizontal navigation)
+  const [activeStatIndex, setActiveStatIndex] = useState(0);
+
+  const prevStat = () => {
+    setActiveStatIndex((prev) => (prev === 0 ? 3 : prev - 1));
+  };
+
+  const nextStat = () => {
+    setActiveStatIndex((prev) => (prev === 3 ? 0 : prev + 1));
+  };
+
   // Form State
   const [formData, setFormData] = useState({
     firstName: "",
@@ -179,7 +201,7 @@ export default function HomePage() {
       location: "Yorkville, Toronto",
       year: "2024 Project",
       category: "MODERN MINIMALIST",
-      image: "/project1.png",
+      image: "/project1.webp",
       description:
         "Calacatta marble waterfall island, brushed brass hardware details, flush pantry wall with integrated panel appliances.",
     },
@@ -188,7 +210,7 @@ export default function HomePage() {
       location: "Forest Hill, Toronto",
       year: "2024 Project",
       category: "CLASSIC SHAKER",
-      image: "/project2.png",
+      image: "/project2.webp",
       description:
         "Crisp classic shaker millwork, sun-drenched apron farm sink, and perimeter quartz countertops with bevelled trim.",
     },
@@ -197,7 +219,7 @@ export default function HomePage() {
       location: "Oakville Harbour",
       year: "2024 Project",
       category: "WHITE OAK",
-      image: "/project3.png",
+      image: "/project3.webp",
       description:
         "Natural white oak island base with curved end radius and seamless engineered quartz surfaces.",
     },
@@ -206,7 +228,7 @@ export default function HomePage() {
       location: "Markham Custom",
       year: "2024 Project",
       category: "MODERN MINIMALIST",
-      image: "/project4.png",
+      image: "/project4.webp",
       description:
         "Warm architectural tones, subtle warm undertones, and cove LED lighting integrated inside open cabinetry.",
     },
@@ -215,7 +237,7 @@ export default function HomePage() {
       location: "Vaughan Heights",
       year: "2024 Project",
       category: "CLASSIC SHAKER",
-      image: "/hero_main.png",
+      image: "/hero_main.webp",
       description:
         "Custom plaster and fluted woodwork canopy with bookmatched Taj Mahal stone backplate.",
     },
@@ -224,7 +246,7 @@ export default function HomePage() {
       location: "Toronto, ON",
       year: "2024 Project",
       category: "WHITE OAK",
-      image: "/project1.png",
+      image: "/project1.webp",
       description:
         "Sleek architectural lines, hidden spice racks, paneled Sub-Zero refrigeration and custom champagne brass brassware.",
     },
@@ -277,61 +299,103 @@ export default function HomePage() {
     },
   ];
 
+  // Architectural Hero 3-panel image sets
+  const heroSlideSets = [
+    [
+      "/arch_kitchen/ACM_5342.webp",
+      "/arch_kitchen/ACM_5860.webp",
+      "/arch_kitchen/ACM_6105.webp",
+    ],
+    [
+      "/arch_kitchen/ACM_6199.webp",
+      "/arch_kitchen/_DSC4084-HDR.webp",
+      "/arch_kitchen/_DSC4105-HDR.webp",
+    ],
+    [
+      "/arch_kitchen/_DSC4114-HDR.webp",
+      "/arch_kitchen/_DSC4712.webp",
+      "/arch_kitchen/IMG_3157.webp",
+    ],
+  ];
+
+  const [activeSetIndex, setActiveSetIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveSetIndex((current) => (current + 1) % heroSlideSets.length);
+    }, 5000); // 5-second interval between transitions
+
+    return () => clearInterval(interval);
+  }, [heroSlideSets.length]);
+
   return (
     <div className="min-h-screen bg-transparent text-[#2c2b29] font-sans antialiased selection:bg-[#c5a059] selection:text-white">
       {/* Dynamic Unified Navbar */}
       <Navbar activePage="home" />
 
-      {/* Architectural Hero Presentation (Urbantrop Reference Style) */}
-      <section className="relative pt-6 pb-12 sm:pt-8 sm:pb-16 lg:pt-14 lg:pb-24 px-4 sm:px-6 lg:px-16 overflow-hidden">
-        <div className="max-w-7xl mx-auto space-y-8 sm:space-y-12 lg:space-y-16">
-          {/* Top 3-Panel Architectural Photography Strip (from Reference Image 1) */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
-            <div className="relative aspect-[3/4] sm:aspect-[4/5] rounded-3xl overflow-hidden shadow-lg border border-[#ede8df] group">
-              <Image
-                src="/project2.png"
-                alt="Toronto Kitchen Architecture"
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute top-4 left-4 bg-black/75 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-mono text-white tracking-widest uppercase">
-                01 / RESIDENTIAL
-              </div>
-            </div>
+      {/* Architectural Hero Presentation (Urbantrop Reference Style - Full Screen First Fold Placed Upper) */}
+      <section className="relative flex flex-col justify-start pt-0 pb-3 sm:pb-8 px-3 sm:px-6 lg:px-12 overflow-hidden">
+        <div className="max-w-[1440px] w-full mx-auto flex-1 flex flex-col justify-start">
+          {/* 3-Panel Architectural Photography Strip:
+              - Mobile: 3 stacked panels with aspect-[16/6.6] and gap-2 so all 3 fit effortlessly in 1 single viewport fold
+              - Desktop (md+): expanded aspect-[3/4.2] / aspect-[3/4.4] for high-impact hero presence
+          */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-2 sm:gap-3 md:gap-5 lg:gap-6 w-full">
+            {[0, 1, 2].map((slotIdx) => {
+              const kenBurnsClass =
+                slotIdx === 0
+                  ? "ken-burns-1"
+                  : slotIdx === 1
+                    ? "ken-burns-2"
+                    : "ken-burns-3";
 
-            <div className="relative aspect-[3/4] sm:aspect-[4/5] rounded-3xl overflow-hidden shadow-lg border border-[#ede8df] group">
-              <Image
-                src="/project1.png"
-                alt="Custom Joinery & Millwork"
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute top-4 left-4 bg-black/75 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-mono text-white tracking-widest uppercase">
-                02 / JOINERY
-              </div>
-            </div>
-
-            <div className="relative aspect-[3/4] sm:aspect-[4/5] rounded-3xl overflow-hidden shadow-lg border border-[#ede8df] group">
-              <Image
-                src="/project3.png"
-                alt="Architectural Kitchen Island & Stone"
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute top-4 left-4 bg-black/75 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-mono text-white tracking-widest uppercase">
-                03 / QUARTZITE
-              </div>
-            </div>
+              return (
+                <div
+                  key={slotIdx}
+                  className="relative w-full aspect-[16/6.6] sm:aspect-[16/8] md:aspect-[3/4.2] lg:aspect-[3/4.4] rounded-[4px] md:rounded-sm overflow-hidden bg-[#fbf9f5] select-none shadow-[0_4px_24px_rgba(0,0,0,0.04)]"
+                >
+                  {heroSlideSets.map((set, setIdx) => {
+                    const isActive = setIdx === activeSetIndex;
+                    return (
+                      <div
+                        key={setIdx}
+                        className={`absolute inset-0 transition-opacity duration-[1000ms] ${
+                          isActive
+                            ? "opacity-100 z-10 pointer-events-auto"
+                            : "opacity-0 z-0 pointer-events-none"
+                        }`}
+                        style={{
+                          willChange: "opacity",
+                          transitionTimingFunction: "cubic-bezier(0.42, 0, 0.58, 1)",
+                        }}
+                      >
+                        {/* Ken Burns continuous subtle pan/zoom motion container */}
+                        <div className={`relative w-full h-full ${kenBurnsClass}`}>
+                          <Image
+                            src={set[slotIdx]}
+                            alt={`Arch Kitchen Architectural Showcase ${slotIdx + 1}`}
+                            fill
+                            priority={setIdx === 0}
+                            quality={100}
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            className="object-cover object-center scale-[1.04]"
+                          />
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              );
+            })}
           </div>
+        </div>
+      </section>
 
+      {/* Toronto Atelier Narrative & Inset Interior Section */}
+      <section className="relative py-16 sm:py-20 lg:py-28 px-4 sm:px-8 lg:px-16 overflow-hidden">
+        <div className="max-w-[1400px] mx-auto">
           {/* Restored Original Content & Heading with Architectural Styling */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center pt-4">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
             <div className="lg:col-span-7 space-y-6">
               <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block">
                 ARCH KITCHENS — TORONTO ATELIER
@@ -385,17 +449,14 @@ export default function HomePage() {
 
             {/* Inset Curated Interior Preview Box */}
             <div className="lg:col-span-5 relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-xl border border-[#ede8df] bg-stone-100 aspect-[4/3] group">
+              <div className="relative rounded-none overflow-hidden shadow-lg border border-[#ede8df] bg-[#fbf9f5] aspect-[4/3] group">
                 <Image
-                  src="/image_from_https_www.archkitchencabinets.com_wp_content_uploads_2024_05_home.png"
+                  src="/arch_kitchen/ACM_5860.webp"
                   alt="Arch Kitchens Architectural Interior"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  className="object-cover object-center scale-[1.02] group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute bottom-4 left-4 bg-black/80 backdrop-blur-md px-4 py-2 rounded-2xl border border-stone-700 text-white text-xs font-mono">
-                  1940 Ellesmere Rd, Scarborough, ON
-                </div>
               </div>
             </div>
           </div>
@@ -454,101 +515,217 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Media Column with Inset Testimonial Card */}
+            {/* Right Media Column */}
             <div className="lg:col-span-6 relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-xl border border-[#ede8df] bg-stone-100 aspect-[4/3] sm:aspect-[1.15/1] z-10 group">
+              <div className="relative overflow-hidden shadow-xl border border-[#ede8df] bg-stone-100 aspect-[4/3] sm:aspect-[1.15/1] z-10 group">
                 <Image
-                  src="/image_from_https_www.archkitchencabinets.com_wp_content_uploads_2024_05_home.png"
+                  src="/arch_kitchen/ACM_5878.webp"
                   alt="Arch Kitchen Cabinets Master Interior Showcase"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover object-center transform group-hover:scale-105 transition-transform duration-700"
                 />
-
-                {/* Floating Verified Client Quote Overlay Card */}
-                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md rounded-xl p-5 border border-[#ede8df] shadow-xl z-20">
-                  <div className="flex items-center justify-between mb-2">
-                    <Quote className="w-6 h-6 text-[#c5a059]" />
-                    <div className="flex text-[#c5a059] space-x-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-3.5 h-3.5 fill-current" />
-                      ))}
-                    </div>
-                  </div>
-                  <p className="text-xs sm:text-[13px] text-[#3e3b36] italic leading-relaxed">
-                    “We had our new kitchen installed by Arch kitchen Cabinets. Everything was exceptional from the beginning. Their design team to installers did a great job. Happy to recommend to everyone who is looking for a new kitchen.”
-                  </p>
-                </div>
               </div>
             </div>
           </div>
 
-          {/* 4 Attractive Achievements Metric Cards (Champagne Brass & Cream Architecture) - Sideways on mobile, Grid on desktop */}
-          <div className="flex overflow-x-auto sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-6 pt-4 pb-2 sm:pb-0 no-scrollbar snap-x snap-mandatory -mx-6 px-6 sm:mx-0 sm:px-0">
+          {/* 4 Attractive Achievements Metric Cards (Champagne Brass & Cream Architecture) */}
+          {/* Desktop View: Standard 4-Column Grid */}
+          <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-4">
             {/* Stat 1: Satisfied Clients */}
-            <div className="min-w-[240px] sm:min-w-0 flex-1 snap-center bg-gradient-to-br from-[#c5a059] to-[#b38e45] text-white rounded-2xl p-5 sm:p-7 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden group shrink-0 sm:shrink">
+            <div className="bg-gradient-to-br from-[#c5a059] to-[#b38e45] text-white rounded-2xl p-7 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden group">
               <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-white/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500" />
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white mb-4 sm:mb-6 border border-white/20">
-                <Award className="w-5 h-5 sm:w-6 sm:h-6" />
+              <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white mb-6 border border-white/20">
+                <Award className="w-6 h-6" />
               </div>
-              <div className="text-3xl sm:text-4xl lg:text-[2.65rem] font-serif font-bold tracking-tight">
+              <div className="text-4xl lg:text-[2.65rem] font-serif font-bold tracking-tight">
                 500 +
               </div>
-              <div className="text-[11px] sm:text-xs uppercase tracking-widest text-white/90 font-semibold mt-1">
+              <div className="text-xs uppercase tracking-widest text-white/90 font-semibold mt-1">
                 Satisfied Clients
               </div>
-              <p className="text-[11px] text-white/80 mt-1.5 sm:mt-2 font-normal line-clamp-2 sm:line-clamp-none">
+              <p className="text-xs text-white/80 mt-2 font-normal">
                 Homeowners across GTA who trust our joinery.
               </p>
             </div>
 
             {/* Stat 2: Employees */}
-            <div className="min-w-[240px] sm:min-w-0 flex-1 snap-center bg-white rounded-2xl p-5 sm:p-7 lg:p-8 border border-[#ede8df] shadow-sm hover:border-[#c5a059] hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group shrink-0 sm:shrink">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#fbf9f5] border border-[#ede8df] group-hover:bg-[#f7f1e5] flex items-center justify-center text-[#c5a059] mb-4 sm:mb-6 transition-colors">
-                <Users className="w-5 h-5 sm:w-6 sm:h-6" />
+            <div className="bg-white rounded-2xl p-7 lg:p-8 border border-[#ede8df] shadow-sm hover:border-[#c5a059] hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group">
+              <div className="w-12 h-12 rounded-xl bg-[#fbf9f5] border border-[#ede8df] group-hover:bg-[#f7f1e5] flex items-center justify-center text-[#c5a059] mb-6 transition-colors">
+                <Users className="w-6 h-6" />
               </div>
-              <div className="text-3xl sm:text-4xl lg:text-[2.65rem] font-serif font-bold text-[#1e1d1b] tracking-tight">
+              <div className="text-4xl lg:text-[2.65rem] font-serif font-bold text-[#1e1d1b] tracking-tight">
                 15 +
               </div>
-              <div className="text-[11px] sm:text-xs uppercase tracking-widest text-[#78756e] font-semibold mt-1">
+              <div className="text-xs uppercase tracking-widest text-[#78756e] font-semibold mt-1">
                 Employees
               </div>
-              <p className="text-[11px] text-[#8c8880] mt-1.5 sm:mt-2 font-normal line-clamp-2 sm:line-clamp-none">
+              <p className="text-xs text-[#8c8880] mt-2 font-normal">
                 Dedicated in-house craftsmen, designers & joiners.
               </p>
             </div>
 
             {/* Stat 3: Project Done */}
-            <div className="min-w-[240px] sm:min-w-0 flex-1 snap-center bg-gradient-to-br from-[#c5a059] to-[#b38e45] text-white rounded-2xl p-5 sm:p-7 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden group shrink-0 sm:shrink">
+            <div className="bg-gradient-to-br from-[#c5a059] to-[#b38e45] text-white rounded-2xl p-7 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden group">
               <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-white/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500" />
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white mb-4 sm:mb-6 border border-white/20">
-                <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6" />
+              <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white mb-6 border border-white/20">
+                <CheckCircle2 className="w-6 h-6" />
               </div>
-              <div className="text-3xl sm:text-4xl lg:text-[2.65rem] font-serif font-bold tracking-tight">
+              <div className="text-4xl lg:text-[2.65rem] font-serif font-bold tracking-tight">
                 500 +
               </div>
-              <div className="text-[11px] sm:text-xs uppercase tracking-widest text-white/90 font-semibold mt-1">
+              <div className="text-xs uppercase tracking-widest text-white/90 font-semibold mt-1">
                 Project Done
               </div>
-              <p className="text-[11px] text-white/80 mt-1.5 sm:mt-2 font-normal line-clamp-2 sm:line-clamp-none">
+              <p className="text-xs text-white/80 mt-2 font-normal">
                 Master residential transformations completed.
               </p>
             </div>
 
             {/* Stat 4: Work Hours */}
-            <div className="min-w-[240px] sm:min-w-0 flex-1 snap-center bg-white rounded-2xl p-5 sm:p-7 lg:p-8 border border-[#ede8df] shadow-sm hover:border-[#c5a059] hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group shrink-0 sm:shrink">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#fbf9f5] border border-[#ede8df] group-hover:bg-[#f7f1e5] flex items-center justify-center text-[#c5a059] mb-4 sm:mb-6 transition-colors">
-                <Clock className="w-5 h-5 sm:w-6 sm:h-6" />
+            <div className="bg-white rounded-2xl p-7 lg:p-8 border border-[#ede8df] shadow-sm hover:border-[#c5a059] hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group">
+              <div className="w-12 h-12 rounded-xl bg-[#fbf9f5] border border-[#ede8df] group-hover:bg-[#f7f1e5] flex items-center justify-center text-[#c5a059] mb-6 transition-colors">
+                <Clock className="w-6 h-6" />
               </div>
-              <div className="text-3xl sm:text-4xl lg:text-[2.65rem] font-serif font-bold text-[#1e1d1b] tracking-tight">
+              <div className="text-4xl lg:text-[2.65rem] font-serif font-bold text-[#1e1d1b] tracking-tight">
                 15,000 +
               </div>
-              <div className="text-[11px] sm:text-xs uppercase tracking-widest text-[#78756e] font-semibold mt-1">
+              <div className="text-xs uppercase tracking-widest text-[#78756e] font-semibold mt-1">
                 Work Hours
               </div>
-              <p className="text-[11px] text-[#8c8880] mt-1.5 sm:mt-2 font-normal line-clamp-2 sm:line-clamp-none">
+              <p className="text-xs text-[#8c8880] mt-2 font-normal">
                 Dedicated to precision millwork and fabrication.
               </p>
+            </div>
+          </div>
+
+          {/* Mobile View: No Scrollbar Carousel with Glass-morphism Left & Right Blur Arrow Buttons */}
+          <div className="block sm:hidden relative pt-4 px-2">
+            {/* Sliding Track Container */}
+            <div className="relative">
+              <div className="overflow-hidden rounded-2xl">
+                <div
+                  className="flex transition-transform duration-500 ease-out"
+                  style={{ transform: `translateX(-${activeStatIndex * 100}%)` }}
+                >
+                  {/* Stat 1: Satisfied Clients */}
+                  <div className="w-full shrink-0">
+                    <div className="bg-gradient-to-br from-[#c5a059] to-[#b38e45] text-white rounded-2xl p-6 shadow-xl relative overflow-hidden min-h-[220px] flex flex-col justify-between">
+                      <div className="absolute -right-4 -bottom-4 w-28 h-28 bg-white/10 rounded-full blur-xl" />
+                      <div>
+                        <div className="w-11 h-11 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white mb-4 border border-white/20">
+                          <Award className="w-5 h-5" />
+                        </div>
+                        <div className="text-3xl font-serif font-bold tracking-tight">
+                          500 +
+                        </div>
+                        <div className="text-[11px] uppercase tracking-widest text-white/90 font-semibold mt-1">
+                          Satisfied Clients
+                        </div>
+                      </div>
+                      <p className="text-xs text-white/80 mt-2 font-normal">
+                        Homeowners across GTA who trust our joinery.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Stat 2: Employees */}
+                  <div className="w-full shrink-0">
+                    <div className="bg-white rounded-2xl p-6 border border-[#ede8df] shadow-md min-h-[220px] flex flex-col justify-between">
+                      <div>
+                        <div className="w-11 h-11 rounded-xl bg-[#fbf9f5] border border-[#ede8df] flex items-center justify-center text-[#c5a059] mb-4">
+                          <Users className="w-5 h-5" />
+                        </div>
+                        <div className="text-3xl font-serif font-bold text-[#1e1d1b] tracking-tight">
+                          15 +
+                        </div>
+                        <div className="text-[11px] uppercase tracking-widest text-[#78756e] font-semibold mt-1">
+                          Employees
+                        </div>
+                      </div>
+                      <p className="text-xs text-[#8c8880] mt-2 font-normal">
+                        Dedicated in-house craftsmen, designers & joiners.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Stat 3: Project Done */}
+                  <div className="w-full shrink-0">
+                    <div className="bg-gradient-to-br from-[#c5a059] to-[#b38e45] text-white rounded-2xl p-6 shadow-xl relative overflow-hidden min-h-[220px] flex flex-col justify-between">
+                      <div className="absolute -right-4 -bottom-4 w-28 h-28 bg-white/10 rounded-full blur-xl" />
+                      <div>
+                        <div className="w-11 h-11 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white mb-4 border border-white/20">
+                          <CheckCircle2 className="w-5 h-5" />
+                        </div>
+                        <div className="text-3xl font-serif font-bold tracking-tight">
+                          500 +
+                        </div>
+                        <div className="text-[11px] uppercase tracking-widest text-white/90 font-semibold mt-1">
+                          Project Done
+                        </div>
+                      </div>
+                      <p className="text-xs text-white/80 mt-2 font-normal">
+                        Master residential transformations completed.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Stat 4: Work Hours */}
+                  <div className="w-full shrink-0">
+                    <div className="bg-white rounded-2xl p-6 border border-[#ede8df] shadow-md min-h-[220px] flex flex-col justify-between">
+                      <div>
+                        <div className="w-11 h-11 rounded-xl bg-[#fbf9f5] border border-[#ede8df] flex items-center justify-center text-[#c5a059] mb-4">
+                          <Clock className="w-5 h-5" />
+                        </div>
+                        <div className="text-3xl font-serif font-bold text-[#1e1d1b] tracking-tight">
+                          15,000 +
+                        </div>
+                        <div className="text-[11px] uppercase tracking-widest text-[#78756e] font-semibold mt-1">
+                          Work Hours
+                        </div>
+                      </div>
+                      <p className="text-xs text-[#8c8880] mt-2 font-normal">
+                        Dedicated to precision millwork and fabrication.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Glass-morphism Left & Right Blur Arrow Buttons Positioned Outside on Each Side */}
+              <button
+                type="button"
+                onClick={prevStat}
+                aria-label="Previous Stat"
+                className="absolute -left-3.5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/85 backdrop-blur-md border border-[#ede8df] shadow-lg flex items-center justify-center text-[#1e1d1b] hover:text-[#c5a059] hover:border-[#c5a059] active:scale-95 transition-all z-10"
+              >
+                <ChevronLeft className="w-5 h-5" strokeWidth={1.5} />
+              </button>
+
+              <button
+                type="button"
+                onClick={nextStat}
+                aria-label="Next Stat"
+                className="absolute -right-3.5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/85 backdrop-blur-md border border-[#ede8df] shadow-lg flex items-center justify-center text-[#1e1d1b] hover:text-[#c5a059] hover:border-[#c5a059] active:scale-95 transition-all z-10"
+              >
+                <ChevronRight className="w-5 h-5" strokeWidth={1.5} />
+              </button>
+            </div>
+
+            {/* Indicators */}
+            <div className="flex items-center justify-center space-x-1.5 mt-4">
+              {[0, 1, 2, 3].map((i) => (
+                <button
+                  key={i}
+                  onClick={() => setActiveStatIndex(i)}
+                  aria-label={`Go to stat card ${i + 1}`}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    activeStatIndex === i
+                      ? "w-6 bg-[#c5a059]"
+                      : "w-1.5 bg-[#d8d3c8] hover:bg-[#b8b3a7]"
+                  }`}
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -637,45 +814,15 @@ export default function HomePage() {
             <div className="lg:col-span-6 relative">
               <div className="relative rounded-2xl overflow-hidden shadow-xl border border-[#ede8df] bg-stone-100 aspect-[4/3] sm:aspect-[1.15/1] z-10 group">
                 <Image
-                  src="/hero_main.png"
+                  src="/arch_kitchen/ACM_5339.webp"
                   alt="Your Kitchen Specialist Toronto Showcase"
                   fill
+                  quality={100}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover object-center transform group-hover:scale-105 transition-transform duration-700"
                 />
 
-                {/* 3 Step Floating Cards: Estimate, Plan, Build */}
-                <div className="absolute bottom-4 left-4 right-4 grid grid-cols-3 gap-3 z-20">
-                  {/* Step 1: Estimate */}
-                  <div className="bg-white/95 backdrop-blur-md rounded-xl p-3.5 sm:p-4 border border-[#ede8df] shadow-lg flex flex-col items-center text-center transform hover:-translate-y-1 transition-all group/card">
-                    <div className="w-10 h-10 rounded-full bg-[#fbf9f5] border border-[#c5a059] flex items-center justify-center text-[#c5a059] mb-2 group-hover/card:bg-[#c5a059] group-hover/card:text-white transition-colors">
-                      <Lightbulb className="w-5 h-5" />
-                    </div>
-                    <span className="font-serif font-bold text-sm sm:text-base text-[#1e1d1b]">
-                      Estimate
-                    </span>
-                  </div>
-
-                  {/* Step 2: Plan */}
-                  <div className="bg-white/95 backdrop-blur-md rounded-xl p-3.5 sm:p-4 border border-[#ede8df] shadow-lg flex flex-col items-center text-center transform hover:-translate-y-1 transition-all group/card">
-                    <div className="w-10 h-10 rounded-full bg-[#fbf9f5] border border-[#c5a059] flex items-center justify-center text-[#c5a059] mb-2 group-hover/card:bg-[#c5a059] group-hover/card:text-white transition-colors">
-                      <FileText className="w-5 h-5" />
-                    </div>
-                    <span className="font-serif font-bold text-sm sm:text-base text-[#1e1d1b]">
-                      Plan
-                    </span>
-                  </div>
-
-                  {/* Step 3: Build */}
-                  <div className="bg-white/95 backdrop-blur-md rounded-xl p-3.5 sm:p-4 border border-[#ede8df] shadow-lg flex flex-col items-center text-center transform hover:-translate-y-1 transition-all group/card">
-                    <div className="w-10 h-10 rounded-full bg-[#fbf9f5] border border-[#c5a059] flex items-center justify-center text-[#c5a059] mb-2 group-hover/card:bg-[#c5a059] group-hover/card:text-white transition-colors">
-                      <Wrench className="w-5 h-5" />
-                    </div>
-                    <span className="font-serif font-bold text-sm sm:text-base text-[#1e1d1b]">
-                      Build
-                    </span>
-                  </div>
-                </div>
+                {/* Clean Full View Showcase Image without text overlays */}
               </div>
             </div>
           </div>
@@ -700,23 +847,27 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* 6 Grid Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* 6 Services Cards - Stacking Card Scroll Animation on Mobile, Standard Grid on Desktop */}
+          <div className="flex flex-col gap-6 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 relative">
             {services.map((svc, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-xl p-8 border border-[#ede8df] flex flex-col justify-between hover:border-[#c5a059]/60 transition-all hover:shadow-xl group"
+                className="sticky md:static bg-white rounded-2xl p-7 sm:p-8 border border-[#ede8df] flex flex-col justify-between hover:border-[#c5a059]/60 transition-all duration-300 hover:shadow-xl group shadow-[0_12px_36px_rgba(0,0,0,0.06)] min-h-[320px]"
+                style={{
+                  top: `calc(5rem + ${idx * 14}px)`,
+                  zIndex: idx + 1,
+                }}
               >
                 <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="w-11 h-11 rounded-lg bg-[#fbf9f5] border border-[#ede8df] flex items-center justify-center group-hover:bg-[#f7f1e5] transition-colors">
+                  <div className="flex items-center justify-between mb-5 sm:mb-6">
+                    <div className="w-12 h-12 rounded-xl bg-[#fbf9f5] border border-[#ede8df] flex items-center justify-center group-hover:bg-[#f7f1e5] transition-colors">
                       {svc.icon}
                     </div>
                     <span className="text-[11px] font-mono tracking-widest text-[#9d9990] font-medium">
                       {svc.num} / {svc.category}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-serif font-semibold text-[#1e1d1b] mb-3">
+                  <h3 className="text-xl sm:text-2xl font-serif font-semibold text-[#1e1d1b] mb-3">
                     {svc.title}
                   </h3>
                   <p className="text-sm text-[#6b6863] leading-relaxed mb-6">
@@ -726,7 +877,7 @@ export default function HomePage() {
 
                 <Link
                   href={svc.href}
-                  className="inline-flex items-center space-x-2 text-xs font-semibold tracking-wider uppercase text-[#c5a059] hover:text-[#b38e45] group-hover:translate-x-1 transition-all"
+                  className="inline-flex items-center space-x-2 text-xs font-semibold tracking-wider uppercase text-[#c5a059] hover:text-[#b38e45] group-hover:translate-x-1 transition-all pt-2"
                 >
                   <span>Learn More & Details</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -768,11 +919,10 @@ export default function HomePage() {
                   <button
                     key={cat}
                     onClick={() => setActiveCategory(cat)}
-                    className={`px-4 py-2 text-xs font-semibold tracking-wider uppercase rounded-full transition-all ${
-                      activeCategory === cat
+                    className={`px-4 py-2 text-xs font-semibold tracking-wider uppercase rounded-full transition-all ${activeCategory === cat
                         ? "bg-[#c5a059] text-white shadow-md"
                         : "bg-white/80 text-[#6b6863] hover:text-[#1e1d1b] border border-[#ede8df]"
-                    }`}
+                      }`}
                   >
                     {cat}
                   </button>
@@ -883,29 +1033,35 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+          <div className="flex flex-col gap-6 md:grid md:grid-cols-3 md:gap-8 relative">
             {steps.map((st, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-xl p-8 border border-[#ede8df] hover:border-[#c5a059]/60 transition-all hover:shadow-xl relative"
+                className="sticky md:static bg-white rounded-2xl p-7 sm:p-8 border border-[#ede8df] hover:border-[#c5a059]/60 transition-all duration-300 hover:shadow-xl shadow-[0_12px_36px_rgba(0,0,0,0.06)] min-h-[290px] flex flex-col justify-between"
+                style={{
+                  top: `calc(5rem + ${idx * 16}px)`,
+                  zIndex: idx + 1,
+                }}
               >
-                <div className="flex items-center justify-between mb-8">
-                  <span className="text-4xl font-serif font-light text-[#c5a059]/60">
-                    {st.num}
-                  </span>
-                  <div className="w-10 h-10 rounded-lg bg-[#fbf9f5] border border-[#ede8df] flex items-center justify-center text-[#c5a059]">
-                    {idx === 0 && <Calendar className="w-4 h-4" />}
-                    {idx === 1 && <Compass className="w-4 h-4" />}
-                    {idx === 2 && <ShieldCheck className="w-4 h-4" />}
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <span className="text-4xl sm:text-5xl font-serif font-light text-[#c5a059]">
+                      {st.num}
+                    </span>
+                    <div className="w-11 h-11 rounded-xl bg-[#fbf9f5] border border-[#ede8df] flex items-center justify-center text-[#c5a059]">
+                      {idx === 0 && <Calendar className="w-5 h-5" />}
+                      {idx === 1 && <Compass className="w-5 h-5" />}
+                      {idx === 2 && <ShieldCheck className="w-5 h-5" />}
+                    </div>
                   </div>
-                </div>
 
-                <h3 className="text-2xl font-serif font-semibold text-[#1e1d1b] mb-4">
-                  {st.title}
-                </h3>
-                <p className="text-sm text-[#6b6863] leading-relaxed">
-                  {st.description}
-                </p>
+                  <h3 className="text-xl sm:text-2xl font-serif font-semibold text-[#1e1d1b] mb-3">
+                    {st.title}
+                  </h3>
+                  <p className="text-sm text-[#6b6863] leading-relaxed">
+                    {st.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -931,7 +1087,8 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Desktop View: Standard 3-Column Grid */}
+          <div className="hidden md:grid md:grid-cols-3 gap-8">
             {testimonials.map((t, idx) => (
               <div
                 key={idx}
@@ -965,6 +1122,92 @@ export default function HomePage() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Mobile View: Horizontal Smooth Transition with Glass Arrow Buttons at Each Side of the Card */}
+          <div className="block md:hidden relative px-2">
+            {/* Carousel Container */}
+            <div className="relative">
+              {/* Carousel Track with smooth horizontal transition */}
+              <div className="overflow-hidden rounded-2xl">
+                <div
+                  className="flex transition-transform duration-500 ease-out"
+                  style={{ transform: `translateX(-${activeReviewIndex * 100}%)` }}
+                >
+                  {testimonials.map((t, idx) => (
+                    <div
+                      key={idx}
+                      className="w-full shrink-0"
+                    >
+                      <div className="bg-white rounded-2xl p-7 border border-[#ede8df] flex flex-col justify-between shadow-[0_8px_30px_rgba(0,0,0,0.04)] min-h-[340px]">
+                        <div>
+                          <div className="flex items-center justify-between mb-5">
+                            <div className="flex text-[#c5a059] space-x-1">
+                              {[...Array(5)].map((_, i) => (
+                                <Star key={i} className="w-4 h-4 fill-current" />
+                              ))}
+                            </div>
+                            <span className="text-[10px] text-[#9d9990] uppercase tracking-wider font-medium bg-[#fbf9f5] px-2.5 py-1 rounded-full border border-[#ede8df]">
+                              Google Verified
+                            </span>
+                          </div>
+
+                          <p className="text-sm text-[#4a4742] leading-relaxed italic mb-6">
+                            {t.quote}
+                          </p>
+                        </div>
+
+                        <div className="pt-4 border-t border-[#ede8df] flex items-center justify-between">
+                          <div>
+                            <h5 className="font-serif font-bold text-[#1e1d1b] text-base">
+                              {t.author}
+                            </h5>
+                            <span className="text-xs text-[#8c8880]">{t.service}</span>
+                          </div>
+                          <Quote className="w-6 h-6 text-[#c5a059]/30" />
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Left Arrow Button at the left side of the card */}
+              <button
+                type="button"
+                onClick={prevReview}
+                aria-label="Previous Review"
+                className="absolute -left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 backdrop-blur-md border border-[#ede8df] shadow-lg flex items-center justify-center text-[#1e1d1b] hover:text-[#c5a059] hover:border-[#c5a059] active:scale-95 transition-all z-10"
+              >
+                <ChevronLeft className="w-5 h-5" strokeWidth={1.5} />
+              </button>
+
+              {/* Right Arrow Button at the right side of the card */}
+              <button
+                type="button"
+                onClick={nextReview}
+                aria-label="Next Review"
+                className="absolute -right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 backdrop-blur-md border border-[#ede8df] shadow-lg flex items-center justify-center text-[#1e1d1b] hover:text-[#c5a059] hover:border-[#c5a059] active:scale-95 transition-all z-10"
+              >
+                <ChevronRight className="w-5 h-5" strokeWidth={1.5} />
+              </button>
+            </div>
+
+            {/* Dot Indicators Centered Below */}
+            <div className="flex items-center justify-center space-x-1.5 mt-5">
+              {testimonials.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActiveReviewIndex(i)}
+                  aria-label={`Go to review ${i + 1}`}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    activeReviewIndex === i
+                      ? "w-6 bg-[#c5a059]"
+                      : "w-1.5 bg-[#d8d3c8] hover:bg-[#b8b3a7]"
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -1029,27 +1272,24 @@ export default function HomePage() {
                   <div
                     key={idx}
                     onMouseEnter={() => setOpenFaq(idx)}
-                    className={`rounded-xl border transition-all duration-500 overflow-hidden cursor-pointer ${
-                      isOpen
+                    className={`rounded-xl border transition-all duration-500 overflow-hidden cursor-pointer ${isOpen
                         ? "bg-white border-[#c5a059] shadow-md ring-1 ring-[#c5a059]/20"
                         : "bg-white border-[#ede8df] hover:border-[#c5a059]/60 hover:shadow-sm"
-                    }`}
+                      }`}
                   >
                     <button
                       onClick={() => setOpenFaq(isOpen ? null : idx)}
-                      className={`w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 transition-colors duration-300 ${
-                        isOpen ? "bg-[#c5a059] text-white" : "text-[#1e1d1b] hover:text-[#c5a059]"
-                      }`}
+                      className={`w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 transition-colors duration-300 ${isOpen ? "bg-[#c5a059] text-white" : "text-[#1e1d1b] hover:text-[#c5a059]"
+                        }`}
                     >
                       <span className="font-serif font-semibold text-base sm:text-lg leading-snug">
                         {faqItem.q}
                       </span>
                       <div
-                        className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 transform ${
-                          isOpen
+                        className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 transform ${isOpen
                             ? "bg-white/20 text-white rotate-180"
                             : "bg-[#fbf9f5] border border-[#ede8df] text-[#c5a059] rotate-0"
-                        }`}
+                          }`}
                       >
                         <ChevronDown className="w-4 h-4 transition-transform duration-300" />
                       </div>
@@ -1057,11 +1297,10 @@ export default function HomePage() {
 
                     {/* Smooth expanding grid transition container */}
                     <div
-                      className={`grid transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                        isOpen
+                      className={`grid transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${isOpen
                           ? "grid-rows-[1fr] opacity-100"
                           : "grid-rows-[0fr] opacity-0"
-                      }`}
+                        }`}
                     >
                       <div className="overflow-hidden">
                         <div className="p-5 sm:p-6 text-sm text-[#4a4742] leading-relaxed bg-[#fbf9f5] border-t border-[#ede8df]/60">
@@ -1378,7 +1617,7 @@ export default function HomePage() {
             <div className="lg:col-span-4 space-y-5">
               <div className="w-[110px] h-[110px] relative">
                 <Image
-                  src="/brand_footer_logo.png"
+                  src="/brand_footer_logo.webp"
                   alt="Arch Kitchen Cabinets Logo"
                   fill
                   sizes="110px"

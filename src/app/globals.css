@@ -121,7 +121,8 @@ button {
   will-change: opacity, transform;
 }
 .reveal-slide-right.is-visible,
-.reveal-slide-right.reveal-visible {
+.reveal-slide-right.reveal-visible,
+.reveal-slide-right[data-revealed="true"] {
   opacity: 1 !important;
   transform: translateX(0) !important;
 }
@@ -135,7 +136,8 @@ button {
   will-change: opacity, transform;
 }
 .reveal-card.is-visible,
-.reveal-card.reveal-visible {
+.reveal-card.reveal-visible,
+.reveal-card[data-revealed="true"] {
   opacity: 1 !important;
   transform: scale(1) translateY(0) !important;
 }
@@ -147,7 +149,9 @@ button {
   will-change: opacity, transform;
 }
 
-.reveal-visible {
+.reveal-visible,
+.reveal-init[data-revealed="true"],
+.scroll-reveal[data-revealed="true"] {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
@@ -159,7 +163,8 @@ button {
   will-change: opacity, transform;
 }
 
-.reveal-scale-visible {
+.reveal-scale-visible,
+.reveal-scale-init[data-revealed="true"] {
   opacity: 1 !important;
   transform: scale(1) translateY(0) !important;
 }
@@ -193,57 +198,7 @@ html {
 .delay-400 { transition-delay: 400ms; }
 .delay-500 { transition-delay: 500ms; }
 
-.architectural-bg,
-.contour-lines {
-  background-color: #fbf9f5;
-  background-image: url("/contour-lines.svg");
-  background-repeat: repeat-y;
-  background-size: 100% auto;
-  background-position: top center;
-}
 
-.arch-card {
-  border-radius: 2rem;
-  border: 1px solid rgba(197, 160, 89, 0.35);
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(8px);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.arch-card:hover {
-  border-color: #c5a059;
-  box-shadow: 0 16px 36px -8px rgba(197, 160, 89, 0.18);
-  transform: translateY(-4px);
-}
-
-.outline-heading {
-  color: transparent;
-  -webkit-text-stroke: 1.5px #c5a059;
-}
-
-/* Subtle, elegant drifting movement for architectural contour lines */
-@keyframes contourDrift {
-  0% {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-  25% {
-    transform: translate3d(-12px, -8px, 0) scale(1.015);
-  }
-  50% {
-    transform: translate3d(10px, -15px, 0) scale(1.02);
-  }
-  75% {
-    transform: translate3d(15px, 8px, 0) scale(1.01);
-  }
-  100% {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-}
-
-.contour-animated-bg {
-  animation: contourDrift 28s ease-in-out infinite;
-  will-change: transform;
-}
 
 /* 3D Curved Architectural Panorama Carousel (Urbantrop / Afana's Angel Style) */
 @keyframes curvedScroll {
@@ -263,4 +218,56 @@ html {
 
 .curved-carousel-track:hover {
   animation-play-state: paused;
+}
+
+/* Ken Burns Subtle Architectural Pan & Zoom Motion (Urbantrop Reference) - Safe margin scale ensures no border exposure */
+@keyframes kenBurnsSlot1 {
+  0% {
+    transform: scale(1.10) translate(0px, 0px);
+  }
+  50% {
+    transform: scale(1.16) translate(6px, -4px);
+  }
+  100% {
+    transform: scale(1.10) translate(0px, 0px);
+  }
+}
+
+@keyframes kenBurnsSlot2 {
+  0% {
+    transform: scale(1.15) translate(0px, 0px);
+  }
+  50% {
+    transform: scale(1.10) translate(-5px, 6px);
+  }
+  100% {
+    transform: scale(1.15) translate(0px, 0px);
+  }
+}
+
+@keyframes kenBurnsSlot3 {
+  0% {
+    transform: scale(1.11) translate(0px, 0px);
+  }
+  50% {
+    transform: scale(1.17) translate(5px, -6px);
+  }
+  100% {
+    transform: scale(1.11) translate(0px, 0px);
+  }
+}
+
+.ken-burns-1 {
+  animation: kenBurnsSlot1 20s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.ken-burns-2 {
+  animation: kenBurnsSlot2 24s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.ken-burns-3 {
+  animation: kenBurnsSlot3 22s ease-in-out infinite alternate;
+  will-change: transform;
 }

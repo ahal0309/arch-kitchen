@@ -17,8 +17,7 @@ export default function ScrollAnimationProvider({
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            entry.target.classList.add("reveal-visible");
+            (entry.target as HTMLElement).dataset.revealed = "true";
           }
         });
       },

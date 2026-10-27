@@ -21,10 +21,21 @@ import {
   Hammer,
   Gem,
   Sparkles,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 
 export default function AboutPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeStatIndex, setActiveStatIndex] = useState(0);
+
+  const prevStat = () => {
+    setActiveStatIndex((prev) => (prev === 0 ? 3 : prev - 1));
+  };
+
+  const nextStat = () => {
+    setActiveStatIndex((prev) => (prev === 3 ? 0 : prev + 1));
+  };
 
   return (
     <div className="min-h-screen bg-transparent text-[#2c2b29] font-sans selection:bg-[#c5a059]/20 selection:text-[#1e1d1b]">
@@ -107,17 +118,18 @@ export default function AboutPage() {
 
             {/* Right Media Column with Inset Testimonial Card */}
             <div className="lg:col-span-6 relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-[#ede8df] bg-stone-100 aspect-[4/3] sm:aspect-[1.15/1] z-10 group">
+              <div className="relative rounded-none overflow-hidden shadow-2xl border border-[#ede8df] bg-stone-100 aspect-[4/3] sm:aspect-[1.15/1] z-10 group">
                 <Image
-                  src="/image_from_https_www.archkitchencabinets.com_wp_content_uploads_2024_05_home.png"
+                  src="/arch_kitchen/ACM_5342.webp"
                   alt="Arch Kitchen Cabinets Master Interior Showcase"
                   fill
+                  quality={100}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover object-center transform group-hover:scale-105 transition-transform duration-700"
                 />
 
                 {/* Floating Verified Client Quote Overlay Card */}
-                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md rounded-2xl p-5 border border-[#ede8df] shadow-xl z-20">
+                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md rounded-none p-5 border border-[#ede8df] shadow-xl z-20">
                   <div className="flex items-center justify-between mb-2">
                     <Quote className="w-5 h-5 text-[#c5a059]" />
                     <div className="flex text-[#c5a059] space-x-1">
@@ -145,10 +157,10 @@ export default function AboutPage() {
               </h3>
             </div>
 
-            {/* 4 Metrics Cards - Minimal pill cards */}
-            <div className="flex overflow-x-auto sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 pb-2 sm:pb-0 no-scrollbar snap-x snap-mandatory -mx-6 px-6 sm:mx-0 sm:px-0">
+            {/* Desktop View: Standard 4-Column Grid */}
+            <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {/* Stat 1: Satisfied Clients */}
-              <div className="min-w-[240px] sm:min-w-0 flex-1 snap-center arch-card p-6 sm:p-7 relative overflow-hidden group shrink-0 sm:shrink">
+              <div className="arch-card p-6 sm:p-7 relative overflow-hidden group">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-[#c5a059]/10 border border-[#c5a059]/30 flex items-center justify-center text-[#c5a059] mb-4 sm:mb-6">
                   <Award className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
@@ -158,13 +170,13 @@ export default function AboutPage() {
                 <div className="text-[11px] sm:text-xs font-mono uppercase tracking-widest text-[#78756e] font-semibold mt-1">
                   Satisfied Clients
                 </div>
-                <p className="text-[11px] text-[#8c8880] mt-1.5 sm:mt-2 font-normal line-clamp-2 sm:line-clamp-none">
+                <p className="text-[11px] text-[#8c8880] mt-1.5 sm:mt-2 font-normal">
                   Homeowners across GTA who trust our joinery.
                 </p>
               </div>
 
               {/* Stat 2: Employees */}
-              <div className="min-w-[240px] sm:min-w-0 flex-1 snap-center arch-card p-6 sm:p-7 relative overflow-hidden group shrink-0 sm:shrink">
+              <div className="arch-card p-6 sm:p-7 relative overflow-hidden group">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-[#c5a059]/10 border border-[#c5a059]/30 flex items-center justify-center text-[#c5a059] mb-4 sm:mb-6">
                   <Users className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
@@ -174,13 +186,13 @@ export default function AboutPage() {
                 <div className="text-[11px] sm:text-xs font-mono uppercase tracking-widest text-[#78756e] font-semibold mt-1">
                   Employees
                 </div>
-                <p className="text-[11px] text-[#8c8880] mt-1.5 sm:mt-2 font-normal line-clamp-2 sm:line-clamp-none">
+                <p className="text-[11px] text-[#8c8880] mt-1.5 sm:mt-2 font-normal">
                   Dedicated in-house craftsmen, designers & joiners.
                 </p>
               </div>
 
               {/* Stat 3: Project Done */}
-              <div className="min-w-[240px] sm:min-w-0 flex-1 snap-center arch-card p-6 sm:p-7 relative overflow-hidden group shrink-0 sm:shrink">
+              <div className="arch-card p-6 sm:p-7 relative overflow-hidden group">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-[#c5a059]/10 border border-[#c5a059]/30 flex items-center justify-center text-[#c5a059] mb-4 sm:mb-6">
                   <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
@@ -190,13 +202,13 @@ export default function AboutPage() {
                 <div className="text-[11px] sm:text-xs font-mono uppercase tracking-widest text-[#78756e] font-semibold mt-1">
                   Project Done
                 </div>
-                <p className="text-[11px] text-[#8c8880] mt-1.5 sm:mt-2 font-normal line-clamp-2 sm:line-clamp-none">
+                <p className="text-[11px] text-[#8c8880] mt-1.5 sm:mt-2 font-normal">
                   Master residential transformations completed.
                 </p>
               </div>
 
               {/* Stat 4: Work Hours */}
-              <div className="min-w-[240px] sm:min-w-0 flex-1 snap-center arch-card p-6 sm:p-7 relative overflow-hidden group shrink-0 sm:shrink">
+              <div className="arch-card p-6 sm:p-7 relative overflow-hidden group">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-[#c5a059]/10 border border-[#c5a059]/30 flex items-center justify-center text-[#c5a059] mb-4 sm:mb-6">
                   <Clock className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
@@ -206,9 +218,136 @@ export default function AboutPage() {
                 <div className="text-[11px] sm:text-xs font-mono uppercase tracking-widest text-[#78756e] font-semibold mt-1">
                   Work Hours
                 </div>
-                <p className="text-[11px] text-[#8c8880] mt-1.5 sm:mt-2 font-normal line-clamp-2 sm:line-clamp-none">
+                <p className="text-[11px] text-[#8c8880] mt-1.5 sm:mt-2 font-normal">
                   Poured into fine architectural kitchen joinery.
                 </p>
+              </div>
+            </div>
+
+            {/* Mobile View: Smooth Horizontal Transition with Glass Arrows at Both Sides (No Scrollbar) */}
+            <div className="block sm:hidden relative px-2">
+              <div className="relative">
+                <div className="overflow-hidden rounded-2xl">
+                  <div
+                    className="flex transition-transform duration-500 ease-out"
+                    style={{ transform: `translateX(-${activeStatIndex * 100}%)` }}
+                  >
+                    {/* Stat 1: Satisfied Clients */}
+                    <div className="w-full shrink-0">
+                      <div className="arch-card p-6 min-h-[210px] flex flex-col justify-between shadow-md">
+                        <div>
+                          <div className="w-11 h-11 rounded-2xl bg-[#c5a059]/10 border border-[#c5a059]/30 flex items-center justify-center text-[#c5a059] mb-4">
+                            <Award className="w-5 h-5" />
+                          </div>
+                          <div className="text-3xl font-arch font-bold tracking-tight text-[#1e1d1b]">
+                            500 +
+                          </div>
+                          <div className="text-[11px] font-mono uppercase tracking-widest text-[#78756e] font-semibold mt-1">
+                            Satisfied Clients
+                          </div>
+                        </div>
+                        <p className="text-xs text-[#8c8880] mt-2 font-normal">
+                          Homeowners across GTA who trust our joinery.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Stat 2: Employees */}
+                    <div className="w-full shrink-0">
+                      <div className="arch-card p-6 min-h-[210px] flex flex-col justify-between shadow-md">
+                        <div>
+                          <div className="w-11 h-11 rounded-2xl bg-[#c5a059]/10 border border-[#c5a059]/30 flex items-center justify-center text-[#c5a059] mb-4">
+                            <Users className="w-5 h-5" />
+                          </div>
+                          <div className="text-3xl font-arch font-bold text-[#1e1d1b] tracking-tight">
+                            15 +
+                          </div>
+                          <div className="text-[11px] font-mono uppercase tracking-widest text-[#78756e] font-semibold mt-1">
+                            Employees
+                          </div>
+                        </div>
+                        <p className="text-xs text-[#8c8880] mt-2 font-normal">
+                          Dedicated in-house craftsmen, designers & joiners.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Stat 3: Project Done */}
+                    <div className="w-full shrink-0">
+                      <div className="arch-card p-6 min-h-[210px] flex flex-col justify-between shadow-md">
+                        <div>
+                          <div className="w-11 h-11 rounded-2xl bg-[#c5a059]/10 border border-[#c5a059]/30 flex items-center justify-center text-[#c5a059] mb-4">
+                            <CheckCircle2 className="w-5 h-5" />
+                          </div>
+                          <div className="text-3xl font-arch font-bold tracking-tight text-[#1e1d1b]">
+                            500 +
+                          </div>
+                          <div className="text-[11px] font-mono uppercase tracking-widest text-[#78756e] font-semibold mt-1">
+                            Project Done
+                          </div>
+                        </div>
+                        <p className="text-xs text-[#8c8880] mt-2 font-normal">
+                          Master residential transformations completed.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Stat 4: Work Hours */}
+                    <div className="w-full shrink-0">
+                      <div className="arch-card p-6 min-h-[210px] flex flex-col justify-between shadow-md">
+                        <div>
+                          <div className="w-11 h-11 rounded-2xl bg-[#c5a059]/10 border border-[#c5a059]/30 flex items-center justify-center text-[#c5a059] mb-4">
+                            <Clock className="w-5 h-5" />
+                          </div>
+                          <div className="text-3xl font-arch font-bold text-[#1e1d1b] tracking-tight">
+                            15,000 +
+                          </div>
+                          <div className="text-[11px] font-mono uppercase tracking-widest text-[#78756e] font-semibold mt-1">
+                            Work Hours
+                          </div>
+                        </div>
+                        <p className="text-xs text-[#8c8880] mt-2 font-normal">
+                          Poured into fine architectural kitchen joinery.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Left & Right Glass Arrow Buttons positioned at both sides */}
+                <button
+                  type="button"
+                  onClick={prevStat}
+                  aria-label="Previous Stat"
+                  className="absolute -left-3.5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/85 backdrop-blur-md border border-[#ede8df] shadow-lg flex items-center justify-center text-[#1e1d1b] hover:text-[#c5a059] hover:border-[#c5a059] active:scale-95 transition-all z-10"
+                >
+                  <ChevronLeft className="w-5 h-5" strokeWidth={1.5} />
+                </button>
+
+                <button
+                  type="button"
+                  onClick={nextStat}
+                  aria-label="Next Stat"
+                  className="absolute -right-3.5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/85 backdrop-blur-md border border-[#ede8df] shadow-lg flex items-center justify-center text-[#1e1d1b] hover:text-[#c5a059] hover:border-[#c5a059] active:scale-95 transition-all z-10"
+                >
+                  <ChevronRight className="w-5 h-5" strokeWidth={1.5} />
+                </button>
+              </div>
+
+              {/* Indicator dots centered below */}
+              <div className="flex items-center justify-center space-x-1.5 mt-4">
+                {[0, 1, 2, 3].map((i) => (
+                  <button
+                    key={i}
+                    onClick={() => setActiveStatIndex(i)}
+                    aria-label={`Go to stat card ${i + 1}`}
+                    className={`h-1.5 rounded-full transition-all duration-300 ${
+                      activeStatIndex === i
+                        ? "w-6 bg-[#c5a059]"
+                        : "w-1.5 bg-[#d8d3c8] hover:bg-[#b8b3a7]"
+                    }`}
+                  />
+                ))}
               </div>
             </div>
           </div>
@@ -268,7 +407,7 @@ export default function AboutPage() {
             <div className="lg:col-span-4 space-y-5">
               <div className="w-[110px] h-[110px] relative">
                 <Image
-                  src="/brand_footer_logo.png"
+                  src="/brand_footer_logo.webp"
                   alt="Arch Kitchen Cabinets Logo"
                   fill
                   sizes="110px"

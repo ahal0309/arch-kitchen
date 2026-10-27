@@ -206,7 +206,7 @@ export default function BacksplashInstallationPage() {
             <div className="lg:col-span-6 relative scroll-reveal reveal-init">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-[#ede8df] bg-stone-100 aspect-[4/3] sm:aspect-[1.15/1] z-10 group">
                 <Image
-                  src="/project4.png"
+                  src="/project4.webp"
                   alt="Why Choose Arch Kitchen Cabinets Backsplash"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -291,7 +291,7 @@ export default function BacksplashInstallationPage() {
               <div className="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 w-3/4 h-3/4 bg-[#e8c75e] rounded-xl -z-0" />
               <div className="relative rounded-xl overflow-hidden shadow-2xl border-4 border-white bg-stone-100 aspect-[4/3] sm:aspect-[1.15/1] z-10 group">
                 <Image
-                  src="/project1.png"
+                  src="/project1.webp"
                   alt="Types Of Backsplashes We Offer"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -386,7 +386,7 @@ export default function BacksplashInstallationPage() {
         {/* Subtle background texture */}
         <div className="absolute inset-0 opacity-25">
           <Image
-            src="/hero_main.png"
+            src="/hero_main.webp"
             alt="Enhance Your Space With A Stylish Backsplash"
             fill
             sizes="100vw"
@@ -424,7 +424,7 @@ export default function BacksplashInstallationPage() {
             <div className="lg:col-span-4 space-y-5">
               <div className="w-[110px] h-[110px] relative">
                 <Image
-                  src="/brand_footer_logo.png"
+                  src="/brand_footer_logo.webp"
                   alt="Arch Kitchen Cabinets Logo"
                   fill
                   sizes="110px"

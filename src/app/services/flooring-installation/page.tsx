@@ -303,7 +303,7 @@ export default function FlooringInstallationPage() {
               <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 w-3/4 h-3/4 bg-[#e8c75e] rounded-xl -z-0" />
               <div className="relative rounded-xl overflow-hidden shadow-2xl border-4 border-white bg-stone-100 aspect-[4/3] sm:aspect-[1.15/1] z-10 group">
                 <Image
-                  src="/project3.png"
+                  src="/project3.webp"
                   alt="Types Of Flooring We Install"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -324,7 +324,7 @@ export default function FlooringInstallationPage() {
               <div className="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 w-3/4 h-3/4 bg-[#e8c75e] rounded-xl -z-0" />
               <div className="relative rounded-xl overflow-hidden shadow-2xl border-4 border-white bg-stone-100 aspect-[4/3] sm:aspect-[1.15/1] z-10 group">
                 <Image
-                  src="/project1.png"
+                  src="/project1.webp"
                   alt="Why Choose Our Flooring Installation Services"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -423,7 +423,7 @@ export default function FlooringInstallationPage() {
         {/* Subtle background texture */}
         <div className="absolute inset-0 opacity-25">
           <Image
-            src="/hero_main.png"
+            src="/hero_main.webp"
             alt="Get Started With Your Flooring Installation Today"
             fill
             sizes="100vw"
@@ -461,7 +461,7 @@ export default function FlooringInstallationPage() {
             <div className="lg:col-span-4 space-y-5">
               <div className="w-[110px] h-[110px] relative">
                 <Image
-                  src="/brand_footer_logo.png"
+                  src="/brand_footer_logo.webp"
                   alt="Arch Kitchen Cabinets Logo"
                   fill
                   sizes="110px"

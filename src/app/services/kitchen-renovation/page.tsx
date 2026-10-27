@@ -52,19 +52,19 @@ export default function KitchenRenovationPage() {
   const completeServices = [
     {
       title: "Custom Cabinetry And Countertops",
-      image: "/project1.png",
+      image: "/project1.webp",
       description:
         "We specialize in custom cabinetry and countertops that are designed to fit your kitchen's layout and your personal style. Our range of high-quality materials ensures durability and aesthetic appeal, making your kitchen both functional and beautiful.",
     },
     {
       title: "High-Quality Kitchen Flooring And Backsplashes",
-      image: "/project3.png",
+      image: "/project3.webp",
       description:
         "Choose from a variety of premium flooring and backsplash options that enhance the look and feel of your kitchen. Our selection includes durable materials that are easy to maintain and add a touch of elegance to your space.",
     },
     {
       title: "Innovative Lighting Solutions",
-      image: "/project4.png",
+      image: "/project4.webp",
       description:
         "Illuminate your kitchen with cutting-edge lighting solutions that enhance both functionality and ambiance. From under-cabinet lighting to statement fixtures, we design lighting plans that create a welcoming and efficient environment.",
     },
@@ -229,7 +229,7 @@ export default function KitchenRenovationPage() {
             <div className="lg:col-span-6 relative scroll-reveal reveal-init">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-[#ede8df] bg-stone-100 aspect-[4/3] sm:aspect-[1.15/1] z-10 group">
                 <Image
-                  src="/hero_main.png"
+                  src="/hero_main.webp"
                   alt="Arch Kitchen Cabinets Renovation Toronto"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -379,7 +379,7 @@ export default function KitchenRenovationPage() {
             <div className="lg:col-span-4 space-y-5">
               <div className="w-[110px] h-[110px] relative">
                 <Image
-                  src="/brand_footer_logo.png"
+                  src="/brand_footer_logo.webp"
                   alt="Arch Kitchen Cabinets Logo"
                   fill
                   sizes="110px"

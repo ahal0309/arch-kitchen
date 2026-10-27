@@ -47,31 +47,31 @@ export default function CountertopInstallationPage() {
   const countertopTypes = [
     {
       title: "Granite Countertops",
-      image: "/project1.png",
+      image: "/project1.webp",
       description:
         "Known for its durability and unique patterns, granite is perfect for high-traffic areas due to its resistance to scratches and heat.",
     },
     {
       title: "Quartz Countertops",
-      image: "/project3.png",
+      image: "/project3.webp",
       description:
         "Engineered from crushed quartz and resin, quartz offers a stylish, low-maintenance option that's resistant to stains and bacteria.",
     },
     {
       title: "Marble Countertops",
-      image: "/project2.png",
+      image: "/project2.webp",
       description:
         "With its luxurious appearance and unique veining, marble adds a classic touch, though it requires more care due to its porosity.",
     },
     {
       title: "Laminate Countertops",
-      image: "/kitchen_real_1.jpg",
+      image: "/kitchen_real_1.webp",
       description:
         "Affordable and versatile, laminate mimics more expensive materials and is easy to clean and maintain.",
     },
     {
       title: "Butcher Block Countertops",
-      image: "/project4.png",
+      image: "/project4.webp",
       description:
         "Made from wooden planks, butcher block adds warmth and is ideal for food preparation, easily refinished to maintain its look.",
     },
@@ -283,7 +283,7 @@ export default function CountertopInstallationPage() {
 
               <div className="relative rounded-xl overflow-hidden shadow-2xl border-4 border-white bg-stone-100 aspect-[4/3] sm:aspect-[1.2/1] z-10 group">
                 <Image
-                  src="/project3.png"
+                  src="/project3.webp"
                   alt="How Countertops Can Enhance The Beauty Of Your Space"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -379,7 +379,7 @@ export default function CountertopInstallationPage() {
         {/* Subtle background texture */}
         <div className="absolute inset-0 opacity-25">
           <Image
-            src="/hero_main.png"
+            src="/hero_main.webp"
             alt="Get Started Today"
             fill
             sizes="100vw"
@@ -417,7 +417,7 @@ export default function CountertopInstallationPage() {
             <div className="lg:col-span-4 space-y-5">
               <div className="w-[110px] h-[110px] relative">
                 <Image
-                  src="/brand_footer_logo.png"
+                  src="/brand_footer_logo.webp"
                   alt="Arch Kitchen Cabinets Logo"
                   fill
                   sizes="110px"

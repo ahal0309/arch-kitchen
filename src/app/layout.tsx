@@ -45,7 +45,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${jakarta.variable} ${spaceGrotesk.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${cormorant.variable} ${jakarta.variable} ${spaceGrotesk.variable}`}>
       <head>
         <link
           href="https://api.fontshare.com/v2/css?f[]=nohemi@400,300,500,600,700,200,100&display=swap"
@@ -56,12 +56,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="antialiased bg-[#fbf9f5] text-[#2c2b29] font-sans selection:bg-[#cbb17b] selection:text-white relative">
-        {/* Architectural Contour Lines Background with gentle organic drifting movement */}
-        <div
-          aria-hidden="true"
-          className="fixed -inset-10 pointer-events-none z-0 bg-[url('/contour-lines.svg')] bg-repeat-y bg-[length:1400px_auto] bg-top opacity-80 contour-animated-bg"
-        />
+      <body
+        suppressHydrationWarning
+        className="antialiased bg-[#fbf9f5] text-[#2c2b29] font-sans selection:bg-[#cbb17b] selection:text-white relative"
+      >
         <div className="relative z-10">
           <ScrollAnimationProvider>{children}</ScrollAnimationProvider>
         </div>
