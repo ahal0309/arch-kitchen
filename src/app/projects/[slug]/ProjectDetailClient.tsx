@@ -192,21 +192,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
               <p>{project.details}</p>
             </div>
 
-            {/* Action Consultation Button */}
-            <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-              <Link
-                href="/contact"
-                className="inline-flex justify-center items-center px-8 py-3.5 bg-[#c5a059] hover:bg-[#b38e45] text-white font-mono text-xs uppercase tracking-wider rounded-full transition-all shadow-md hover:shadow-lg"
-              >
-                Inquire About Similar Build
-              </Link>
-              <Link
-                href="/projects"
-                className="inline-flex justify-center items-center px-6 py-3.5 bg-white hover:bg-[#fbf9f5] border border-[#ede8df] text-[#2c2b29] font-mono text-xs uppercase tracking-wider rounded-full transition-all"
-              >
-                All Projects
-              </Link>
-            </div>
+
           </div>
         </div>
       </main>
