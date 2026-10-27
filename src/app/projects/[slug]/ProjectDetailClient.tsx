@@ -66,7 +66,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
                 className="object-cover object-center transition-all duration-500"
               />
 
-              {/* Prev / Next controls permanently visible on both sides */}
+              {/* Prev / Next controls permanently visible on both sides across mobile and desktop */}
               {images.length > 1 && (
                 <>
                   <button
@@ -77,9 +77,9 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
                       prevImage();
                     }}
                     aria-label="Previous photograph"
-                    className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/90 hover:bg-white text-[#1e1d1b] flex items-center justify-center transition-all duration-200 shadow-md hover:shadow-xl hover:scale-105 backdrop-blur-md z-20 border border-white/60 active:scale-95"
+                    className="absolute left-2.5 sm:left-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/95 text-[#1e1d1b] flex items-center justify-center transition-all duration-200 shadow-[0_4px_16px_rgba(0,0,0,0.18)] hover:bg-[#c5a059] hover:text-white hover:scale-105 active:scale-90 z-40 border border-white/80"
                   >
-                    <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-[#1e1d1b]" />
+                    <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
                   </button>
                   <button
                     type="button"
@@ -89,9 +89,9 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
                       nextImage();
                     }}
                     aria-label="Next photograph"
-                    className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/90 hover:bg-white text-[#1e1d1b] flex items-center justify-center transition-all duration-200 shadow-md hover:shadow-xl hover:scale-105 backdrop-blur-md z-20 border border-white/60 active:scale-95"
+                    className="absolute right-2.5 sm:right-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/95 text-[#1e1d1b] flex items-center justify-center transition-all duration-200 shadow-[0_4px_16px_rgba(0,0,0,0.18)] hover:bg-[#c5a059] hover:text-white hover:scale-105 active:scale-90 z-40 border border-white/80"
                   >
-                    <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-[#1e1d1b]" />
+                    <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
                   </button>
                 </>
               )}
