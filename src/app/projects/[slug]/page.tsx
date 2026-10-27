@@ -1,8 +1,5 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
+import React, { Suspense } from "react";
 import { notFound } from "next/navigation";
-import Navbar from "@/components/Navbar";
 import { ARCH_PROJECTS, ProjectItem } from "@/data/projects";
 import ProjectDetailClient from "./ProjectDetailClient";
 
@@ -16,7 +13,7 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-export default async function ProjectDetailPage({ params }: PageProps) {
+async function ProjectContent({ params }: PageProps) {
   const { slug } = await params;
   const project = ARCH_PROJECTS.find((p) => p.slug === slug);
 
@@ -25,4 +22,18 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   }
 
   return <ProjectDetailClient project={project} />;
+}
+
+export default function ProjectDetailPage({ params }: PageProps) {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-transparent flex items-center justify-center p-12">
+          <div className="w-8 h-8 border-2 border-[#c5a059] border-t-transparent rounded-full animate-spin" />
+        </div>
+      }
+    >
+      <ProjectContent params={params} />
+    </Suspense>
+  );
 }
