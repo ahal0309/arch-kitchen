@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import { ARCH_PROJECTS } from "@/data/projects";
 import {
   Phone,
   Clock,
@@ -195,67 +196,24 @@ export default function HomePage() {
     },
   ];
 
-  const projects = [
-    {
-      title: "The Yorkville Residence",
-      location: "Yorkville, Toronto",
-      year: "2024 Project",
-      category: "MODERN MINIMALIST",
-      image: "/project1.webp",
-      description:
-        "Calacatta marble waterfall island, brushed brass hardware details, flush pantry wall with integrated panel appliances.",
-    },
-    {
-      title: "The Forest Hill Estate",
-      location: "Forest Hill, Toronto",
-      year: "2024 Project",
-      category: "CLASSIC SHAKER",
-      image: "/project2.webp",
-      description:
-        "Crisp classic shaker millwork, sun-drenched apron farm sink, and perimeter quartz countertops with bevelled trim.",
-    },
-    {
-      title: "The Oakville Modern",
-      location: "Oakville Harbour",
-      year: "2024 Project",
-      category: "WHITE OAK",
-      image: "/project3.webp",
-      description:
-        "Natural white oak island base with curved end radius and seamless engineered quartz surfaces.",
-    },
-    {
-      title: "Warmwood & Softlight",
-      location: "Markham Custom",
-      year: "2024 Project",
-      category: "MODERN MINIMALIST",
-      image: "/project4.webp",
-      description:
-        "Warm architectural tones, subtle warm undertones, and cove LED lighting integrated inside open cabinetry.",
-    },
-    {
-      title: "Artisan Range Canopy",
-      location: "Vaughan Heights",
-      year: "2024 Project",
-      category: "CLASSIC SHAKER",
-      image: "/hero_main.webp",
-      description:
-        "Custom plaster and fluted woodwork canopy with bookmatched Taj Mahal stone backplate.",
-    },
-    {
-      title: "The Bridle Path Suite",
-      location: "Toronto, ON",
-      year: "2024 Project",
-      category: "WHITE OAK",
-      image: "/project1.webp",
-      description:
-        "Sleek architectural lines, hidden spice racks, paneled Sub-Zero refrigeration and custom champagne brass brassware.",
-    },
-  ];
+  const projects = ARCH_PROJECTS.map((p) => ({
+    slug: p.slug,
+    title: p.title,
+    location: p.location,
+    year: `${p.year} Project`,
+    category: p.shortCategory,
+    image: p.coverImage,
+    description: p.description,
+  }));
 
   const filteredProjects =
     activeCategory === "ALL"
       ? projects
-      : projects.filter((p) => p.category === activeCategory);
+      : projects.filter(
+          (p) =>
+            p.category.toLowerCase() === activeCategory.toLowerCase() ||
+            p.category.toLowerCase().includes(activeCategory.toLowerCase())
+        );
 
   const steps = [
     {
@@ -914,20 +872,25 @@ export default function HomePage() {
           {/* Filter buttons */}
           <div className="flex flex-wrap items-center justify-between gap-4 mb-10">
             <div className="flex flex-wrap items-center gap-2">
-              {["ALL", "MODERN MINIMALIST", "CLASSIC SHAKER", "WHITE OAK"].map(
-                (cat) => (
-                  <button
-                    key={cat}
-                    onClick={() => setActiveCategory(cat)}
-                    className={`px-4 py-2 text-xs font-semibold tracking-wider uppercase rounded-full transition-all ${activeCategory === cat
-                        ? "bg-[#c5a059] text-white shadow-md"
-                        : "bg-white/80 text-[#6b6863] hover:text-[#1e1d1b] border border-[#ede8df]"
-                      }`}
-                  >
-                    {cat}
-                  </button>
-                )
-              )}
+              {[
+                "ALL",
+                "RESIDENTIAL ARCHITECTURE",
+                "CUSTOM CABINETRY",
+                "TURNKEY RENOVATION",
+                "BESPOKE JOINERY",
+              ].map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setActiveCategory(cat)}
+                  className={`px-4 py-2 text-xs font-semibold tracking-wider uppercase rounded-full transition-all ${
+                    activeCategory === cat
+                      ? "bg-[#c5a059] text-white shadow-md"
+                      : "bg-white/80 text-[#6b6863] hover:text-[#1e1d1b] border border-[#ede8df]"
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
             </div>
             <span className="text-xs font-mono text-[#c5a059] tracking-widest uppercase hidden md:inline-block">
               [ PANORAMIC ATELIER VIEW ]
@@ -960,9 +923,10 @@ export default function HomePage() {
             <div className="curved-carousel-track relative z-10 space-x-6 sm:space-x-8 py-8 items-center">
               {[...filteredProjects, ...filteredProjects].map((project, idx) => {
                 return (
-                  <div
+                  <Link
                     key={idx}
-                    className="relative shrink-0 w-[280px] sm:w-[330px] md:w-[380px] aspect-[4/5] rounded-[2rem] overflow-hidden shadow-[0_12px_36px_rgba(0,0,0,0.14)] border border-[#ede8df] bg-[#ebe7e0] group transition-all duration-500 hover:scale-[1.03] hover:shadow-[0_20px_48px_rgba(197,160,89,0.22)]"
+                    href={`/projects/${project.slug}`}
+                    className="relative shrink-0 w-[280px] sm:w-[330px] md:w-[380px] aspect-[4/5] rounded-[2rem] overflow-hidden shadow-[0_12px_36px_rgba(0,0,0,0.14)] border border-[#ede8df] bg-[#ebe7e0] group transition-all duration-500 hover:scale-[1.03] hover:shadow-[0_20px_48px_rgba(197,160,89,0.22)] block"
                   >
                     <Image
                       src={project.image}
@@ -995,7 +959,7 @@ export default function HomePage() {
                         </p>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 );
               })}
             </div>
@@ -1003,13 +967,13 @@ export default function HomePage() {
 
           {/* View Full Portfolio Button */}
           <div className="mt-8 text-center relative z-20">
-            <a
-              href="#contact"
+            <Link
+              href="/projects"
               className="inline-flex items-center space-x-3 px-8 py-3.5 bg-[#ebe7e0] border border-[#ded8cd] hover:border-[#c5a059] text-[#2c2b29] hover:text-[#c5a059] font-medium text-xs uppercase tracking-wider rounded-full transition-all shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
             >
-              <span>View Complete Portfolio Gallery (45+ Projects)</span>
+              <span>Explore All Featured Projects</span>
               <ArrowRight className="w-4 h-4 text-[#c5a059]" />
-            </a>
+            </Link>
           </div>
         </div>
       </section>
