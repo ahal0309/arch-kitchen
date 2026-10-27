@@ -66,24 +66,32 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
                 className="object-cover object-center transition-all duration-500"
               />
 
-              {/* Prev / Next controls on hover */}
+              {/* Prev / Next controls permanently visible on both sides */}
               {images.length > 1 && (
                 <>
                   <button
                     type="button"
-                    onClick={prevImage}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      prevImage();
+                    }}
                     aria-label="Previous photograph"
-                    className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 hover:bg-white text-[#1e1d1b] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg backdrop-blur-sm"
+                    className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/90 hover:bg-white text-[#1e1d1b] flex items-center justify-center transition-all duration-200 shadow-md hover:shadow-xl hover:scale-105 backdrop-blur-md z-20 border border-white/60 active:scale-95"
                   >
-                    <ChevronLeft className="w-5 h-5" />
+                    <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-[#1e1d1b]" />
                   </button>
                   <button
                     type="button"
-                    onClick={nextImage}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      nextImage();
+                    }}
                     aria-label="Next photograph"
-                    className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 hover:bg-white text-[#1e1d1b] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg backdrop-blur-sm"
+                    className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/90 hover:bg-white text-[#1e1d1b] flex items-center justify-center transition-all duration-200 shadow-md hover:shadow-xl hover:scale-105 backdrop-blur-md z-20 border border-white/60 active:scale-95"
                   >
-                    <ChevronRight className="w-5 h-5" />
+                    <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-[#1e1d1b]" />
                   </button>
                 </>
               )}
