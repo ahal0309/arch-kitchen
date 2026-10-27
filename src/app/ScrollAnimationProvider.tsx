@@ -11,29 +11,33 @@ export default function ScrollAnimationProvider({
   const pathname = usePathname();
 
   useEffect(() => {
-    // Only observe elements explicitly marked with scroll-reveal, reveal-card, or reveal-init
-    // Do NOT mutate classes on raw section, main, or footer elements to prevent React hydration mismatch!
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            (entry.target as HTMLElement).dataset.revealed = "true";
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-        rootMargin: "0px 0px -40px 0px",
-      }
-    );
+    let observer: IntersectionObserver | null = null;
+    const rafId = requestAnimationFrame(() => {
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              (entry.target as HTMLElement).dataset.revealed = "true";
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+          rootMargin: "0px 0px -40px 0px",
+        }
+      );
 
-    const targets = document.querySelectorAll(
-      ".scroll-reveal, .reveal-item, .reveal-card, .reveal-init, .reveal-scale-init"
-    );
+      const targets = document.querySelectorAll(
+        ".scroll-reveal, .reveal-item, .reveal-card, .reveal-init, .reveal-scale-init"
+      );
 
-    targets.forEach((el) => observer.observe(el));
+      targets.forEach((el) => observer?.observe(el));
+    });
 
-    return () => observer.disconnect();
+    return () => {
+      cancelAnimationFrame(rafId);
+      if (observer) observer.disconnect();
+    };
   }, [pathname]);
 
   return <>{children}</>;

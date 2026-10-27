@@ -21,29 +21,7 @@ import Navbar from "@/components/Navbar";
 
 export default function CountertopInstallationPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("reveal-visible");
-          }
-        });
-      },
-      {
-        threshold: 0.15,
-        rootMargin: "0px 0px -40px 0px",
-      }
-    );
-
-    const elements = document.querySelectorAll(".scroll-reveal");
-    elements.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-
-  // 5 Countertop Types from Screenshot 1
+// 5 Countertop Types from Screenshot 1
   const countertopTypes = [
     {
       title: "Granite Countertops",

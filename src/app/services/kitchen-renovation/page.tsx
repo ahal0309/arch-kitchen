@@ -26,29 +26,7 @@ import Navbar from "@/components/Navbar";
 
 export default function KitchenRenovationPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("reveal-visible");
-          }
-        });
-      },
-      {
-        threshold: 0.15,
-        rootMargin: "0px 0px -40px 0px",
-      }
-    );
-
-    const elements = document.querySelectorAll(".scroll-reveal");
-    elements.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-
-  // 3 Complete Remodeling Services from screenshot 1
+// 3 Complete Remodeling Services from screenshot 1
   const completeServices = [
     {
       title: "Custom Cabinetry And Countertops",

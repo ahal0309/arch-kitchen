@@ -17,29 +17,7 @@ import Navbar from "@/components/Navbar";
 
 export default function BacksplashInstallationPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("reveal-visible");
-          }
-        });
-      },
-      {
-        threshold: 0.15,
-        rootMargin: "0px 0px -40px 0px",
-      }
-    );
-
-    const elements = document.querySelectorAll(".scroll-reveal");
-    elements.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-
-  // 3 "Why Choose Arch Kitchen Cabinets" bullet points from Screenshot 1
+// 3 "Why Choose Arch Kitchen Cabinets" bullet points from Screenshot 1
   const whyChoosePoints = [
     {
       title: "Design Impact",

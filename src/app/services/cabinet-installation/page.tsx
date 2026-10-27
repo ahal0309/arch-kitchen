@@ -26,29 +26,7 @@ import Navbar from "@/components/Navbar";
 
 export default function CabinetInstallationPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("reveal-visible");
-          }
-        });
-      },
-      {
-        threshold: 0.15,
-        rootMargin: "0px 0px -40px 0px",
-      }
-    );
-
-    const elements = document.querySelectorAll(".scroll-reveal");
-    elements.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-
-  return (
+return (
     <div className="min-h-screen bg-transparent text-[#2c2a29] font-sans selection:bg-[#c5a059] selection:text-white animate-page-enter">
       {/* Unified Navbar */}
       <Navbar activePage="services" />
