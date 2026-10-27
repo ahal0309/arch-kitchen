@@ -247,17 +247,11 @@ export default function FlooringInstallationPage() {
         <div className="max-w-7xl mx-auto space-y-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6">
             <div>
-              <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-3">
-                01 / SERVICES / ARCHITECTURAL FLOORING
-              </span>
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-arch uppercase tracking-tight text-[#1e1d1b]">
                 FLOORING INSTALLATION <span className="text-[#c5a059]">TORONTO</span>
               </h1>
             </div>
-            <p className="text-xs sm:text-sm font-mono uppercase tracking-widest text-[#78756e] max-w-sm">
-              [ HARDWOOD, ENGINEERED OAK & PORCELAIN TILE ]
-            </p>
-          </div>
+            </div>
           <p className="text-base sm:text-lg text-[#5a5750] max-w-3xl leading-relaxed">
             Professional flooring installation services across the GTA designed to enhance the foundation and aesthetic cohesion of your home.
           </p>
@@ -270,9 +264,6 @@ export default function FlooringInstallationPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* Left Column: Intro & Types of Flooring */}
             <div className="lg:col-span-6 space-y-6 scroll-reveal reveal-init">
-              <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block">
-                02 / MATERIAL SELECTION
-              </span>
               <p className="text-sm sm:text-base text-[#6b6863] leading-relaxed">
                 At Arch Kitchen Cabinets, we offer professional flooring installation services in Toronto designed to enhance the beauty and functionality of your home. Our skilled team ensures precise installation, using high-quality materials that meet your style and practical needs. Explore our comprehensive range of flooring options and discover how we can help you achieve the perfect look for your space.
               </p>

@@ -181,17 +181,11 @@ export default function BacksplashInstallationPage() {
         <div className="max-w-7xl mx-auto space-y-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6">
             <div>
-              <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-3">
-                01 / SERVICES / TILE & SLAB
-              </span>
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-arch uppercase tracking-tight text-[#1e1d1b]">
                 BACKSPLASH INSTALLATION <span className="text-[#c5a059]">TORONTO</span>
               </h1>
             </div>
-            <p className="text-xs sm:text-sm font-mono uppercase tracking-widest text-[#78756e] max-w-sm">
-              [ SEAMLESS SLAB CONTINUITY & MOSAIC TILING ]
-            </p>
-          </div>
+            </div>
           <p className="text-base sm:text-lg text-[#5a5750] max-w-3xl leading-relaxed">
             Elevate your kitchen aesthetic with full-height stone slabs, artisan zellige, and precision herringbone backsplash installations in Toronto.
           </p>

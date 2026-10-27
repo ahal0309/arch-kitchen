@@ -141,17 +141,11 @@ export default function KitchenRenovationPage() {
         <div className="max-w-7xl mx-auto space-y-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6">
             <div>
-              <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-3">
-                01 / SERVICES / TURNKEY LIVING
-              </span>
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-arch uppercase tracking-tight text-[#1e1d1b]">
                 KITCHEN RENOVATION <span className="text-[#c5a059]">TORONTO</span>
               </h1>
             </div>
-            <p className="text-xs sm:text-sm font-mono uppercase tracking-widest text-[#78756e] max-w-sm">
-              [ COMPLETE RESIDENTIAL OVERHAUL & PROJECT DELIVERY ]
-            </p>
-          </div>
+            </div>
           <p className="text-base sm:text-lg text-[#5a5750] max-w-3xl leading-relaxed">
             Transforming kitchens with quality craftsmanship, functional designs, and customized solutions across the Greater Toronto Area.
           </p>
@@ -163,9 +157,6 @@ export default function KitchenRenovationPage() {
         <div className="max-w-7xl mx-auto">
           {/* Header Block */}
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-3 scroll-reveal reveal-init">
-            <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block">
-              02 / COMPREHENSIVE CAPABILITIES
-            </span>
             <h2 className="text-3xl sm:text-5xl font-arch uppercase text-[#1e1d1b] leading-tight">
               OUR COMPLETE KITCHEN REMODELING <span className="text-[#c5a059]">SERVICES INCLUDE</span>
             </h2>
@@ -241,9 +232,6 @@ export default function KitchenRenovationPage() {
             {/* Right Text Column - Exact text matching screenshot 2 */}
             <div className="lg:col-span-6 space-y-6 scroll-reveal reveal-init delay-150">
               <div>
-                <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-2">
-                  03 / ATELIER EXCELLENCE
-                </span>
                 <h2 className="text-3xl sm:text-5xl font-arch uppercase text-[#1e1d1b] leading-tight">
                   WHY CHOOSE <span className="text-[#c5a059]">ARCH KITCHENS</span>
                 </h2>
@@ -291,9 +279,6 @@ export default function KitchenRenovationPage() {
         <div className="max-w-7xl mx-auto space-y-16">
           {/* Header with decorative center accent line */}
           <div className="text-center max-w-2xl mx-auto space-y-3 scroll-reveal reveal-init">
-            <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block">
-              04 / EXECUTION METHODOLOGY
-            </span>
             <h2 className="text-3xl sm:text-5xl font-arch uppercase text-[#1e1d1b]">
               KITCHEN RENOVATION <span className="text-[#c5a059]">PROCESS</span>
             </h2>

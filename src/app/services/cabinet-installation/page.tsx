@@ -58,17 +58,11 @@ export default function CabinetInstallationPage() {
         <div className="max-w-7xl mx-auto space-y-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6">
             <div>
-              <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-3">
-                01 / SERVICES / BESPOKE JOINERY
-              </span>
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-arch uppercase tracking-tight text-[#1e1d1b]">
                 CABINET INSTALLATION <span className="text-[#c5a059]">TORONTO</span>
               </h1>
             </div>
-            <p className="text-xs sm:text-sm font-mono uppercase tracking-widest text-[#78756e] max-w-sm">
-              [ IN-HOUSE CNC WOODWORKING & CUSTOM MILLWORK ]
-            </p>
-          </div>
+            </div>
           <p className="text-base sm:text-lg text-[#5a5750] max-w-3xl leading-relaxed">
             Expert cabinet installation, repair, and refinishing services designed to elevate your kitchen's elegance, durability, and daily efficiency.
           </p>
@@ -79,9 +73,6 @@ export default function CabinetInstallationPage() {
       <section className="pt-6 pb-20 px-6 lg:px-16 max-w-7xl mx-auto relative overflow-hidden">
         {/* Exact Intro Paragraph */}
         <div className="max-w-4xl mx-auto text-center mb-16 scroll-reveal reveal-init">
-          <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-2">
-            02 / BESPOKE ATELIER MILLWORK
-          </span>
           <p className="text-[#5a5750] text-base sm:text-lg leading-relaxed font-normal">
             Is your kitchen or any other room in need of a fresh update? Arch Kitchen
             Cabinets offers expert cabinet installation services in Toronto to enhance
@@ -94,9 +85,6 @@ export default function CabinetInstallationPage() {
         {/* Section Heading with Minimal Contour styling (Urbantrop Style) */}
         <div className="space-y-12 scroll-reveal reveal-init">
           <div className="text-center">
-            <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-2">
-              03 / CAPABILITIES & CRAFTSMANSHIP
-            </span>
             <h2 className="text-3xl sm:text-5xl font-arch uppercase text-[#1e1d1b]">
               WHAT WE <span className="text-[#c5a059]">OFFER</span>
             </h2>
@@ -217,9 +205,6 @@ export default function CabinetInstallationPage() {
             {/* Right Column: Exact Content & Verbatim Bullet Points */}
             <div className="lg:col-span-7 scroll-reveal reveal-init space-y-4" style={{ transitionDelay: "150ms" }}>
               <div>
-                <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-2">
-                  04 / ATELIER STANDARDS
-                </span>
                 <h2 className="text-3xl sm:text-5xl font-arch uppercase text-[#181715] tracking-tight">
                   WHY CHOOSE <span className="text-[#c5a059]">ARCH KITCHENS</span>
                 </h2>
@@ -316,9 +301,6 @@ export default function CabinetInstallationPage() {
       {/* ──────────────── CABINET INSTALLATION PROCESS (Screenshot 3) ──────────────── */}
       <section className="py-20 px-6 lg:px-16 max-w-7xl mx-auto relative overflow-hidden">
         <div className="text-center mb-16 scroll-reveal reveal-init">
-          <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-2">
-            05 / EXECUTION METHODOLOGY
-          </span>
           <h2 className="text-3xl sm:text-5xl font-arch uppercase text-[#181715] tracking-tight">
             CABINET INSTALLATION <span className="text-[#c5a059]">PROCESS</span>
           </h2>

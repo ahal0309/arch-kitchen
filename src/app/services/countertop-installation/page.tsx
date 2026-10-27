@@ -196,17 +196,11 @@ export default function CountertopInstallationPage() {
         <div className="max-w-7xl mx-auto space-y-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6">
             <div>
-              <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-3">
-                01 / SERVICES / STONE FABRICATION
-              </span>
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-arch uppercase tracking-tight text-[#1e1d1b]">
                 COUNTERTOPS INSTALLATION <span className="text-[#c5a059]">TORONTO</span>
               </h1>
             </div>
-            <p className="text-xs sm:text-sm font-mono uppercase tracking-widest text-[#78756e] max-w-sm">
-              [ TAJ MAHAL QUARTZITE, CALACATTA & SOLID QUARTZ ]
-            </p>
-          </div>
+            </div>
           <p className="text-base sm:text-lg text-[#5a5750] max-w-3xl leading-relaxed">
             Direct stone slab sourcing, precision laser templating, and mitred waterfall fabrication across Toronto and the GTA.
           </p>
@@ -218,9 +212,6 @@ export default function CountertopInstallationPage() {
         <div className="max-w-7xl mx-auto">
           {/* Header Block */}
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4 scroll-reveal reveal-init">
-            <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block">
-              02 / CURATED STONE SLABS
-            </span>
             <h2 className="text-3xl sm:text-5xl font-arch uppercase text-[#1e1d1b] leading-tight">
               TRANSFORM YOUR SPACE WITH <span className="text-[#c5a059]">PREMIUM COUNTERTOPS</span>
             </h2>

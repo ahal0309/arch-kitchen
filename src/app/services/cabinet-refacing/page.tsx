@@ -55,17 +55,11 @@ export default function CabinetRefacingPage() {
         <div className="max-w-7xl mx-auto space-y-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6">
             <div>
-              <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-3">
-                01 / SERVICES / PRECISION REFACING
-              </span>
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-arch uppercase tracking-tight text-[#1e1d1b]">
                 CABINET REFACING <span className="text-[#c5a059]">TORONTO</span>
               </h1>
             </div>
-            <p className="text-xs sm:text-sm font-mono uppercase tracking-widest text-[#78756e] max-w-sm">
-              [ MODERN ELEVATION WITH MINIMAL DISRUPTION ]
-            </p>
-          </div>
+            </div>
           <p className="text-base sm:text-lg text-[#5a5750] max-w-3xl leading-relaxed">
             Revitalize your kitchen with premium doors, veneers, and modern hardware at a fraction of the cost and time of full replacement.
           </p>
@@ -77,9 +71,6 @@ export default function CabinetRefacingPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           {/* Left Column: Numbered Points 1 to 5 */}
           <div className="lg:col-span-7 scroll-reveal reveal-init">
-            <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-2">
-              02 / MODERN LIVING
-            </span>
             <h2 className="text-3xl sm:text-5xl font-arch uppercase text-[#1e1d1b] leading-tight mb-8">
               EXPERT CABINET REFACING <br />
               <span className="text-[#c5a059]">SERVICES IN TORONTO</span>
@@ -188,9 +179,6 @@ export default function CabinetRefacingPage() {
             {/* Right Column: Exact Content & Verbatim Bullet Points */}
             <div className="lg:col-span-7 scroll-reveal reveal-init space-y-4" style={{ transitionDelay: "150ms" }}>
               <div>
-                <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-2">
-                  03 / ATELIER STANDARDS
-                </span>
                 <h2 className="text-3xl sm:text-5xl font-arch uppercase text-[#181715] tracking-tight">
                   WHY CHOOSE <span className="text-[#c5a059]">ARCH KITCHENS</span>
                 </h2>
@@ -290,9 +278,6 @@ export default function CabinetRefacingPage() {
       {/* ──────────────── WHAT WE OFFER (Screenshot 2) ──────────────── */}
       <section className="py-20 px-6 lg:px-16 max-w-7xl mx-auto relative overflow-hidden">
         <div className="text-center mb-16 scroll-reveal reveal-init">
-          <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-2">
-            04 / REFACING SCOPE & CAPABILITIES
-          </span>
           <h2 className="text-3xl sm:text-5xl font-arch uppercase text-[#181715] tracking-tight">
             WHAT WE <span className="text-[#c5a059]">OFFER</span>
           </h2>
@@ -401,9 +386,6 @@ export default function CabinetRefacingPage() {
             {/* Right Column: Exact Content from Screenshot 3 + Get A Quote button */}
             <div className="lg:col-span-7 scroll-reveal reveal-init space-y-4" style={{ transitionDelay: "150ms" }}>
               <div>
-                <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-2">
-                  05 / ATELIER DISTINCTION
-                </span>
                 <h2 className="text-3xl sm:text-5xl font-arch uppercase text-[#181715] tracking-tight">
                   WHAT SETS <span className="text-[#c5a059]">US APART</span>
                 </h2>
