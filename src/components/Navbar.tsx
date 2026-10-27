@@ -71,8 +71,12 @@ export default function Navbar({ activePage = "home" }: NavbarProps) {
               ABOUT
             </Link>
             <Link
-              href="/#portfolio"
-              className="hover:text-[#c5a059] transition-colors py-1 whitespace-nowrap"
+              href="/projects"
+              className={`py-1 whitespace-nowrap transition-colors ${
+                activePage === "projects"
+                  ? "text-[#c5a059] font-medium"
+                  : "hover:text-[#c5a059]"
+              }`}
             >
               PROJECTS
             </Link>
@@ -210,8 +214,12 @@ export default function Navbar({ activePage = "home" }: NavbarProps) {
 
             <button
               type="button"
-              onClick={() => navigateTo("/#portfolio")}
-              className="w-full flex items-center justify-between py-2.5 px-3 rounded-xl text-xs font-mono tracking-[0.2em] uppercase text-[#3a3834] hover:text-[#c5a059] hover:bg-black/[0.03] transition-colors text-left"
+              onClick={() => navigateTo("/projects")}
+              className={`w-full flex items-center justify-between py-2.5 px-3 rounded-xl text-xs font-mono tracking-[0.2em] uppercase transition-colors text-left ${
+                activePage === "projects"
+                  ? "text-[#c5a059] bg-black/[0.04] font-semibold"
+                  : "text-[#3a3834] hover:text-[#c5a059] hover:bg-black/[0.03]"
+              }`}
             >
               <span>PROJECTS</span>
               <span className="text-[10px] text-[#c5a059] font-mono">03</span>

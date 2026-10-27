@@ -377,7 +377,7 @@ export default function ContactPage() {
                 </li>
                 <li>
                   <Link
-                    href="/#portfolio"
+                    href="/projects"
                     className="flex items-center space-x-2 hover:text-[#e4be6c] transition-colors group"
                   >
                     <span className="text-[#a0a0a0] group-hover:text-[#e4be6c] transition-colors">→</span>

@@ -108,7 +108,7 @@ export default function AboutPage() {
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
-                  href="/#portfolio"
+                  href="/projects"
                   className="inline-flex items-center space-x-2 px-8 py-3.5 bg-white border border-[#ded8cb] hover:border-[#c5a059] text-[#2c2b29] font-medium text-xs uppercase tracking-wider rounded-full transition-all shadow-sm"
                 >
                   <span>View Our Work</span>
@@ -481,7 +481,7 @@ export default function AboutPage() {
                 </li>
                 <li>
                   <Link
-                    href="/#portfolio"
+                    href="/projects"
                     className="flex items-center space-x-2 hover:text-[#e4be6c] transition-colors group"
                   >
                     <span className="text-[#a0a0a0] group-hover:text-[#e4be6c] transition-colors">→</span>
