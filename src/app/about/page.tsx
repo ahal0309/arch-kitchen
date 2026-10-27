@@ -47,16 +47,10 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto space-y-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6">
             <div>
-              <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-3">
-                01 / ATELIER HERITAGE & CRAFTSMANSHIP
-              </span>
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-arch uppercase tracking-tight text-[#1e1d1b]">
                 ABOUT <span className="text-[#c5a059]">ARCH KITCHENS</span>
               </h1>
             </div>
-            <p className="text-xs sm:text-sm font-mono uppercase tracking-widest text-[#78756e] max-w-sm">
-              [ TORONTO BESPOKE JOINERY & ARCHITECTURAL INTERIORS ]
-            </p>
           </div>
           <p className="text-base sm:text-lg text-[#5a5750] max-w-3xl leading-relaxed">
             Transforming residential living spaces across the Greater Toronto Area with uncompromising millwork precision, in-house joinery, and enduring architectural elegance.
@@ -72,9 +66,6 @@ export default function AboutPage() {
             {/* Left Content Column with Exact Requested Text */}
             <div className="lg:col-span-6 space-y-6">
               <div>
-                <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-2">
-                  02 / OUR PHILOSOPHY
-                </span>
                 <h2 className="text-3xl sm:text-5xl lg:text-6xl font-arch uppercase text-[#1e1d1b] leading-tight">
                   KNOW MORE <span className="text-[#c5a059]">ABOUT US</span>
                 </h2>
@@ -149,9 +140,6 @@ export default function AboutPage() {
           {/* 4 Architectural Achievements Metric Cards */}
           <div className="pt-4">
             <div className="text-center max-w-xl mx-auto mb-10">
-              <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-1">
-                03 / MILESTONES & PROVEN EXCELLENCE
-              </span>
               <h3 className="text-3xl sm:text-4xl font-arch uppercase text-[#1e1d1b]">
                 OUR PROUD <span className="text-[#c5a059]">ACHIEVEMENTS</span>
               </h3>
@@ -355,9 +343,6 @@ export default function AboutPage() {
           {/* Core Values / Why Homeowners Choose Arch Kitchens */}
           <div className="arch-card p-8 lg:p-14 space-y-10">
             <div className="text-center max-w-2xl mx-auto">
-              <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block mb-1">
-                04 / THE ARCH KITCHENS STANDARD
-              </span>
               <h3 className="text-3xl font-arch uppercase text-[#1e1d1b]">
                 WHY HOMEOWNERS CHOOSE OUR <span className="text-[#c5a059]">ATELIER</span>
               </h3>
