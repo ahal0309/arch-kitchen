@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import { ProjectItem } from "@/data/projects";
 import {
   ArrowLeft,
@@ -196,6 +197,9 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
           </div>
         </div>
       </main>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }

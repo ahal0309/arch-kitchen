@@ -15,6 +15,41 @@ export interface ProjectItem {
 
 export const ARCH_PROJECTS: ProjectItem[] = [
   {
+    "slug": "allenvale-residence",
+    "title": "ALLENVALE RESIDENCE",
+    "category": "ARCHITECTURAL KITCHEN & BESPOKE CABINETRY",
+    "shortCategory": "ARCHITECTURAL JOINERY",
+    "location": "Toronto, Ontario",
+    "area": "3,100 SqFt",
+    "status": "Completed",
+    "year": "2025",
+    "description": "An exquisite custom kitchen and millwork suite showcasing tailored full-height cabinetry, contemporary luxury finishes, and an expansive architectural island designed for seamless living.",
+    "details": "Engineered with custom integrated appliance panels, soft ambient under-cabinet illumination, precision joinery, and premium stone surfaces that bring warmth and elegance to the home.",
+    "coverImage": "/projects/allenvale-residence/image_6.webp",
+    "images": [
+      "/projects/allenvale-residence/image_6.webp",
+      "/projects/allenvale-residence/image_15.webp",
+      "/projects/allenvale-residence/image_1.webp",
+      "/projects/allenvale-residence/image_2.webp",
+      "/projects/allenvale-residence/image_3.webp",
+      "/projects/allenvale-residence/image_4.webp",
+      "/projects/allenvale-residence/image_5.webp",
+      "/projects/allenvale-residence/image_7.webp",
+      "/projects/allenvale-residence/image_8.webp",
+      "/projects/allenvale-residence/image_9.webp",
+      "/projects/allenvale-residence/image_10.webp",
+      "/projects/allenvale-residence/image_11.webp",
+      "/projects/allenvale-residence/image_12.webp",
+      "/projects/allenvale-residence/image_13.webp",
+      "/projects/allenvale-residence/image_14.webp",
+      "/projects/allenvale-residence/image_16.webp",
+      "/projects/allenvale-residence/image_17.webp",
+      "/projects/allenvale-residence/image_18.webp",
+      "/projects/allenvale-residence/image_19.webp",
+      "/projects/allenvale-residence/image_20.webp"
+    ]
+  },
+  {
     "slug": "cedabrea-residence",
     "title": "CEDABREA RESIDENCE",
     "category": "RESIDENTIAL ARCHITECTURE & INTERIOR",

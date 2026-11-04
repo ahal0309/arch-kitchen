@@ -14,6 +14,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
+import Footer from '@/components/Footer';
 
 export default function FlooringInstallationPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -422,144 +423,7 @@ export default function FlooringInstallationPage() {
       </section>
 
       {/* ──────────────── Footer (Exact Home Page Style) ──────────────── */}
-      <footer className="bg-black text-[#9e9e9e] border-t border-[#1f1f1f] pt-16 pb-8 px-6 lg:px-16 text-sm">
-        <div className="max-w-7xl mx-auto">
-          {/* Main 4-Column Footer Content */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12">
-            {/* Column 1: Gold Framed AK Logo & Payment text */}
-            <div className="lg:col-span-4 space-y-5">
-              <div className="w-[110px] h-[110px] relative">
-                <Image
-                  src="/brand_footer_logo.webp"
-                  alt="Arch Kitchen Cabinets Logo"
-                  fill
-                  sizes="110px"
-                  className="object-contain"
-                />
-              </div>
-              <p className="text-xs text-[#a0a0a0] leading-relaxed max-w-sm">
-                We accept payment through cash, bank transfers. Choose the option that suits you best for a secure and convenient transaction.
-              </p>
-            </div>
-
-            {/* Column 2: Information Links */}
-            <div className="lg:col-span-3 space-y-4">
-              <h4 className="text-white font-bold text-base tracking-wide">
-                Information
-              </h4>
-              <ul className="space-y-2.5 text-xs text-[#a0a0a0]">
-                <li>
-                  <Link
-                    href="/contact"
-                    className="flex items-center space-x-2 hover:text-[#e4be6c] transition-colors group"
-                  >
-                    <span className="text-[#a0a0a0] group-hover:text-[#e4be6c] transition-colors">→</span>
-                    <span>Terms & Condition</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/contact"
-                    className="flex items-center space-x-2 hover:text-[#e4be6c] transition-colors group"
-                  >
-                    <span className="text-[#a0a0a0] group-hover:text-[#e4be6c] transition-colors">→</span>
-                    <span>Privacy Policy</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/contact"
-                    className="flex items-center space-x-2 hover:text-[#e4be6c] transition-colors group"
-                  >
-                    <span className="text-[#a0a0a0] group-hover:text-[#e4be6c] transition-colors">→</span>
-                    <span>Costumer Services</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/#faq"
-                    className="flex items-center space-x-2 hover:text-[#e4be6c] transition-colors group"
-                  >
-                    <span className="text-[#a0a0a0] group-hover:text-[#e4be6c] transition-colors">→</span>
-                    <span>FAQ's</span>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Column 3: Quick Link */}
-            <div className="lg:col-span-2 space-y-4">
-              <h4 className="text-white font-bold text-base tracking-wide">
-                Quick Link
-              </h4>
-              <ul className="space-y-2.5 text-xs text-[#a0a0a0]">
-                <li>
-                  <Link
-                    href="/about"
-                    className="flex items-center space-x-2 hover:text-[#e4be6c] transition-colors group"
-                  >
-                    <span className="text-[#a0a0a0] group-hover:text-[#e4be6c] transition-colors">→</span>
-                    <span>About Us</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/services"
-                    className="flex items-center space-x-2 hover:text-[#e4be6c] transition-colors group"
-                  >
-                    <span className="text-[#a0a0a0] group-hover:text-[#e4be6c] transition-colors">→</span>
-                    <span>Our Services</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/#portfolio"
-                    className="flex items-center space-x-2 hover:text-[#e4be6c] transition-colors group"
-                  >
-                    <span className="text-[#a0a0a0] group-hover:text-[#e4be6c] transition-colors">→</span>
-                    <span>Recent Transformations</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/#reviews"
-                    className="flex items-center space-x-2 hover:text-[#e4be6c] transition-colors group"
-                  >
-                    <span className="text-[#a0a0a0] group-hover:text-[#e4be6c] transition-colors">→</span>
-                    <span>Client Testimonials</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/#areas"
-                    className="flex items-center space-x-2 hover:text-[#e4be6c] transition-colors group"
-                  >
-                    <span className="text-[#a0a0a0] group-hover:text-[#e4be6c] transition-colors">→</span>
-                    <span>Areas We Serve</span>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Column 4: Schedule CTA Button */}
-            <div className="lg:col-span-3 flex items-start lg:justify-end pt-2">
-              <Link
-                href="/contact"
-                className="inline-block px-7 py-3.5 bg-[#e8c75e] hover:bg-[#d8b64c] text-[#1e1d1b] font-bold text-xs sm:text-sm rounded-md transition-all shadow hover:shadow-lg transform hover:-translate-y-0.5 text-center"
-              >
-                Schedule A Free Consultation
-              </Link>
-            </div>
-          </div>
-
-          {/* Thin Horizontal Divider */}
-          <div className="border-t border-[#1f1f1f] pt-6 flex flex-col sm:flex-row items-center justify-center text-center text-xs text-[#808080]">
-            <div>
-              © Copyright 2026 Arch Kitchen Cabinets. All Rights Reserved. | Website Design By
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

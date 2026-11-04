@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import { ARCH_PROJECTS } from "@/data/projects";
 import {
   Phone,
@@ -210,10 +211,10 @@ export default function HomePage() {
     activeCategory === "ALL"
       ? projects
       : projects.filter(
-          (p) =>
-            p.category.toLowerCase() === activeCategory.toLowerCase() ||
-            p.category.toLowerCase().includes(activeCategory.toLowerCase())
-        );
+        (p) =>
+          p.category.toLowerCase() === activeCategory.toLowerCase() ||
+          p.category.toLowerCase().includes(activeCategory.toLowerCase())
+      );
 
   const steps = [
     {
@@ -260,14 +261,14 @@ export default function HomePage() {
   // Architectural Hero 3-panel image sets
   const heroSlideSets = [
     [
-      "/arch_kitchen/ACM_5342.webp",
-      "/arch_kitchen/ACM_5860.webp",
-      "/arch_kitchen/ACM_6105.webp",
+      "/arch_kitchen/IMG_3159.webp",
+      "/arch_kitchen/_DSC2189.webp",
+      "/arch_kitchen/IMG_0476.webp",
     ],
     [
-      "/arch_kitchen/ACM_6199.webp",
+      "/arch_kitchen/ACM_5342.webp",
       "/arch_kitchen/_DSC4084-HDR.webp",
-      "/arch_kitchen/_DSC4105-HDR.webp",
+      "/arch_kitchen/ACM_6105.webp",
     ],
     [
       "/arch_kitchen/_DSC4114-HDR.webp",
@@ -317,11 +318,10 @@ export default function HomePage() {
                     return (
                       <div
                         key={setIdx}
-                        className={`absolute inset-0 transition-opacity duration-[1000ms] ${
-                          isActive
-                            ? "opacity-100 z-10 pointer-events-auto"
-                            : "opacity-0 z-0 pointer-events-none"
-                        }`}
+                        className={`absolute inset-0 transition-opacity duration-[1000ms] ${isActive
+                          ? "opacity-100 z-10 pointer-events-auto"
+                          : "opacity-0 z-0 pointer-events-none"
+                          }`}
                         style={{
                           willChange: "opacity",
                           transitionTimingFunction: "cubic-bezier(0.42, 0, 0.58, 1)",
@@ -409,7 +409,7 @@ export default function HomePage() {
             <div className="lg:col-span-5 relative">
               <div className="relative rounded-none overflow-hidden shadow-lg border border-[#ede8df] bg-[#fbf9f5] aspect-[4/3] group">
                 <Image
-                  src="/arch_kitchen/ACM_5860.webp"
+                  src="/arch_kitchen/_DSC2189.webp"
                   alt="Arch Kitchens Architectural Interior"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
@@ -677,13 +677,43 @@ export default function HomePage() {
                   key={i}
                   onClick={() => setActiveStatIndex(i)}
                   aria-label={`Go to stat card ${i + 1}`}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${
-                    activeStatIndex === i
-                      ? "w-6 bg-[#c5a059]"
-                      : "w-1.5 bg-[#d8d3c8] hover:bg-[#b8b3a7]"
-                  }`}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${activeStatIndex === i
+                    ? "w-6 bg-[#c5a059]"
+                    : "w-1.5 bg-[#d8d3c8] hover:bg-[#b8b3a7]"
+                    }`}
                 />
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured in HGTV Architectural Banner */}
+      <section className="py-8 sm:py-12 px-4 sm:px-6 lg:px-16 bg-transparent">
+        <div className="max-w-4xl mx-auto">
+          <div className="relative rounded-2xl sm:rounded-3xl py-10 sm:py-14 px-6 sm:px-12 bg-white/70 backdrop-blur-md border border-[#ede8df] shadow-[0_4px_28px_rgba(44,38,25,0.03)] flex flex-col items-center justify-center text-center group hover:border-[#c5a059]/40 transition-all duration-500">
+            {/* Top Text: FEATURED IN */}
+            <span className="text-sm sm:text-base md:text-lg uppercase tracking-[0.45em] text-[#2c2724] font-medium font-sans mb-5 sm:mb-6 select-none pl-1">
+              F E A T U R E D &nbsp; I N
+            </span>
+
+            {/* Extracted HGTV Logo Mark */}
+            <div className="relative w-44 sm:w-56 md:w-64 aspect-[563/290] transition-transform duration-500 group-hover:scale-105">
+              <Image
+                src="/hgtv_logo_clean.webp"
+                alt="HGTV"
+                fill
+                sizes="(max-width: 640px) 176px, (max-width: 768px) 224px, 256px"
+                className="object-contain object-center"
+                priority
+              />
+            </div>
+
+            {/* Bottom Subtitle with Decorative Lines */}
+            <div className="mt-7 sm:mt-8 flex items-center justify-center space-x-3 sm:space-x-4 text-[10px] sm:text-xs uppercase tracking-[0.22em] sm:tracking-[0.28em] font-mono text-[#78756e]">
+              <span className="w-8 sm:w-14 h-[1px] bg-[#c5a059]/40"></span>
+              <span>Nationally Recognized Architectural Design</span>
+              <span className="w-8 sm:w-14 h-[1px] bg-[#c5a059]/40"></span>
             </div>
           </div>
         </div>
@@ -772,7 +802,7 @@ export default function HomePage() {
             <div className="lg:col-span-6 relative">
               <div className="relative rounded-2xl overflow-hidden shadow-xl border border-[#ede8df] bg-stone-100 aspect-[4/3] sm:aspect-[1.15/1] z-10 group">
                 <Image
-                  src="/arch_kitchen/ACM_5339.webp"
+                  src="/arch_kitchen/IMG_9775.webp"
                   alt="Your Kitchen Specialist Toronto Showcase"
                   fill
                   quality={100}
@@ -882,19 +912,15 @@ export default function HomePage() {
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-4 py-2 text-xs font-semibold tracking-wider uppercase rounded-full transition-all ${
-                    activeCategory === cat
-                      ? "bg-[#c5a059] text-white shadow-md"
-                      : "bg-white/80 text-[#6b6863] hover:text-[#1e1d1b] border border-[#ede8df]"
-                  }`}
+                  className={`px-4 py-2 text-xs font-semibold tracking-wider uppercase rounded-full transition-all ${activeCategory === cat
+                    ? "bg-[#c5a059] text-white shadow-md"
+                    : "bg-white/80 text-[#6b6863] hover:text-[#1e1d1b] border border-[#ede8df]"
+                    }`}
                 >
                   {cat}
                 </button>
               ))}
             </div>
-            <span className="text-xs font-mono text-[#c5a059] tracking-widest uppercase hidden md:inline-block">
-              [ PANORAMIC ATELIER VIEW ]
-            </span>
           </div>
 
           {/* 3D Curved Flow Ribbon Gallery (Centered Full-Bleed Viewport) */}
@@ -1164,13 +1190,59 @@ export default function HomePage() {
                   key={i}
                   onClick={() => setActiveReviewIndex(i)}
                   aria-label={`Go to review ${i + 1}`}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${
-                    activeReviewIndex === i
-                      ? "w-6 bg-[#c5a059]"
-                      : "w-1.5 bg-[#d8d3c8] hover:bg-[#b8b3a7]"
-                  }`}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${activeReviewIndex === i
+                    ? "w-6 bg-[#c5a059]"
+                    : "w-1.5 bg-[#d8d3c8] hover:bg-[#b8b3a7]"
+                    }`}
                 />
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Architectural Google Reviews Trust Banner (Blended Palette) */}
+      <section className="py-10 sm:py-14 px-4 sm:px-6 lg:px-12 bg-transparent">
+        <div className="max-w-5xl mx-auto">
+          <div className="relative rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 bg-white/75 backdrop-blur-md border border-[#ede8df] shadow-[0_4px_28px_rgba(44,38,25,0.04)] flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
+            {/* Left: Blended Google Logo & 5 Stars */}
+            <div className="flex flex-col items-center md:items-start text-center md:text-left gap-3">
+              <div className="relative w-44 sm:w-52 h-16 sm:h-20 flex items-center justify-center md:justify-start">
+                <Image
+                  src="/google_reviews_blended.webp"
+                  alt="Arch Kitchens Google 5-Star Reviews"
+                  fill
+                  sizes="(max-width: 640px) 176px, 208px"
+                  className="object-contain object-center md:object-left"
+                />
+              </div>
+              <div className="flex items-center space-x-2 text-xs uppercase tracking-widest font-mono text-[#78756e]">
+                <span className="inline-block w-2 h-2 rounded-full bg-[#c5a059]"></span>
+                <span>Verified Client Ratings on Google</span>
+              </div>
+            </div>
+
+            {/* Right: Key Trust Metrics & Direct Review Link */}
+            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 border-t md:border-t-0 md:border-l border-[#ede8df] pt-4 md:pt-0 md:pl-8 w-full md:w-auto justify-center md:justify-end">
+              <div className="text-center md:text-left">
+                <div className="flex items-baseline justify-center md:justify-start gap-1">
+                  <span className="text-3xl sm:text-4xl font-arch text-[#1e1d1b]">4.9</span>
+                  <span className="text-sm font-mono text-[#c5a059]">/ 5.0</span>
+                </div>
+                <p className="text-[11px] sm:text-xs text-[#78756e] font-sans">
+                  Across Greater Toronto Area
+                </p>
+              </div>
+
+              <a
+                href="https://maps.google.com/?q=Arch+Kitchen+Cabinets+Scarborough"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center space-x-2 px-5 sm:px-6 py-3 rounded-full bg-[#fbf9f5] hover:bg-[#c5a059] text-[#1e1d1b] hover:text-white border border-[#ded8cd] hover:border-[#c5a059] text-xs uppercase tracking-wider font-medium transition-all duration-300 shadow-sm hover:shadow-md"
+              >
+                <span>Read Reviews</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </a>
             </div>
           </div>
         </div>
@@ -1237,8 +1309,8 @@ export default function HomePage() {
                     key={idx}
                     onMouseEnter={() => setOpenFaq(idx)}
                     className={`rounded-xl border transition-all duration-500 overflow-hidden cursor-pointer ${isOpen
-                        ? "bg-white border-[#c5a059] shadow-md ring-1 ring-[#c5a059]/20"
-                        : "bg-white border-[#ede8df] hover:border-[#c5a059]/60 hover:shadow-sm"
+                      ? "bg-white border-[#c5a059] shadow-md ring-1 ring-[#c5a059]/20"
+                      : "bg-white border-[#ede8df] hover:border-[#c5a059]/60 hover:shadow-sm"
                       }`}
                   >
                     <button
@@ -1251,8 +1323,8 @@ export default function HomePage() {
                       </span>
                       <div
                         className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 transform ${isOpen
-                            ? "bg-white/20 text-white rotate-180"
-                            : "bg-[#fbf9f5] border border-[#ede8df] text-[#c5a059] rotate-0"
+                          ? "bg-white/20 text-white rotate-180"
+                          : "bg-[#fbf9f5] border border-[#ede8df] text-[#c5a059] rotate-0"
                           }`}
                       >
                         <ChevronDown className="w-4 h-4 transition-transform duration-300" />
@@ -1262,8 +1334,8 @@ export default function HomePage() {
                     {/* Smooth expanding grid transition container */}
                     <div
                       className={`grid transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${isOpen
-                          ? "grid-rows-[1fr] opacity-100"
-                          : "grid-rows-[0fr] opacity-0"
+                        ? "grid-rows-[1fr] opacity-100"
+                        : "grid-rows-[0fr] opacity-0"
                         }`}
                     >
                       <div className="overflow-hidden">
@@ -1572,136 +1644,7 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      {/* Footer - Exact Design Matching User Reference */}
-      <footer className="bg-black text-[#9e9e9e] border-t border-[#1f1f1f] pt-16 pb-8 px-6 lg:px-16 text-sm">
-        <div className="max-w-7xl mx-auto">
-          {/* Main 4-Column Footer Content */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12">
-            {/* Column 1: Gold Framed AK Logo & Payment text */}
-            <div className="lg:col-span-4 space-y-5">
-              <div className="w-[110px] h-[110px] relative">
-                <Image
-                  src="/brand_footer_logo.webp"
-                  alt="Arch Kitchen Cabinets Logo"
-                  fill
-                  sizes="110px"
-                  className="object-contain"
-                />
-              </div>
-              <p className="text-xs text-[#a0a0a0] leading-relaxed max-w-sm">
-                We accept payment through cash, bank transfers. Choose the option that suits you best for a secure and convenient transaction.
-              </p>
-            </div>
-
-            {/* Column 2: Information Links */}
-            <div className="lg:col-span-3 space-y-4">
-              <h4 className="text-white font-bold text-base tracking-wide">
-                Information
-              </h4>
-              <ul className="space-y-2.5 text-xs text-[#a0a0a0]">
-                <li>
-                  <a
-                    href="#contact"
-                    className="flex items-center space-x-2 hover:text-[#e4be6c] transition-colors group"
-                  >
-                    <span className="text-[#a0a0a0] group-hover:text-[#e4be6c] transition-colors">→</span>
-                    <span>Terms & Condition</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#contact"
-                    className="flex items-center space-x-2 hover:text-[#e4be6c] transition-colors group"
-                  >
-                    <span className="text-[#a0a0a0] group-hover:text-[#e4be6c] transition-colors">→</span>
-                    <span>Privacy Policy</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#contact"
-                    className="flex items-center space-x-2 hover:text-[#e4be6c] transition-colors group"
-                  >
-                    <span className="text-[#a0a0a0] group-hover:text-[#e4be6c] transition-colors">→</span>
-                    <span>Costumer Services</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#faq"
-                    className="flex items-center space-x-2 hover:text-[#e4be6c] transition-colors group"
-                  >
-                    <span className="text-[#a0a0a0] group-hover:text-[#e4be6c] transition-colors">→</span>
-                    <span>FAQ's</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Column 3: Quick Link */}
-            <div className="lg:col-span-2 space-y-4">
-              <h4 className="text-white font-bold text-base tracking-wide">
-                Quick Link
-              </h4>
-              <ul className="space-y-2.5 text-xs text-[#a0a0a0]">
-                <li>
-                  <a
-                    href="#blog"
-                    className="flex items-center space-x-2 hover:text-[#e4be6c] transition-colors group"
-                  >
-                    <span className="text-[#a0a0a0] group-hover:text-[#e4be6c] transition-colors">→</span>
-                    <span>Latest News</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#portfolio"
-                    className="flex items-center space-x-2 hover:text-[#e4be6c] transition-colors group"
-                  >
-                    <span className="text-[#a0a0a0] group-hover:text-[#e4be6c] transition-colors">→</span>
-                    <span>Our Projects</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#blog"
-                    className="flex items-center space-x-2 hover:text-[#e4be6c] transition-colors group"
-                  >
-                    <span className="text-[#a0a0a0] group-hover:text-[#e4be6c] transition-colors">→</span>
-                    <span>Blog</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#areas"
-                    className="flex items-center space-x-2 hover:text-[#e4be6c] transition-colors group"
-                  >
-                    <span className="text-[#a0a0a0] group-hover:text-[#e4be6c] transition-colors">→</span>
-                    <span>Areas We Serve</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Column 4: Schedule CTA Button */}
-            <div className="lg:col-span-3 flex items-start lg:justify-end pt-2">
-              <a
-                href="#contact"
-                className="inline-block px-7 py-3.5 bg-[#c5a059] hover:bg-[#b38e45] text-white font-semibold text-xs sm:text-sm rounded-md transition-all shadow hover:shadow-lg transform hover:-translate-y-0.5 text-center"
-              >
-                Schedule A Free Consultation
-              </a>
-            </div>
-          </div>
-
-          {/* Thin Horizontal Divider */}
-          <div className="border-t border-[#1f1f1f] pt-6 flex flex-col sm:flex-row items-center justify-center text-center text-xs text-[#808080]">
-            <div>
-              © Copyright 2026 Arch Kitchen Cabinets. All Rights Reserved. | Website Design By
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
