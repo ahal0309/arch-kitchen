@@ -1226,11 +1226,11 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 border-t md:border-t-0 md:border-l border-[#ede8df] pt-4 md:pt-0 md:pl-8 w-full md:w-auto justify-center md:justify-end">
               <div className="text-center md:text-left">
                 <div className="flex items-baseline justify-center md:justify-start gap-1">
-                  <span className="text-3xl sm:text-4xl font-arch text-[#1e1d1b]">4.9</span>
+                  <span className="text-3xl sm:text-4xl font-arch text-[#1e1d1b]">5.0</span>
                   <span className="text-sm font-mono text-[#c5a059]">/ 5.0</span>
                 </div>
                 <p className="text-[11px] sm:text-xs text-[#78756e] font-sans">
-                  Across Greater Toronto Area
+                  104+ Verified Reviews • Greater Toronto Area
                 </p>
               </div>
 
