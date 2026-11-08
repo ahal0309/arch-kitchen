@@ -800,7 +800,7 @@ export default function HomePage() {
 
             {/* Right Media Column with Specialist Joinery Showcase */}
             <div className="lg:col-span-6 relative flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-[540px] overflow-hidden aspect-[760/680] z-10 group">
+              <div className="relative w-full max-w-[480px] overflow-hidden aspect-[9/16] md:aspect-[9/16] z-10 group">
                 <Image
                   src="/arch_kitchen/IMG_9775.webp"
                   alt="Your Kitchen Specialist Toronto Showcase"
