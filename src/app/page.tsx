@@ -800,7 +800,7 @@ export default function HomePage() {
 
             {/* Right Media Column with 3 Floating Steps */}
             <div className="lg:col-span-6 relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-xl border border-[#ede8df] bg-stone-100 aspect-[4/3] sm:aspect-[1.15/1] z-10 group">
+              <div className="relative rounded-2xl overflow-hidden shadow-xl border border-[#ede8df] bg-stone-100 aspect-[850/765] z-10 group">
                 <Image
                   src="/arch_kitchen/IMG_9775.webp"
                   alt="Your Kitchen Specialist Toronto Showcase"
