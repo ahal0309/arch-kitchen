@@ -800,14 +800,14 @@ export default function HomePage() {
 
             {/* Right Media Column with 3 Floating Steps */}
             <div className="lg:col-span-6 relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-xl border border-[#ede8df] bg-stone-100 aspect-[850/765] z-10 group">
+              <div className="relative rounded-none overflow-hidden shadow-xl border border-[#ede8df] bg-[#fbf9f5] aspect-[850/765] z-10 group">
                 <Image
                   src="/arch_kitchen/IMG_9775.webp"
                   alt="Your Kitchen Specialist Toronto Showcase"
                   fill
                   quality={100}
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover object-center transform group-hover:scale-105 transition-transform duration-700"
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
 
                 {/* Clean Full View Showcase Image without text overlays */}
