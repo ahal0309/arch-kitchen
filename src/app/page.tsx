@@ -296,22 +296,15 @@ export default function HomePage() {
       <section className="relative flex flex-col justify-start pt-0 pb-3 sm:pb-8 px-3 sm:px-6 lg:px-12 overflow-hidden">
         <div className="max-w-[1440px] w-full mx-auto flex-1 flex flex-col justify-start">
           {/* 3-Panel Architectural Photography Strip:
-              - Mobile: 3 stacked panels with aspect-[16/6.6] and gap-2 so all 3 fit effortlessly in 1 single viewport fold
-              - Desktop (md+): expanded aspect-[3/4.2] / aspect-[3/4.4] for high-impact hero presence
+              - Mobile: aspect-[2/3] for each portrait frame or aspect-[3/4.5] so each photo is shown completely in true proportion
+              - Desktop (md+): aspect-[2/3] (0.667) exactly matching the 682x1024 / 4672x7008 original photography ratio
           */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-2 sm:gap-3 md:gap-5 lg:gap-6 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 md:gap-5 lg:gap-6 w-full">
             {[0, 1, 2].map((slotIdx) => {
-              const kenBurnsClass =
-                slotIdx === 0
-                  ? "ken-burns-1"
-                  : slotIdx === 1
-                    ? "ken-burns-2"
-                    : "ken-burns-3";
-
               return (
                 <div
                   key={slotIdx}
-                  className="relative w-full aspect-[16/6.6] sm:aspect-[16/8] md:aspect-[3/4.2] lg:aspect-[3/4.4] rounded-[4px] md:rounded-sm overflow-hidden bg-[#fbf9f5] select-none shadow-[0_4px_24px_rgba(0,0,0,0.04)]"
+                  className="relative w-full aspect-[2/3] rounded-[4px] md:rounded-sm overflow-hidden bg-[#fbf9f5] select-none shadow-[0_4px_24px_rgba(0,0,0,0.04)]"
                 >
                   {heroSlideSets.map((set, setIdx) => {
                     const isActive = setIdx === activeSetIndex;
@@ -327,8 +320,7 @@ export default function HomePage() {
                           transitionTimingFunction: "cubic-bezier(0.42, 0, 0.58, 1)",
                         }}
                       >
-                        {/* Ken Burns continuous subtle pan/zoom motion container */}
-                        <div className={`relative w-full h-full ${kenBurnsClass}`}>
+                        <div className="relative w-full h-full">
                           <Image
                             src={set[slotIdx]}
                             alt={`Arch Kitchen Architectural Showcase ${slotIdx + 1}`}
@@ -336,7 +328,7 @@ export default function HomePage() {
                             priority={setIdx === 0}
                             quality={100}
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                            className="object-cover object-center scale-[1.04]"
+                            className="object-cover object-center"
                           />
                         </div>
                       </div>
