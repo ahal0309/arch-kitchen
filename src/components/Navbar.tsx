@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Phone, Clock, MapPin, ChevronDown, Menu, X } from "lucide-react";
-import { SOCIAL_LINKS } from "./Footer";
 
 interface NavbarProps {
   activePage?: "home" | "about" | "services" | "projects" | "blog" | "contact";
@@ -158,22 +157,6 @@ export default function Navbar({ activePage = "home" }: NavbarProps) {
             >
               CONTACTS
             </Link>
-
-            {/* Social Media Quick Links */}
-            <div className="flex items-center space-x-2.5 pl-4 border-l border-[#c5a059]/30">
-              {SOCIAL_LINKS.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Arch Kitchen Cabinets on ${item.name}`}
-                  className="w-8 h-8 rounded-full bg-black/[0.03] hover:bg-[#c5a059] text-[#78756e] hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-sm"
-                >
-                  {item.icon("w-3.5 h-3.5")}
-                </a>
-              ))}
-            </div>
           </nav>
 
           {/* Minimal Hamburger (Two crisp horizontal lines matching reference image with identical thickness) */}
@@ -344,27 +327,6 @@ export default function Navbar({ activePage = "home" }: NavbarProps) {
               >
                 Get A Quote
               </button>
-            </div>
-
-            {/* Social Media Links in Mobile Menu */}
-            <div className="pt-3 border-t border-[#ede8df] flex items-center justify-between">
-              <span className="text-[11px] font-mono tracking-[0.16em] uppercase text-[#78756e]">
-                Follow Us
-              </span>
-              <div className="flex items-center space-x-2.5">
-                {SOCIAL_LINKS.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Arch Kitchen Cabinets on ${item.name}`}
-                    className="w-8 h-8 rounded-full bg-black/[0.04] text-[#78756e] hover:text-white hover:bg-[#c5a059] flex items-center justify-center transition-colors"
-                  >
-                    {item.icon("w-3.5 h-3.5")}
-                  </a>
-                ))}
-              </div>
             </div>
           </div>
         )}

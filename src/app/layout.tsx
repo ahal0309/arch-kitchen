@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import ScrollAnimationProvider from "./ScrollAnimationProvider";
+import SocialFloatingBar from "@/components/SocialFloatingBar";
 
 export const metadata: Metadata = {
   title: "Toronto's Best Kitchen Contractor | Arch Kitchen Cabinets",
@@ -50,6 +51,7 @@ export default function RootLayout({
         <div className="relative z-10">
           <ScrollAnimationProvider>{children}</ScrollAnimationProvider>
         </div>
+        <SocialFloatingBar />
       </body>
     </html>
   );
