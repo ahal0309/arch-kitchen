@@ -406,14 +406,14 @@ export default function HomePage() {
             </div>
 
             {/* Inset Curated Interior Preview Box */}
-            <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-[460px] rounded-2xl overflow-hidden shadow-lg border border-[#ede8df] bg-[#fbf9f5] aspect-[2/3] group">
+            <div className="lg:col-span-5 relative flex justify-center lg:justify-end items-center">
+              <div className="relative w-full max-w-[480px] aspect-[682/1024] group">
                 <Image
                   src="/arch_kitchen/IMG_3159.webp"
                   alt="Arch Kitchens Architectural Interior"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  className="object-contain object-center group-hover:scale-102 transition-transform duration-700"
                 />
               </div>
             </div>
