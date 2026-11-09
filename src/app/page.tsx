@@ -799,15 +799,15 @@ export default function HomePage() {
             </div>
 
             {/* Right Media Column with Specialist Joinery Showcase */}
-            <div className="lg:col-span-6 relative flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-[480px] overflow-hidden aspect-[9/16] md:aspect-[9/16] z-10 group">
+            <div className="lg:col-span-6 relative flex justify-center lg:justify-end items-center">
+              <div className="relative w-full max-w-[520px] aspect-[2253/2899] z-10 group overflow-hidden">
                 <Image
                   src="/arch_kitchen/IMG_9775.webp"
                   alt="Your Kitchen Specialist Toronto Showcase"
                   fill
                   quality={100}
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  className="object-contain object-center group-hover:scale-102 transition-transform duration-700"
                 />
 
                 {/* Clean Full View Showcase Image without text overlays */}
