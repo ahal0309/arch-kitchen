@@ -213,7 +213,6 @@ export default function Navbar({ activePage = "home" }: NavbarProps) {
               }`}
             >
               <span>HOME</span>
-              <span className="text-[10px] text-[#c5a059] font-mono">01</span>
             </button>
 
             <button
@@ -226,7 +225,6 @@ export default function Navbar({ activePage = "home" }: NavbarProps) {
               }`}
             >
               <span>ABOUT</span>
-              <span className="text-[10px] text-[#c5a059] font-mono">02</span>
             </button>
 
             <button
@@ -239,7 +237,6 @@ export default function Navbar({ activePage = "home" }: NavbarProps) {
               }`}
             >
               <span>PROJECTS</span>
-              <span className="text-[10px] text-[#c5a059] font-mono">03</span>
             </button>
 
             {/* Services with Expandable Accordion on Mobile */}
@@ -337,7 +334,6 @@ export default function Navbar({ activePage = "home" }: NavbarProps) {
               }`}
             >
               <span>CONTACTS</span>
-              <span className="text-[10px] text-[#c5a059] font-mono">04</span>
             </button>
 
             <div className="pt-2">
