@@ -116,7 +116,7 @@ export default function ProjectsPage() {
                 href="/contact"
                 className="inline-flex items-center space-x-3 px-8 py-4 rounded-full bg-[#c5a059] hover:bg-[#b38e45] text-white text-xs font-mono uppercase tracking-[0.2em] transition-all shadow-md hover:shadow-xl hover:-translate-y-0.5"
               >
-                <span>Initiate Your Atelier Commission</span>
+                <span>Book Your Design Consultation</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
