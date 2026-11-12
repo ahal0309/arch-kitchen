@@ -356,7 +356,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
             <div className="lg:col-span-7 space-y-6">
               <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#c5a059] block">
-                ARCH KITCHENS — TORONTO ATELIER
+                Arch Kitchen Cabinets | Custom Fine Cabinetry
               </span>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-arch uppercase text-[#1e1d1b] leading-[1.08] tracking-tight">
                 Toronto's Best <br className="hidden sm:inline" />
