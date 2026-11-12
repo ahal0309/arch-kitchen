@@ -15,6 +15,27 @@ export interface ProjectItem {
 
 export const ARCH_PROJECTS: ProjectItem[] = [
   {
+    "slug": "milton-residence",
+    "title": "MILTON RESIDENCE",
+    "category": "BESPOKE ARCHITECTURAL KITCHEN & CABINETRY",
+    "shortCategory": "ARCHITECTURAL JOINERY",
+    "location": "Milton, Ontario",
+    "area": "3,400 SqFt",
+    "status": "Completed",
+    "year": "2025",
+    "description": "A refined custom kitchen and millwork project showcasing bespoke cabinetry, elegant stone countertops, and tailored architectural joinery designed for seamless contemporary living.",
+    "details": "Crafted with precision dovetail joinery, custom fluted accents, integrated appliance panels, and soft warm ambient lighting throughout the culinary and pantry spaces.",
+    "coverImage": "/projects/milton-residence/image_1.webp",
+    "images": [
+      "/projects/milton-residence/image_1.webp",
+      "/projects/milton-residence/image_2.webp",
+      "/projects/milton-residence/image_3.webp",
+      "/projects/milton-residence/image_4.webp",
+      "/projects/milton-residence/image_5.webp",
+      "/projects/milton-residence/image_6.webp"
+    ]
+  },
+  {
     "slug": "allenvale-residence",
     "title": "ALLENVALE RESIDENCE",
     "category": "ARCHITECTURAL KITCHEN & BESPOKE CABINETRY",
