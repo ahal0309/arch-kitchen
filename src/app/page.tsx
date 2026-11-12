@@ -262,7 +262,7 @@ export default function HomePage() {
   const heroSlideSets = [
     [
       "/arch_kitchen/IMG_3159.webp",
-      "/arch_kitchen/_DSC2189.webp",
+      "/arch_kitchen/hero_0497.webp",
       "/arch_kitchen/IMG_0476.webp",
     ],
     [
