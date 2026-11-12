@@ -8,14 +8,14 @@ export default function SocialFloatingBar() {
   return (
     <aside
       aria-label="Direct contact and social media channels"
-      className="fixed right-3 sm:right-5 top-1/2 -translate-y-1/2 z-[990] flex flex-col items-center gap-2 p-1.5 sm:p-2 rounded-full bg-white/90 backdrop-blur-md border border-[#ede8df] shadow-[0_4px_24px_rgba(0,0,0,0.08)] transition-all duration-300"
+      className="fixed bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-[990] flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-2.5 rounded-full bg-white/90 backdrop-blur-md border border-[#ede8df] shadow-[0_6px_28px_rgba(0,0,0,0.12)] transition-all duration-300 max-w-[calc(100vw-2rem)]"
     >
       {/* Phone Call */}
       <a
         href="tel:+14164749094"
         aria-label="Call +1 416-474-9094"
         title="Call +1 416-474-9094"
-        className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#c5a059] text-white hover:bg-[#b38e45] flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 shadow-sm"
+        className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#c5a059] text-white hover:bg-[#b38e45] flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 shadow-sm shrink-0"
       >
         <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
       </a>
@@ -27,7 +27,7 @@ export default function SocialFloatingBar() {
         rel="noopener noreferrer"
         aria-label="Chat with us on WhatsApp"
         title="Chat on WhatsApp (+1 416-474-9094)"
-        className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#25D366] text-white hover:bg-[#20ba59] flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 shadow-sm"
+        className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#25D366] text-white hover:bg-[#20ba59] flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 shadow-sm shrink-0"
       >
         <svg
           className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current"
@@ -38,7 +38,7 @@ export default function SocialFloatingBar() {
       </a>
 
       {/* Subtle divider between direct contact and social profiles */}
-      <div className="w-4 h-[1px] bg-[#ede8df] my-0.5" />
+      <div className="h-5 w-[1px] bg-[#ede8df] mx-1 shrink-0" />
 
       {/* Social Links */}
       {SOCIAL_LINKS.map((item) => (
@@ -49,7 +49,7 @@ export default function SocialFloatingBar() {
           rel="noopener noreferrer"
           aria-label={`Arch Kitchen Cabinets on ${item.name}`}
           title={item.name}
-          className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/[0.03] hover:bg-[#c5a059] text-[#78756e] hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 shadow-sm"
+          className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/[0.03] hover:bg-[#c5a059] text-[#78756e] hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 shadow-sm shrink-0"
         >
           {item.icon("w-3.5 h-3.5 sm:w-4 sm:h-4")}
         </a>
