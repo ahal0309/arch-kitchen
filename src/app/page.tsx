@@ -409,7 +409,7 @@ export default function HomePage() {
             <div className="lg:col-span-5 relative flex justify-center lg:justify-end items-center">
               <div className="relative w-full max-w-[480px] aspect-[682/1024] group">
                 <Image
-                  src="/arch_kitchen/IMG_3159.webp"
+                  src="/arch_kitchen/_DSC2189.webp"
                   alt="Arch Kitchens Architectural Interior"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
